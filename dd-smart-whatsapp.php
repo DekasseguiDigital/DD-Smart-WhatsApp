@@ -1,15 +1,18 @@
 <?php
 /**
  * Plugin Name: DD Smart WhatsApp
- * Description: Botões inteligentes de WhatsApp com cópia automática de mensagem, estatísticas, GA4, shortcode e widget Elementor.
+ * Plugin URI: https://github.com/DekasseguiDigital/DD-Smart-WhatsApp
+ * Description: DD Smart WhatsApp transforma botões de contato em ferramentas inteligentes de conversão, com Smart Copy, ações flutuantes, mensagens contextuais, analytics, Elementor, Gutenberg e atualização via GitHub.
  * Version: 2.2.0
- * Requires at least: 6.0
- * Requires PHP: 8.0
+ * Requires at least: 6.8
+ * Requires PHP: 8.1
  * Author: Dekassegui Digital
+ * Author URI: https://dekasseguidigital.com/
  * License: GPLv2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: dd-smart-whatsapp
  * Domain Path: /languages
+ * Update URI: https://github.com/DekasseguiDigital/DD-Smart-WhatsApp
  */
 
 if (!defined('ABSPATH')) {
@@ -36,6 +39,7 @@ require_once DDSW_PLUGIN_DIR . 'includes/class-ddsw-floating-actions.php';
 require_once DDSW_PLUGIN_DIR . 'includes/class-ddsw-dashboard-widget.php';
 require_once DDSW_PLUGIN_DIR . 'includes/class-ddsw-github-update-source.php';
 require_once DDSW_PLUGIN_DIR . 'includes/class-ddsw-update-checker.php';
+require_once DDSW_PLUGIN_DIR . 'includes/class-ddsw-plugin-meta.php';
 require_once DDSW_PLUGIN_DIR . 'admin/class-ddsw-admin.php';
 require_once DDSW_PLUGIN_DIR . 'blocks/class-ddsw-block.php';
 require_once DDSW_PLUGIN_DIR . 'includes/class-ddsw-elementor.php';
