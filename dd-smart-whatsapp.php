@@ -2,7 +2,7 @@
 /**
  * Plugin Name: DD Smart WhatsApp
  * Description: Botões inteligentes de WhatsApp com cópia automática de mensagem, estatísticas, GA4, shortcode e widget Elementor.
- * Version: 2.1.0
+ * Version: 2.2.0
  * Requires at least: 6.0
  * Requires PHP: 8.0
  * Author: Dekassegui Digital
@@ -16,7 +16,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('DDSW_VERSION', '2.1.0');
+define('DDSW_VERSION', '2.2.0');
 define('DDSW_PLUGIN_FILE', __FILE__);
 define('DDSW_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('DDSW_PLUGIN_URL', plugin_dir_url(__FILE__));

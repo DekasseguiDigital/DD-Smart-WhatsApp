@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: DD Smart WhatsApp 2.1.0\n"
-"POT-Creation-Date: 2026-07-31 09:43+0000\n"
+"Project-Id-Version: DD Smart WhatsApp 2.2.0\n"
+"POT-Creation-Date: 2026-07-31 12:56+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -22,6 +22,14 @@ msgstr "%dミリ秒"
 msgid "100%"
 msgstr "100%"
 
+#: includes/class-ddsw-i18n.php:177
+msgid "A mensagem inicial foi copiada para a Ã¡rea de transferÃªncia."
+msgstr "A mensagem inicial foi copiada para a Ã¡rea de transferÃªncia."
+
+#: includes/class-ddsw-i18n.php:181
+msgid "A mensagem inicial serÃ¡ copiada antes de abrir este canal."
+msgstr "A mensagem inicial serÃ¡ copiada antes de abrir este canal."
+
 #: admin/class-ddsw-admin.php:427
 msgid "Abre o WhatsApp com a mensagem pelo parâmetro text="
 msgstr "Opens WhatsApp with the message through the text= parameter"
@@ -31,7 +39,7 @@ msgstr "Opens WhatsApp with the message through the text= parameter"
 msgid "Abrir automaticamente após copiar"
 msgstr "Open automatically after copying"
 
-#: includes/class-ddsw-floating-actions.php:53
+#: includes/class-ddsw-floating-actions.php:63
 msgid "Abrir ações flutuantes: %s"
 msgstr "Abrir ações flutuantes: %s"
 
@@ -104,7 +112,7 @@ msgstr "Active"
 msgid "Atualizar"
 msgstr "Atualizar"
 
-#: includes/class-ddsw-settings.php:664
+#: includes/class-ddsw-settings.php:709
 msgid "Auto — usar identidade visual do site"
 msgstr "Auto — use the site's visual identity"
 
@@ -204,7 +212,7 @@ msgstr "書式付きメッセージを保持するための従来モードとSma
 msgid "Browser"
 msgstr "?????"
 
-#: includes/class-ddsw-assets.php:170
+#: includes/class-ddsw-assets.php:171
 msgid "Button"
 msgstr "Button"
 
@@ -255,7 +263,7 @@ msgstr "WhatsAppで相談する"
 msgid "Check availability"
 msgstr "Check availability"
 
-#: includes/class-ddsw-settings.php:667
+#: includes/class-ddsw-settings.php:712
 msgid "Claro"
 msgstr "Light"
 
@@ -271,6 +279,10 @@ msgstr "Clean"
 #: blocks/block-editor.js:131
 msgid "Close modal automatically"
 msgstr "Close modal automatically"
+
+#: includes/class-ddsw-i18n.php:178
+msgid "Cole na conversa."
+msgstr "Cole na conversa."
 
 #: admin/class-ddsw-admin.php:663
 msgid "Comportamento no mobile"
@@ -288,7 +300,7 @@ msgstr "コンサルティング"
 msgid "Conteúdo"
 msgstr "Content"
 
-#: includes/class-ddsw-settings.php:668
+#: includes/class-ddsw-settings.php:713
 msgid "Contorno"
 msgstr "Outline"
 
@@ -301,11 +313,23 @@ msgstr "Conversion"
 msgid "Copia a mensagem formatada e abre o WhatsApp sem texto"
 msgstr "Copies the formatted message and opens WhatsApp without text"
 
+#: includes/class-ddsw-i18n.php:179
+msgid "Copiar e abrir"
+msgstr "Copiar e abrir"
+
+#: includes/class-ddsw-i18n.php:180
+msgid "Copiar mensagem?"
+msgstr "Copiar mensagem?"
+
+#: includes/class-ddsw-i18n.php:184
+msgid "Copiar novamente"
+msgstr "Copy again"
+
 #: admin/class-ddsw-admin.php:377
 msgid "Copiar shortcode"
 msgstr "Copy shortcode"
 
-#: admin/class-ddsw-admin.php:733
+#: admin/class-ddsw-admin.php:745
 #: elementor/class-ddsw-elementor-widget.php:356
 msgid "Cor"
 msgstr "Color"
@@ -338,7 +362,7 @@ msgstr "Icon color"
 msgid "Custom Attributes"
 msgstr "Custom Attributes"
 
-#: includes/class-ddsw-assets.php:171
+#: includes/class-ddsw-assets.php:172
 msgid "Custom Override"
 msgstr "Custom Override"
 
@@ -359,6 +383,7 @@ msgstr "DD Smart Copy"
 #: blocks/block-editor.js:15
 #: elementor/class-ddsw-elementor-widget.php:16
 #: includes/class-ddsw-elementor.php:35
+#: includes/class-ddsw-version.php:31
 msgid "DD Smart WhatsApp"
 msgstr "DD Smart WhatsApp"
 
@@ -366,15 +391,23 @@ msgstr "DD Smart WhatsApp"
 msgid "DD Smart WhatsApp Analytics"
 msgstr "DD Smart WhatsApp Analytics"
 
+#: includes/class-ddsw-github-update-source.php:73
+msgid "DD Smart WhatsApp update check failed with HTTP status %d."
+msgstr "DD Smart WhatsApp update check failed with HTTP status %d."
+
 #: includes/class-ddsw-assets.php:137
 msgid "DD Smart WhatsApp: Smart Copy failed."
 msgstr "DD Smart WhatsApp: Smart Copy failed."
+
+#: includes/class-ddsw-assets.php:138
+msgid "DD Smart WhatsApp: Universal Smart Copy failed."
+msgstr "DD Smart WhatsApp: Universal Smart Copy failed."
 
 #: includes/class-ddsw-renderer.php:105
 msgid "DD Smart WhatsApp: configure o telefone do botão."
 msgstr "DD Smart WhatsApp: configure the button phone number."
 
-#: includes/class-ddsw-assets.php:138
+#: includes/class-ddsw-assets.php:139
 msgid "DD Smart WhatsApp: copy fallback failed."
 msgstr "DD Smart WhatsApp: copy fallback failed."
 
@@ -382,7 +415,7 @@ msgstr "DD Smart WhatsApp: copy fallback failed."
 msgid "DD Smart WhatsApp: failed to copy in Traditional mode."
 msgstr "DD Smart WhatsApp: failed to copy in Traditional mode."
 
-#: includes/class-ddsw-assets.php:139
+#: includes/class-ddsw-assets.php:140
 msgid "DD Smart WhatsApp: failed to record event."
 msgstr "DD Smart WhatsApp: failed to record event."
 
@@ -402,7 +435,7 @@ msgstr "DD WhatsApp Principal"
 msgid "DD WhatsApp Suporte"
 msgstr "DD WhatsApp Suporte"
 
-#: includes/class-ddsw-assets.php:152
+#: includes/class-ddsw-assets.php:153
 msgid "DDSW Debug"
 msgstr "DDSW Debug"
 
@@ -412,6 +445,7 @@ msgid "Dark"
 msgstr "Dark"
 
 #: admin/class-ddsw-admin.php:123
+#: includes/class-ddsw-update-checker.php:89
 msgid "Dekassegui Digital"
 msgstr "Dekassegui Digital"
 
@@ -423,13 +457,17 @@ msgstr "Delay"
 msgid "Delay automático"
 msgstr "Automatic delay"
 
+#: includes/class-ddsw-i18n.php:182
+msgid "Depois que a conversa abrir, cole a mensagem copiada."
+msgstr "Depois que a conversa abrir, cole a mensagem copiada."
+
 #: elementor/class-ddsw-elementor-widget.php:442
 #: elementor/class-ddsw-elementor-widget.php:488
 #: elementor/class-ddsw-elementor-widget.php:514
 msgid "Desativado"
 msgstr "Disabled"
 
-#: includes/class-ddsw-assets.php:168
+#: includes/class-ddsw-assets.php:169
 msgid "Description"
 msgstr "Description"
 
@@ -466,7 +504,7 @@ msgstr "Distância vertical"
 
 #: blocks/block-editor.js:143
 #: includes/class-ddsw-i18n.php:109
-#: includes/class-ddsw-i18n.php:182
+#: includes/class-ddsw-i18n.php:201
 msgid "Do not show again on this browser"
 msgstr "このブラウザーでは再表示しない"
 
@@ -474,7 +512,7 @@ msgstr "このブラウザーでは再表示しない"
 msgid "Doctor"
 msgstr "医師"
 
-#: includes/class-ddsw-assets.php:161
+#: includes/class-ddsw-assets.php:162
 msgid "Document Lang"
 msgstr "Document Lang"
 
@@ -486,7 +524,7 @@ msgstr "Dutch"
 msgid "Elevação"
 msgstr "Elevação"
 
-#: includes/class-ddsw-settings.php:527
+#: includes/class-ddsw-settings.php:529
 msgid "Email"
 msgstr "Email"
 
@@ -512,7 +550,7 @@ msgstr "Escala"
 msgid "Escolha as opções e copie o shortcode automaticamente."
 msgstr "Choose the options and copy the shortcode automatically."
 
-#: includes/class-ddsw-settings.php:666
+#: includes/class-ddsw-settings.php:711
 msgid "Escuro"
 msgstr "Dark"
 
@@ -559,11 +597,11 @@ msgstr "生のIPを保存しない、ボタン別のローカルイベント。"
 msgid "Eventos totais"
 msgstr "Total events"
 
-#: assets/js/admin.js:536
+#: assets/js/admin.js:585
 msgid "Events"
 msgstr "Events"
 
-#: admin/class-ddsw-admin.php:743
+#: admin/class-ddsw-admin.php:755
 msgid "Exibir"
 msgstr "Exibir"
 
@@ -579,7 +617,7 @@ msgstr "Exibir rótulos das ações"
 msgid "Exportar CSV"
 msgstr "Exportar CSV"
 
-#: includes/class-ddsw-settings.php:529
+#: includes/class-ddsw-settings.php:531
 msgid "Facebook"
 msgstr "Facebook"
 
@@ -595,6 +633,10 @@ msgstr "Falar no WhatsApp"
 msgid "Família da fonte"
 msgstr "Font family"
 
+#: includes/class-ddsw-i18n.php:185
+msgid "Fechar"
+msgstr "Close"
+
 #: admin/class-ddsw-admin.php:476
 #: elementor/class-ddsw-elementor-widget.php:483
 msgid "Fechar modal automaticamente"
@@ -604,7 +646,7 @@ msgstr "Close modal automatically"
 msgid "Feedback do modo tradicional"
 msgstr "従来モードのフィードバック"
 
-#: includes/class-ddsw-settings.php:534
+#: includes/class-ddsw-settings.php:536
 msgid "Formulário"
 msgstr "Formulário"
 
@@ -632,15 +674,15 @@ msgstr "German"
 msgid "Get support on WhatsApp"
 msgstr "WhatsAppでサポートを受ける"
 
-#: includes/class-ddsw-assets.php:158
+#: includes/class-ddsw-assets.php:159
 msgid "Gettext Locale"
 msgstr "Gettext Locale"
 
-#: includes/class-ddsw-settings.php:533
+#: includes/class-ddsw-settings.php:535
 msgid "Google Maps"
 msgstr "Google Maps"
 
-#: includes/class-ddsw-assets.php:160
+#: includes/class-ddsw-assets.php:161
 msgid "HTML Lang"
 msgstr "HTML Lang"
 
@@ -967,11 +1009,11 @@ msgstr "Inferior direita"
 msgid "Inferior esquerda"
 msgstr "Inferior esquerda"
 
-#: includes/class-ddsw-settings.php:528
+#: includes/class-ddsw-settings.php:530
 msgid "Instagram"
 msgstr "Instagram"
 
-#: includes/class-ddsw-assets.php:169
+#: includes/class-ddsw-assets.php:170
 msgid "Instruction"
 msgstr "Instruction"
 
@@ -990,6 +1032,14 @@ msgstr "Desktop instruction"
 msgid "Instrução iPhone/iPad"
 msgstr "iPhone/iPad instruction"
 
+#: includes/class-ddsw-github-update-source.php:81
+msgid "Invalid DD Smart WhatsApp update response."
+msgstr "Invalid DD Smart WhatsApp update response."
+
+#: includes/class-ddsw-update-checker.php:121
+msgid "Invalid DD Smart WhatsApp update source."
+msgstr "Invalid DD Smart WhatsApp update source."
+
 #: includes/class-ddsw-language.php:187
 msgid "Italian"
 msgstr "Italian"
@@ -998,11 +1048,11 @@ msgstr "Italian"
 msgid "Japanese"
 msgstr "日本語"
 
-#: includes/class-ddsw-settings.php:532
+#: includes/class-ddsw-settings.php:534
 msgid "LINE"
 msgstr "LINE"
 
-#: includes/class-ddsw-assets.php:156
+#: includes/class-ddsw-assets.php:157
 msgid "Language Source"
 msgstr "Language Source"
 
@@ -1027,19 +1077,19 @@ msgstr "Lenta"
 msgid "Limpar estatísticas"
 msgstr "統計をクリア"
 
-#: includes/class-ddsw-settings.php:536
+#: includes/class-ddsw-settings.php:538
 msgid "Link personalizado"
 msgstr "Link personalizado"
 
-#: includes/class-ddsw-settings.php:518
+#: includes/class-ddsw-settings.php:520
 msgid "Lista compacta"
 msgstr "Lista compacta"
 
-#: includes/class-ddsw-assets.php:154
+#: includes/class-ddsw-assets.php:155
 msgid "Locale"
 msgstr "Locale"
 
-#: includes/class-ddsw-assets.php:173
+#: includes/class-ddsw-assets.php:174
 msgid "MO Loaded"
 msgstr "MO Loaded"
 
@@ -1057,6 +1107,14 @@ msgstr "Margin"
 msgid "Mensagem"
 msgstr "Message"
 
+#: includes/class-ddsw-i18n.php:176
+msgid "Mensagem copiada."
+msgstr "Mensagem copiada."
+
+#: includes/class-ddsw-i18n.php:186
+msgid "Mensagem copiada. Cole na conversa."
+msgstr "Mensagem copiada. Cole na conversa."
+
 #: admin/class-ddsw-admin.php:458
 #: elementor/class-ddsw-elementor-widget.php:420
 msgid "Mensagem de erro"
@@ -1067,6 +1125,10 @@ msgstr "Error message"
 msgid "Mensagem de sucesso"
 msgstr "Success message"
 
+#: admin/class-ddsw-admin.php:729
+msgid "Mensagem inicial"
+msgstr "Mensagem inicial"
+
 #: admin/class-ddsw-admin.php:207
 msgid "Mesma aba"
 msgstr "Same tab"
@@ -1075,7 +1137,7 @@ msgstr "Same tab"
 msgid "Message"
 msgstr "Message"
 
-#: includes/class-ddsw-settings.php:530
+#: includes/class-ddsw-settings.php:532
 msgid "Messenger"
 msgstr "Messenger"
 
@@ -1083,11 +1145,11 @@ msgstr "Messenger"
 msgid "Minúsculas"
 msgstr "Lowercase"
 
-#: includes/class-ddsw-assets.php:165
+#: includes/class-ddsw-assets.php:166
 msgid "Modal Fields"
 msgstr "Modal Fields"
 
-#: includes/class-ddsw-assets.php:166
+#: includes/class-ddsw-assets.php:167
 msgid "Modal Payload"
 msgstr "Modal Payload"
 
@@ -1096,13 +1158,17 @@ msgstr "Modal Payload"
 msgid "Modal Smart Copy"
 msgstr "Modal Smart Copy"
 
-#: includes/class-ddsw-assets.php:163
+#: includes/class-ddsw-assets.php:164
 msgid "Modal Source"
 msgstr "Modal Source"
 
 #: admin/class-ddsw-admin.php:370
 msgid "Modo"
 msgstr "Mode"
+
+#: admin/class-ddsw-admin.php:733
+msgid "Modo da mensagem"
+msgstr "Modo da mensagem"
 
 #: admin/class-ddsw-admin.php:423
 #: elementor/class-ddsw-elementor-widget.php:73
@@ -1115,8 +1181,13 @@ msgid "Mostrar ícone"
 msgstr "Show icon"
 
 #: admin/class-ddsw-admin.php:570
+#: includes/class-ddsw-settings.php:545
 msgid "Nenhuma"
 msgstr "None"
+
+#: includes/class-ddsw-update-checker.php:156
+msgid "No changelog was provided for this release."
+msgstr "No changelog was provided for this release."
 
 #: admin/class-ddsw-admin.php:705
 msgid "Nome"
@@ -1131,9 +1202,13 @@ msgid "Normal"
 msgstr "Normal"
 
 #: admin/class-ddsw-admin.php:206
-#: admin/class-ddsw-admin.php:747
+#: admin/class-ddsw-admin.php:759
 msgid "Nova aba"
 msgstr "新しいタブ"
+
+#: includes/class-ddsw-i18n.php:183
+msgid "NÃ£o foi possÃ­vel copiar automaticamente. Selecione e copie a mensagem abaixo."
+msgstr "NÃ£o foi possÃ­vel copiar automaticamente. Selecione e copie a mensagem abaixo."
 
 #: admin/class-ddsw-admin.php:483
 #: elementor/class-ddsw-elementor-widget.php:509
@@ -1152,6 +1227,10 @@ msgstr "The frontend always uses the site language. The admin area can follow th
 msgid "O idioma do modelo foi alterado."
 msgstr "The template language changed."
 
+#: admin/class-ddsw-admin.php:730
+msgid "Olá {{name}}, encontrei seu site e gostaria de solicitar um orçamento."
+msgstr "Olá {{name}}, encontrei seu site e gostaria de solicitar um orçamento."
+
 #: elementor/class-ddsw-elementor-widget.php:129
 msgid "Opcional. Deixe vazio para usar o ícone padrão do WhatsApp."
 msgstr "Optional. Leave empty to use the default WhatsApp icon."
@@ -1160,11 +1239,11 @@ msgstr "Optional. Leave empty to use the default WhatsApp icon."
 msgid "Open automatically after copying"
 msgstr "Open automatically after copying"
 
-#: admin/class-ddsw-admin.php:737
+#: admin/class-ddsw-admin.php:749
 msgid "Ordem"
 msgstr "Ordem"
 
-#: includes/class-ddsw-assets.php:174
+#: includes/class-ddsw-assets.php:175
 msgid "PO Loaded"
 msgstr "PO Loaded"
 
@@ -1196,11 +1275,11 @@ msgstr "Step 3: create the first button."
 msgid "Passo 4: copie o shortcode."
 msgstr "Step 4: copy the shortcode."
 
-#: includes/class-ddsw-assets.php:159
+#: includes/class-ddsw-assets.php:160
 msgid "Payload Language"
 msgstr "Payload Language"
 
-#: includes/class-ddsw-settings.php:669
+#: includes/class-ddsw-settings.php:714
 msgid "Personalizado"
 msgstr "Custom"
 
@@ -1243,7 +1322,7 @@ msgid "Real estate"
 msgstr "不動産"
 
 #: admin/class-ddsw-admin.php:586
-#: admin/class-ddsw-admin.php:750
+#: admin/class-ddsw-admin.php:762
 msgid "Remover"
 msgstr "Remove"
 
@@ -1267,7 +1346,7 @@ msgstr "Request legal assistance"
 msgid "Requisição inválida."
 msgstr "Invalid request."
 
-#: includes/class-ddsw-settings.php:535
+#: includes/class-ddsw-settings.php:537
 msgid "Reservar"
 msgstr "Reservar"
 
@@ -1275,11 +1354,11 @@ msgstr "Reservar"
 msgid "Reserve on WhatsApp"
 msgstr "Reserve on WhatsApp"
 
-#: includes/class-ddsw-assets.php:164
+#: includes/class-ddsw-assets.php:165
 msgid "Resolved By"
 msgstr "Resolved By"
 
-#: includes/class-ddsw-assets.php:155
+#: includes/class-ddsw-assets.php:156
 msgid "Resolved Locale"
 msgstr "Resolved Locale"
 
@@ -1364,6 +1443,10 @@ msgstr "???????"
 msgid "Schedule an appointment"
 msgstr "Schedule an appointment"
 
+#: includes/class-ddsw-settings.php:547
+msgid "Sempre perguntar antes de copiar"
+msgstr "Sempre perguntar antes de copiar"
+
 #: blocks/block-editor.js:53
 msgid "Send mode"
 msgstr "?????"
@@ -1394,6 +1477,10 @@ msgstr "Smart Copy"
 msgid "Smart Copy Modal"
 msgstr "Smart Copy Modal"
 
+#: includes/class-ddsw-settings.php:546
+msgid "Smart Copy automÃ¡tico"
+msgstr "Smart Copy automÃ¡tico"
+
 #: assets/js/admin.js:330
 msgid "Smart Copy modal"
 msgstr "Smart Copy modal"
@@ -1405,6 +1492,10 @@ msgstr "Smart Copy shortcode"
 #: admin/class-ddsw-admin.php:231
 msgid "Smart Floating Actions"
 msgstr "Smart Floating Actions"
+
+#: includes/class-ddsw-update-checker.php:97
+msgid "Smart WhatsApp buttons with Smart Copy, floating actions, analytics, Elementor, Gutenberg and shortcodes."
+msgstr "Smart WhatsApp buttons with Smart Copy, floating actions, analytics, Elementor, Gutenberg and shortcodes."
 
 #: elementor/class-ddsw-elementor-widget.php:97
 msgid "Sobrescrever mensagem"
@@ -1462,19 +1553,19 @@ msgstr "Icon size"
 
 #: admin/class-ddsw-admin.php:401
 #: elementor/class-ddsw-elementor-widget.php:63
-#: includes/class-ddsw-settings.php:526
+#: includes/class-ddsw-settings.php:528
 msgid "Telefone"
 msgstr "Phone"
 
-#: includes/class-ddsw-settings.php:531
+#: includes/class-ddsw-settings.php:533
 msgid "Telegram"
 msgstr "Telegram"
 
-#: includes/class-ddsw-assets.php:162
+#: includes/class-ddsw-assets.php:163
 msgid "Template"
 msgstr "Template"
 
-#: includes/class-ddsw-assets.php:157
+#: includes/class-ddsw-assets.php:158
 msgid "Template Loaded"
 msgstr "Template Loaded"
 
@@ -1496,7 +1587,7 @@ msgstr "The template language changed."
 msgid "Tipo"
 msgstr "Tipo"
 
-#: includes/class-ddsw-assets.php:167
+#: includes/class-ddsw-assets.php:168
 msgid "Title"
 msgstr "Title"
 
@@ -1539,7 +1630,7 @@ msgstr "Transition"
 msgid "Transição"
 msgstr "Transition"
 
-#: includes/class-ddsw-assets.php:172
+#: includes/class-ddsw-assets.php:173
 msgid "Translation Loaded"
 msgstr "Translation Loaded"
 
@@ -1627,11 +1718,11 @@ msgstr "Variables available for dynamic messages."
 msgid "Velocidade"
 msgstr "Velocidade"
 
-#: includes/class-ddsw-settings.php:665
+#: includes/class-ddsw-settings.php:710
 msgid "Verde WhatsApp"
 msgstr "WhatsApp Green"
 
-#: includes/class-ddsw-settings.php:517
+#: includes/class-ddsw-settings.php:519
 msgid "Vertical"
 msgstr "Vertical"
 
@@ -1648,7 +1739,7 @@ msgstr "You do not have permission to perform this action."
 msgid "WhatsApp"
 msgstr "WhatsApp"
 
-#: includes/class-ddsw-settings.php:525
+#: includes/class-ddsw-settings.php:527
 msgid "WhatsApp (Smart Copy)"
 msgstr "WhatsApp (Smart Copy)"
 
@@ -1676,7 +1767,7 @@ msgstr "????"
 msgid "tablet"
 msgstr "?????"
 
-#: admin/class-ddsw-admin.php:729
+#: admin/class-ddsw-admin.php:741
 #: elementor/class-ddsw-elementor-widget.php:348
 msgid "Ícone"
 msgstr "Icon"
@@ -1806,57 +1897,57 @@ msgctxt "Elementor search keyword"
 msgid "whatsapp"
 msgstr "whatsapp"
 
-#: includes/class-ddsw-i18n.php:249
+#: includes/class-ddsw-i18n.php:268
 msgctxt "Internal Smart Copy Android fallback"
 msgid "Tap Open WhatsApp, tap and hold the message field and choose Paste."
 msgstr "WhatsAppを開き、メッセージ欄を長押しして「貼り付け」を選択してください。"
 
-#: includes/class-ddsw-i18n.php:250
+#: includes/class-ddsw-i18n.php:269
 msgctxt "Internal Smart Copy button fallback"
 msgid "Open WhatsApp"
 msgstr "WhatsAppを開く"
 
-#: includes/class-ddsw-i18n.php:251
+#: includes/class-ddsw-i18n.php:270
 msgctxt "Internal Smart Copy close fallback"
 msgid "Close"
 msgstr "閉じる"
 
-#: includes/class-ddsw-i18n.php:247
+#: includes/class-ddsw-i18n.php:266
 msgctxt "Internal Smart Copy desktop fallback"
 msgid "Click Open WhatsApp and press Ctrl + V in the message field."
 msgstr "WhatsAppを開いて Ctrl + V を押してください。"
 
-#: includes/class-ddsw-i18n.php:253
+#: includes/class-ddsw-i18n.php:272
 msgctxt "Internal Smart Copy error fallback"
 msgid "Automatic copy failed. Select and copy the message below."
 msgstr "自動コピーできませんでした。下のメッセージを選択してコピーしてください。"
 
-#: includes/class-ddsw-i18n.php:255
+#: includes/class-ddsw-i18n.php:274
 msgctxt "Internal Smart Copy hide-again fallback"
 msgid "Do not show again on this browser"
 msgstr "このブラウザーでは再表示しない"
 
-#: includes/class-ddsw-i18n.php:248
+#: includes/class-ddsw-i18n.php:267
 msgctxt "Internal Smart Copy iOS fallback"
 msgid "Tap Open WhatsApp, tap the message field and choose Paste."
 msgstr "WhatsAppを開き、メッセージ欄をタップして「ペースト」を選択してください。"
 
-#: includes/class-ddsw-i18n.php:246
+#: includes/class-ddsw-i18n.php:265
 msgctxt "Internal Smart Copy modal success fallback"
 msgid "Your message has been copied to the clipboard."
 msgstr "メッセージをクリップボードにコピーしました。"
 
-#: includes/class-ddsw-i18n.php:245
+#: includes/class-ddsw-i18n.php:264
 msgctxt "Internal Smart Copy modal title fallback"
 msgid "Copied successfully"
 msgstr "メッセージをコピーしました"
 
-#: includes/class-ddsw-i18n.php:252
+#: includes/class-ddsw-i18n.php:271
 msgctxt "Internal Smart Copy retry fallback"
 msgid "Copy again"
 msgstr "もう一度コピー"
 
-#: includes/class-ddsw-i18n.php:254
+#: includes/class-ddsw-i18n.php:273
 msgctxt "Internal traditional feedback fallback"
 msgid "Message copied. Opening WhatsApp..."
 msgstr "メッセージをコピーしました。WhatsAppを開いています..."

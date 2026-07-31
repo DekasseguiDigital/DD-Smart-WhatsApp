@@ -4,7 +4,7 @@ Tags: whatsapp, elementor, gutenberg, shortcode, analytics
 Requires at least: 6.0
 Tested up to: 6.8
 Requires PHP: 8.0
-Stable tag: 2.1.0
+Stable tag: 2.2.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -79,6 +79,13 @@ No. Raw IP addresses are not stored. Optional IP hashing can be disabled in the 
 
 == Changelog ==
 
+= 2.2.0 =
+* Added Universal Smart Copy for Messenger, Instagram, Telegram, LINE and optional custom links.
+* Added per-action initial messages with placeholder support in Smart Floating Actions.
+* Added per-action message modes: none, automatic Smart Copy and ask before copying.
+* Added mailto subject and body generation for email actions without using Smart Copy.
+* Added platform analytics event tracking for Universal Smart Copy.
+
 = 2.1.0 =
 * Added optional Smart Floating Actions hubs with Vertical and Compact List layouts.
 * Added configurable floating actions for WhatsApp Smart Copy, phone, email, social links, maps, booking, form and custom links.
@@ -140,6 +147,9 @@ No. Raw IP addresses are not stored. Optional IP hashing can be disabled in the 
 * Initial WordPress.org-ready public release candidate.
 
 == Upgrade Notice ==
+
+= 2.2.0 =
+Adds Universal Smart Copy for Messenger, Instagram, Telegram, LINE and optional custom links while preserving existing WhatsApp behavior.
 
 = 2.1.0 =
 Adds optional Smart Floating Actions and Dashboard Analytics. Existing buttons, shortcodes, Elementor widgets and Gutenberg blocks keep their current behavior unless the new module is enabled.
