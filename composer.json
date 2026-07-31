@@ -1,0 +1,17 @@
+{
+  "name": "dekassegui-digital/dd-smart-whatsapp",
+  "description": "Smart WhatsApp buttons for WordPress with Elementor, Gutenberg, shortcodes, Smart Copy and tracking.",
+  "type": "wordpress-plugin",
+  "license": "GPL-2.0-or-later",
+  "require": {
+    "php": ">=8.0"
+  },
+  "require-dev": {
+    "wp-coding-standards/wpcs": "^3.0",
+    "phpcompatibility/phpcompatibility-wp": "^2.1",
+    "dealerdirect/phpcodesniffer-composer-installer": "^1.0"
+  },
+  "scripts": {
+    "lint": "phpcs"
+  }
+}

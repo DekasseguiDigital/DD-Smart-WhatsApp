@@ -1,0 +1,370 @@
+.ddsw-floating-hub {
+    --ddsw-float-x: 24px;
+    --ddsw-float-y: 24px;
+    --ddsw-float-size: 58px;
+    --ddsw-float-main: #25d366;
+    --ddsw-float-bg: #ffffff;
+    --ddsw-float-hover: #128c7e;
+    --ddsw-float-speed: 200ms;
+    --ddsw-float-gap: 12px;
+    --ddsw-float-text: #17211c;
+    --ddsw-float-muted: #647067;
+    --ddsw-float-shadow: 0 18px 46px rgba(15, 23, 42, 0.22);
+    --ddsw-float-action-shadow: 0 12px 32px rgba(15, 23, 42, 0.14);
+    bottom: calc(var(--ddsw-float-y) + env(safe-area-inset-bottom, 0px)) !important;
+    box-sizing: border-box;
+    display: block !important;
+    height: var(--ddsw-float-size);
+    max-height: var(--ddsw-float-size);
+    max-width: calc(100vw - 24px);
+    overflow: visible !important;
+    pointer-events: none;
+    position: fixed !important;
+    top: auto !important;
+    width: var(--ddsw-float-size);
+    z-index: 999999;
+}
+
+.ddsw-floating-hub,
+.ddsw-floating-hub *,
+.ddsw-floating-hub *::before,
+.ddsw-floating-hub *::after {
+    box-sizing: border-box;
+}
+
+.ddsw-floating-hub--bottom-right {
+    left: auto !important;
+    right: calc(var(--ddsw-float-x) + env(safe-area-inset-right, 0px)) !important;
+}
+
+.ddsw-floating-hub--bottom-left {
+    left: calc(var(--ddsw-float-x) + env(safe-area-inset-left, 0px)) !important;
+    right: auto !important;
+}
+
+.ddsw-floating-hub--slow {
+    --ddsw-float-speed: 240ms;
+}
+
+.ddsw-floating-hub--fast {
+    --ddsw-float-speed: 160ms;
+}
+
+.ddsw-floating-hub__trigger {
+    align-items: center !important;
+    appearance: none;
+    background: var(--ddsw-float-main) !important;
+    border: 0 !important;
+    border-radius: 999px !important;
+    box-shadow: var(--ddsw-float-shadow);
+    color: #ffffff !important;
+    cursor: pointer;
+    display: inline-flex !important;
+    height: var(--ddsw-float-size);
+    justify-content: center !important;
+    line-height: 1;
+    margin: 0 !important;
+    min-height: 56px;
+    min-width: 56px;
+    overflow: hidden;
+    padding: 0 !important;
+    pointer-events: auto;
+    position: relative;
+    text-align: center;
+    transition:
+        background-color var(--ddsw-float-speed) ease,
+        box-shadow var(--ddsw-float-speed) ease,
+        transform var(--ddsw-float-speed) ease;
+    width: var(--ddsw-float-size);
+    z-index: 2;
+}
+
+.ddsw-floating-hub__trigger:hover,
+.ddsw-floating-hub__trigger:focus {
+    background: var(--ddsw-float-hover) !important;
+    box-shadow: 0 22px 56px rgba(15, 23, 42, 0.28);
+    transform: translateY(-2px);
+}
+
+.ddsw-floating-hub__trigger:focus-visible,
+.ddsw-floating-action:focus-visible,
+.ddsw-floating-action .ddsw-button:focus-visible {
+    outline: 3px solid rgba(37, 211, 102, 0.36);
+    outline-offset: 4px;
+}
+
+.ddsw-floating-hub__trigger-icon {
+    display: inline-flex;
+    height: calc(var(--ddsw-float-size) * 0.46);
+    width: calc(var(--ddsw-float-size) * 0.46);
+}
+
+.ddsw-floating-hub__trigger-icon svg,
+.ddsw-floating-action__icon svg {
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+.ddsw-floating-hub__menu {
+    align-items: flex-end;
+    bottom: calc(var(--ddsw-float-size) + var(--ddsw-float-gap));
+    display: flex !important;
+    flex-direction: column;
+    gap: 10px;
+    max-height: calc(100vh - var(--ddsw-float-size) - var(--ddsw-float-y) - 48px - env(safe-area-inset-bottom, 0px));
+    max-width: calc(100vw - 24px);
+    opacity: 0;
+    overflow: visible;
+    pointer-events: none;
+    position: absolute !important;
+    right: 0;
+    transform: translateY(8px) scale(0.98);
+    transform-origin: bottom right;
+    transition:
+        opacity var(--ddsw-float-speed) ease,
+        transform var(--ddsw-float-speed) ease,
+        visibility var(--ddsw-float-speed) ease;
+    visibility: hidden;
+    width: max-content;
+    z-index: 1;
+}
+
+.ddsw-floating-hub--bottom-left .ddsw-floating-hub__menu {
+    align-items: flex-start;
+    left: 0;
+    right: auto;
+    transform-origin: bottom left;
+}
+
+.ddsw-floating-hub.is-open .ddsw-floating-hub__menu {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0) scale(1);
+    visibility: visible;
+}
+
+.ddsw-floating-action {
+    align-items: center !important;
+    background: var(--ddsw-float-bg) !important;
+    border: 1px solid rgba(15, 23, 42, 0.08) !important;
+    border-radius: 999px !important;
+    box-shadow: var(--ddsw-float-action-shadow);
+    color: var(--ddsw-float-text) !important;
+    display: inline-flex !important;
+    gap: 10px;
+    justify-content: flex-start !important;
+    line-height: 1.2;
+    margin: 0 !important;
+    max-width: min(320px, calc(100vw - 32px));
+    min-height: 46px;
+    min-width: 46px;
+    opacity: 0;
+    padding: 8px 14px 8px 8px !important;
+    pointer-events: auto;
+    text-decoration: none !important;
+    transform: translateY(8px) scale(0.96);
+    transition:
+        background-color var(--ddsw-float-speed) ease,
+        box-shadow var(--ddsw-float-speed) ease,
+        color var(--ddsw-float-speed) ease,
+        opacity var(--ddsw-float-speed) ease,
+        transform var(--ddsw-float-speed) ease;
+    transition-delay: calc(var(--ddsw-action-index, 0) * 22ms);
+    white-space: nowrap;
+}
+
+.ddsw-floating-hub.is-open .ddsw-floating-action {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.ddsw-floating-action:hover,
+.ddsw-floating-action:focus {
+    box-shadow: 0 16px 42px rgba(15, 23, 42, 0.2);
+    color: var(--ddsw-action-color, var(--ddsw-float-main)) !important;
+    transform: translateY(-2px) scale(1);
+}
+
+.ddsw-floating-action__icon {
+    align-items: center;
+    background: var(--ddsw-action-color, var(--ddsw-float-main));
+    border-radius: 999px;
+    color: #ffffff;
+    display: inline-flex;
+    flex: 0 0 32px;
+    height: 32px;
+    justify-content: center;
+    width: 32px;
+}
+
+.ddsw-floating-action__icon svg {
+    height: 18px;
+    width: 18px;
+}
+
+.ddsw-floating-action__label,
+.ddsw-floating-action .ddsw-label {
+    display: inline-block;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 14px;
+    font-weight: 650;
+    line-height: 1.25;
+    max-width: 220px;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.ddsw-floating-action--whatsapp {
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    color: inherit !important;
+    display: block !important;
+    padding: 0 !important;
+}
+
+.ddsw-floating-action--whatsapp:hover,
+.ddsw-floating-action--whatsapp:focus {
+    box-shadow: none !important;
+    transform: translateY(0) scale(1);
+}
+
+.ddsw-floating-action--whatsapp .ddsw-wrap {
+    display: inline-flex !important;
+    justify-content: flex-end !important;
+    width: auto !important;
+}
+
+.ddsw-floating-hub--bottom-left .ddsw-floating-action--whatsapp .ddsw-wrap {
+    justify-content: flex-start !important;
+}
+
+.ddsw-floating-action--whatsapp .ddsw-button {
+    border-radius: 999px !important;
+    box-shadow: var(--ddsw-float-action-shadow) !important;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 650 !important;
+    gap: 10px !important;
+    line-height: 1.2 !important;
+    max-width: min(320px, calc(100vw - 32px));
+    min-height: 46px !important;
+    padding: 8px 14px 8px 8px !important;
+    width: auto !important;
+}
+
+.ddsw-floating-action--whatsapp .ddsw-icon {
+    align-items: center;
+    background: var(--ddsw-action-color, var(--ddsw-float-main));
+    border-radius: 999px;
+    color: #ffffff;
+    display: inline-flex;
+    flex: 0 0 32px;
+    height: 32px;
+    justify-content: center;
+    width: 32px;
+}
+
+.ddsw-floating-action--whatsapp .ddsw-icon svg {
+    height: 18px;
+    width: 18px;
+}
+
+.ddsw-floating-hub--compact .ddsw-floating-hub__menu {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 18px;
+    box-shadow: 0 24px 64px rgba(15, 23, 42, 0.18);
+    gap: 6px;
+    padding: 8px;
+}
+
+.ddsw-floating-hub--compact .ddsw-floating-action,
+.ddsw-floating-hub--compact .ddsw-floating-action--whatsapp .ddsw-button {
+    box-shadow: none !important;
+    min-width: min(220px, calc(100vw - 48px));
+}
+
+.ddsw-floating-hub[data-ddsw-show-labels="0"] .ddsw-floating-action__label,
+.ddsw-floating-hub[data-ddsw-show-labels="0"] .ddsw-label {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+.ddsw-floating-hub[data-ddsw-show-labels="0"] .ddsw-floating-action,
+.ddsw-floating-hub[data-ddsw-show-labels="0"] .ddsw-button {
+    justify-content: center !important;
+    padding: 8px !important;
+}
+
+@supports (backdrop-filter: blur(16px)) {
+    .ddsw-floating-hub--compact .ddsw-floating-hub__menu {
+        backdrop-filter: blur(16px);
+    }
+}
+
+@media (max-width: 600px) {
+    .ddsw-floating-hub {
+        --ddsw-float-x: min(18px, 4vw);
+        --ddsw-float-y: min(18px, 4vw);
+        --ddsw-float-size: clamp(56px, var(--ddsw-float-size), 62px);
+    }
+
+    .ddsw-floating-hub__menu {
+        max-height: calc(100vh - var(--ddsw-float-size) - 42px - env(safe-area-inset-bottom, 0px));
+    }
+
+    .ddsw-floating-action,
+    .ddsw-floating-action--whatsapp .ddsw-button {
+        max-width: calc(100vw - 32px);
+    }
+
+    .ddsw-floating-action__label,
+    .ddsw-floating-action .ddsw-label {
+        max-width: min(190px, calc(100vw - 112px));
+    }
+
+    .ddsw-floating-hub[data-ddsw-mobile-behavior="icons"] .ddsw-floating-action__label,
+    .ddsw-floating-hub[data-ddsw-mobile-behavior="icons"] .ddsw-label {
+        clip: rect(0 0 0 0);
+        clip-path: inset(50%);
+        height: 1px;
+        overflow: hidden;
+        position: absolute;
+        white-space: nowrap;
+        width: 1px;
+    }
+
+    .ddsw-floating-hub[data-ddsw-mobile-behavior="icons"] .ddsw-floating-action,
+    .ddsw-floating-hub[data-ddsw-mobile-behavior="icons"] .ddsw-button {
+        justify-content: center !important;
+        padding: 8px !important;
+    }
+}
+
+@media (max-width: 340px) {
+    .ddsw-floating-action__label,
+    .ddsw-floating-action .ddsw-label {
+        max-width: 148px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ddsw-floating-hub *,
+    .ddsw-floating-hub *::before,
+    .ddsw-floating-hub *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        transition-delay: 0ms !important;
+    }
+}

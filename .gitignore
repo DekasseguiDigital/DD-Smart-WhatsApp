@@ -1,0 +1,13 @@
+*.zip
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
+node_modules/
+vendor/
+coverage/
+dist/
+build/
+__pycache__/
+*.pyc
+.phpunit.result.cache

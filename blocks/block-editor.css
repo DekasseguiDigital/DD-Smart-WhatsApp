@@ -1,0 +1,33 @@
+.ddsw-block-preview {
+    display: grid;
+    gap: 8px;
+    padding: 12px 0;
+}
+
+.ddsw-block-preview__button {
+    background: #18b65c;
+    border: 1px solid #18b65c;
+    border-radius: 8px;
+    color: #ffffff;
+    display: inline-flex;
+    font-weight: 700;
+    min-height: 44px;
+    padding: 12px 16px;
+}
+
+.ddsw-block-preview--dark .ddsw-block-preview__button {
+    background: #111827;
+    border-color: #111827;
+}
+
+.ddsw-block-preview--light .ddsw-block-preview__button {
+    background: #ffffff;
+    border-color: #d7e1dc;
+    color: #17211c;
+}
+
+.ddsw-block-preview--outline .ddsw-block-preview__button {
+    background: transparent;
+    border-color: #128c7e;
+    color: #128c7e;
+}
