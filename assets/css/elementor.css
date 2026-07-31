@@ -1,0 +1,4 @@
+.elementor-editor-active .ddsw-wrap,
+.elementor-editor-preview .ddsw-wrap {
+    min-height: 1px;
+}

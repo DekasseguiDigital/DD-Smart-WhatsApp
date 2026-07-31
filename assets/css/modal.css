@@ -1,0 +1,210 @@
+.ddsw-modal {
+    --ddsw-background: #B52418;
+    --ddsw-color: #ffffff;
+    --ddsw-hover-background: #831A13;
+    --ddsw-focus-outline: rgba(181, 36, 24, 0.34);
+    align-items: center;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    background: rgba(0, 0, 0, 0.65);
+    display: flex;
+    inset: 0;
+    justify-content: center;
+    padding: 24px;
+    position: fixed;
+    z-index: 999999;
+}
+
+.ddsw-modal__backdrop {
+    background: transparent;
+    inset: 0;
+    position: absolute;
+}
+
+.ddsw-modal__dialog,
+.ddsw-modal__panel {
+    background: #fff;
+    border: 0;
+    border-radius: 18px;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+    box-sizing: border-box;
+    color: #222;
+    max-height: calc(100vh - 48px);
+    overflow: auto;
+    padding: 32px;
+    position: relative;
+    width: min(520px, 90vw);
+    z-index: 1;
+}
+
+.ddsw-modal__icon {
+    align-items: center;
+    background: rgba(198, 40, 40, 0.1);
+    border-radius: 16px;
+    color: #C62828;
+    display: flex;
+    height: 58px;
+    justify-content: center;
+    margin: 0 0 18px;
+    width: 58px;
+}
+
+.ddsw-modal__icon svg {
+    display: block;
+    height: 32px;
+    width: 32px;
+}
+
+.ddsw-modal__title,
+.ddsw-modal h2 {
+    color: #111;
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 1.15;
+    margin: 0 52px 18px 0;
+}
+
+.ddsw-modal__status,
+.ddsw-modal__instruction {
+    color: #555;
+    font-size: 18px;
+    line-height: 1.7;
+    margin: 0 0 16px;
+}
+
+.ddsw-modal__instruction {
+    white-space: pre-line;
+}
+
+.ddsw-modal__manual {
+    display: grid;
+    gap: 10px;
+    margin: 16px 0;
+}
+
+.ddsw-modal__manual textarea {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-sizing: border-box;
+    color: #222;
+    font: inherit;
+    font-size: 16px;
+    line-height: 1.6;
+    min-height: 150px;
+    padding: 12px;
+    resize: vertical;
+    white-space: pre-wrap;
+    width: 100%;
+}
+
+.ddsw-modal__hide-again {
+    align-items: center;
+    color: #555;
+    display: inline-flex;
+    font-size: 15px;
+    gap: 8px;
+    line-height: 1.4;
+    margin-top: 4px;
+}
+
+.ddsw-modal__hide-again input {
+    accent-color: #C62828;
+    height: 18px;
+    width: 18px;
+}
+
+.ddsw-modal__actions {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 24px;
+}
+
+.ddsw-modal__open,
+.ddsw-modal__retry {
+    background: #C62828;
+    border: 0;
+    border-radius: 10px;
+    box-shadow: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.2;
+    min-height: 0;
+    padding: 14px 28px;
+    text-decoration: none;
+    transition: background-color 0.25s ease, transform 0.25s ease;
+}
+
+.ddsw-modal__open:hover,
+.ddsw-modal__open:focus,
+.ddsw-modal__retry:hover,
+.ddsw-modal__retry:focus {
+    background: #9F1F1F;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.ddsw-modal__close {
+    align-items: center;
+    background: #f3f3f3;
+    border: 0;
+    border-radius: 50%;
+    color: #555;
+    cursor: pointer;
+    display: flex;
+    font-size: 24px;
+    height: 38px;
+    justify-content: center;
+    line-height: 1;
+    opacity: 1;
+    padding: 0;
+    position: absolute;
+    right: 18px;
+    top: 18px;
+    transition: background-color 0.25s ease;
+    width: 38px;
+}
+
+.ddsw-modal__close:hover,
+.ddsw-modal__close:focus {
+    background: #ddd;
+    color: #222;
+}
+
+.ddsw-modal button:focus-visible,
+.ddsw-modal textarea:focus-visible {
+    outline: 3px solid var(--ddsw-focus-outline);
+    outline-offset: 3px;
+}
+
+@media (max-width: 600px) {
+    .ddsw-modal {
+        align-items: center;
+        padding: 0;
+    }
+
+    .ddsw-modal__dialog,
+    .ddsw-modal__panel {
+        max-height: calc(100vh - 32px);
+        padding: 24px;
+        width: 92vw;
+    }
+
+    .ddsw-modal h2 {
+        font-size: 28px;
+        margin-right: 48px;
+    }
+
+    .ddsw-modal__status,
+    .ddsw-modal__instruction {
+        font-size: 16px;
+    }
+
+    .ddsw-modal__actions,
+    .ddsw-modal__open,
+    .ddsw-modal__retry {
+        width: 100%;
+    }
+}

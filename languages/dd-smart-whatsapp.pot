@@ -1,0 +1,1759 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: DD Smart WhatsApp 2.1.0\n"
+"POT-Creation-Date: 2026-07-31 09:43+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Domain: dd-smart-whatsapp\n"
+"Language: \n"
+
+#: admin/class-ddsw-admin.php:494
+#: elementor/class-ddsw-elementor-widget.php:457
+#: elementor/class-ddsw-elementor-widget.php:462
+#: elementor/class-ddsw-elementor-widget.php:467
+#: elementor/class-ddsw-elementor-widget.php:472
+msgid "%d ms"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:554
+#: blocks/block-editor.js:105
+#: elementor/class-ddsw-elementor-widget.php:141
+msgid "100%"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:427
+msgid "Abre o WhatsApp com a mensagem pelo parâmetro text="
+msgstr ""
+
+#: admin/class-ddsw-admin.php:471
+#: elementor/class-ddsw-elementor-widget.php:437
+msgid "Abrir automaticamente após copiar"
+msgstr ""
+
+#: includes/class-ddsw-floating-actions.php:53
+msgid "Abrir ações flutuantes: %s"
+msgstr ""
+
+#: elementor/class-ddsw-elementor-widget.php:107
+msgid "Abrir em nova aba"
+msgstr ""
+
+#: includes/class-ddsw-dashboard-widget.php:79
+msgid "Abrir estatísticas"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:235
+msgid "Adicionar Floating Hub"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:687
+msgid "Adicionar ação"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:152
+msgid "Adicionar botão"
+msgstr ""
+
+#: includes/class-ddsw-dashboard-widget.php:65
+#: includes/class-ddsw-dashboard-widget.php:69
+#: includes/class-ddsw-dashboard-widget.php:73
+msgid "Ainda sem dados"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:307
+msgid "Ainda sem eventos registrados."
+msgstr ""
+
+#: blocks/block-editor.js:87
+msgid "Alignment"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:559
+#: elementor/class-ddsw-elementor-widget.php:150
+msgid "Alinhamento"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:651
+msgid "Animação"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:506
+msgid "Aparência do botão"
+msgstr ""
+
+#: templates/en_US/real_estate.php:5
+msgid "Ask about this property"
+msgstr ""
+
+#: elementor/class-ddsw-elementor-widget.php:441
+#: elementor/class-ddsw-elementor-widget.php:487
+#: elementor/class-ddsw-elementor-widget.php:513
+msgid "Ativado"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:241
+msgid "Ativar Smart Floating Actions"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:583
+msgid "Ativo"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:71
+msgid "Atualizar"
+msgstr ""
+
+#: includes/class-ddsw-settings.php:664
+msgid "Auto — usar identidade visual do site"
+msgstr ""
+
+#: blocks/block-editor.js:104
+msgid "Automatic"
+msgstr ""
+
+#: includes/class-ddsw-language.php:180
+msgid "Automatic — current site language"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:553
+#: elementor/class-ddsw-elementor-widget.php:140
+msgid "Automática"
+msgstr ""
+
+#: includes/class-ddsw-dashboard-widget.php:68
+msgid "Ação campeã"
+msgstr ""
+
+#: elementor/class-ddsw-elementor-widget.php:213
+msgid "Background"
+msgstr ""
+
+#: templates/en_US/barbershop.php:4
+msgid "Barbershop"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:182
+msgid "Bem-vindo ao DD Smart WhatsApp"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:413
+msgid "Biblioteca de modelos"
+msgstr ""
+
+#: templates/en_US/consulting.php:5
+msgid "Book a consultation"
+msgstr ""
+
+#: templates/en_US/barbershop.php:5
+msgid "Book a time"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:522
+msgid "Borda"
+msgstr ""
+
+#: elementor/class-ddsw-elementor-widget.php:257
+msgid "Border Color"
+msgstr ""
+
+#: elementor/class-ddsw-elementor-widget.php:281
+msgid "Border Radius"
+msgstr ""
+
+#: elementor/class-ddsw-elementor-widget.php:268
+msgid "Border Width"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:301
+#: admin/class-ddsw-admin.php:362
+#: elementor/class-ddsw-elementor-widget.php:205
+msgid "Botão"
+msgstr ""
+
+#: includes/class-ddsw-settings.php:482
+msgid "Botão Principal"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:721
+msgid "Botão WhatsApp"
+msgstr ""
+
+#: includes/class-ddsw-tracker.php:25
+msgid "Botão inválido."
+msgstr ""
+
+#: includes/class-ddsw-dashboard-widget.php:64
+msgid "Botão mais utilizado"
+msgstr ""
+
+#: elementor/class-ddsw-elementor-dynamic-tags.php:39
+#: elementor/class-ddsw-elementor-widget.php:53
+msgid "Botão salvo"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:148
+msgid "Botões configurados"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:125
+msgid "Botões reutilizáveis com modo tradicional e Smart Copy para preservar mensagens formatadas."
+msgstr ""
+
+#: assets/js/frontend.js:409
+msgid "Browser"
+msgstr ""
+
+#: includes/class-ddsw-assets.php:170
+msgid "Button"
+msgstr ""
+
+#: blocks/block-editor.js:16
+msgid "Button with Traditional or Smart Copy mode."
+msgstr ""
+
+#: templates/en_US/store.php:5
+msgid "Buy on WhatsApp"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:68
+#: assets/js/admin.js:328
+#: elementor/class-ddsw-elementor-dynamic-tags.php:200
+msgid "CTA"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:149
+msgid "Cada botão pode usar o modo tradicional ou Smart Copy sem depender de Elementor."
+msgstr ""
+
+#: assets/js/admin.js:362
+msgid "Cancel"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:72
+msgid "Cancelar"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:573
+msgid "Capitalizar"
+msgstr ""
+
+#: blocks/block-editor.js:92
+msgid "Center"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:562
+#: elementor/class-ddsw-elementor-widget.php:158
+msgid "Centro"
+msgstr ""
+
+#: blocks/block-editor.js:39
+msgid "Chat on WhatsApp"
+msgstr ""
+
+#: templates/en_US/hotel.php:5
+msgid "Check availability"
+msgstr ""
+
+#: includes/class-ddsw-settings.php:667
+msgid "Claro"
+msgstr ""
+
+#: elementor/class-ddsw-elementor-widget.php:173
+msgid "Classe CSS"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:463
+#: elementor/class-ddsw-elementor-widget.php:527
+msgid "Clean"
+msgstr ""
+
+#: blocks/block-editor.js:131
+msgid "Close modal automatically"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:663
+msgid "Comportamento no mobile"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:191
+msgid "Concluir wizard"
+msgstr ""
+
+#: templates/en_US/consulting.php:4
+msgid "Consulting"
+msgstr ""
+
+#: elementor/class-ddsw-elementor-widget.php:45
+msgid "Conteúdo"
+msgstr ""
+
+#: includes/class-ddsw-settings.php:668
+msgid "Contorno"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:292
+#: includes/class-ddsw-dashboard-widget.php:57
+msgid "Conversão"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:432
+msgid "Copia a mensagem formatada e abre o WhatsApp sem texto"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:377
+msgid "Copiar shortcode"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:733
+#: elementor/class-ddsw-elementor-widget.php:356
+msgid "Cor"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:640
+msgid "Cor do fundo"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:641
+msgid "Cor do hover"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:518
+msgid "Cor fundo"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:639
+msgid "Cor principal"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:519
+msgid "Cor texto"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:523
+msgid "Cor ícone"
+msgstr ""
+
+#: elementor/class-ddsw-elementor-widget.php:181
+msgid "Custom Attributes"
+msgstr ""
+
+#: includes/class-ddsw-assets.php:171
+msgid "Custom Override"
+msgstr ""
+
+#: blocks/block-editor.js:65
+msgid "Custom label"
+msgstr ""
+
+#: blocks/block-editor.js:72
+msgid "Custom message"
+msgstr ""
+
+#: elementor/class-ddsw-elementor-dynamic-tags.php:152
+msgid "DD Smart Copy"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:124
+#: admin/class-ddsw-admin.php:21
+#: blocks/block-editor.js:15
+#: elementor/class-ddsw-elementor-widget.php:16
+#: includes/class-ddsw-elementor.php:35
+msgid "DD Smart WhatsApp"
+msgstr ""
+
+#: includes/class-ddsw-dashboard-widget.php:28
+msgid "DD Smart WhatsApp Analytics"
+msgstr ""
+
+#: includes/class-ddsw-assets.php:137
+msgid "DD Smart WhatsApp: Smart Copy failed."
+msgstr ""
+
+#: includes/class-ddsw-renderer.php:105
+msgid "DD Smart WhatsApp: configure o telefone do botão."
+msgstr ""
+
+#: includes/class-ddsw-assets.php:138
+msgid "DD Smart WhatsApp: copy fallback failed."
+msgstr ""
+
+#: includes/class-ddsw-assets.php:136
+msgid "DD Smart WhatsApp: failed to copy in Traditional mode."
+msgstr ""
+
+#: includes/class-ddsw-assets.php:139
+msgid "DD Smart WhatsApp: failed to record event."
+msgstr ""
+
+#: includes/class-ddsw-assets.php:135
+msgid "DD Smart WhatsApp: invalid payload."
+msgstr ""
+
+#: admin/class-ddsw-admin.php:22
+msgid "DD WhatsApp"
+msgstr ""
+
+#: elementor/class-ddsw-elementor-dynamic-tags.php:120
+msgid "DD WhatsApp Principal"
+msgstr ""
+
+#: elementor/class-ddsw-elementor-dynamic-tags.php:136
+msgid "DD WhatsApp Suporte"
+msgstr ""
+
+#: includes/class-ddsw-assets.php:152
+msgid "DDSW Debug"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:465
+#: elementor/class-ddsw-elementor-widget.php:529
+msgid "Dark"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:123
+msgid "Dekassegui Digital"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:487
+msgid "Delay"
+msgstr ""
+
+#: elementor/class-ddsw-elementor-widget.php:451
+msgid "Delay automático"
+msgstr ""
+
+#: elementor/class-ddsw-elementor-widget.php:442
+#: elementor/class-ddsw-elementor-widget.php:488
+#: elementor/class-ddsw-elementor-widget.php:514
+msgid "Desativado"
+msgstr ""
+
+#: includes/class-ddsw-assets.php:168
+msgid "Description"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:67
+msgid "Deseja atualizar automaticamente os textos que ainda usam o padrão anterior?"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:204
+msgid "Destino padrão"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:563
+#: elementor/class-ddsw-elementor-widget.php:162
+msgid "Direita"
+msgstr ""
+
+#: blocks/block-editor.js:124
+#: blocks/block-editor.js:136
+#: blocks/block-editor.js:148
+msgid "Disabled"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:530
+msgid "Distância entre ícone e texto"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:636
+msgid "Distância horizontal"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:637
+msgid "Distância vertical"
+msgstr ""
+
+#: blocks/block-editor.js:143
+#: includes/class-ddsw-i18n.php:109
+#: includes/class-ddsw-i18n.php:182
+msgid "Do not show again on this browser"
+msgstr ""
+
+#: templates/en_US/doctor.php:4
+msgid "Doctor"
+msgstr ""
+
+#: includes/class-ddsw-assets.php:161
+msgid "Document Lang"
+msgstr ""
+
+#: includes/class-ddsw-language.php:188
+msgid "Dutch"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:653
+msgid "Elevação"
+msgstr ""
+
+#: includes/class-ddsw-settings.php:527
+msgid "Email"
+msgstr ""
+
+#: blocks/block-editor.js:123
+#: blocks/block-editor.js:135
+#: blocks/block-editor.js:147
+msgid "Enabled"
+msgstr ""
+
+#: includes/class-ddsw-language.php:182
+msgid "English"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:213
+msgid "Enviar eventos para GA4 quando gtag estiver disponível"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:655
+msgid "Escala"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:357
+msgid "Escolha as opções e copie o shortcode automaticamente."
+msgstr ""
+
+#: includes/class-ddsw-settings.php:666
+msgid "Escuro"
+msgstr ""
+
+#: elementor/class-ddsw-elementor-widget.php:391
+msgid "Espaçamento"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:525
+msgid "Espessura da borda"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:561
+#: elementor/class-ddsw-elementor-widget.php:154
+msgid "Esquerda"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:268
+msgid "Estatísticas"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:137
+msgid "Estatísticas limpas com sucesso."
+msgstr ""
+
+#: admin/class-ddsw-admin.php:509
+#: elementor/class-ddsw-elementor-widget.php:190
+msgid "Estilo do botão"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:461
+#: elementor/class-ddsw-elementor-widget.php:523
+msgid "Estilo do modal"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:302
+msgid "Eventos"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:269
+msgid "Eventos locais por botão, sem armazenar IP bruto."
+msgstr ""
+
+#: admin/class-ddsw-admin.php:276
+msgid "Eventos totais"
+msgstr ""
+
+#: assets/js/admin.js:536
+msgid "Events"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:743
+msgid "Exibir"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:665
+msgid "Exibir rótulos"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:684
+msgid "Exibir rótulos das ações"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:336
+msgid "Exportar CSV"
+msgstr ""
+
+#: includes/class-ddsw-settings.php:529
+msgid "Facebook"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:654
+msgid "Fade"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:398
+msgid "Falar no WhatsApp"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:532
+msgid "Família da fonte"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:476
+#: elementor/class-ddsw-elementor-widget.php:483
+msgid "Fechar modal automaticamente"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:199
+msgid "Feedback do modo tradicional"
+msgstr ""
+
+#: includes/class-ddsw-settings.php:534
+msgid "Formulário"
+msgstr ""
+
+#: templates/en_US/freelancer.php:4
+msgid "Freelancer"
+msgstr ""
+
+#: includes/class-ddsw-language.php:185
+msgid "French"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:356
+msgid "Gerador de shortcode"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:218
+msgid "Gerar hash de IP para deduplicação estatística"
+msgstr ""
+
+#: includes/class-ddsw-language.php:186
+msgid "German"
+msgstr ""
+
+#: templates/en_US/support.php:5
+msgid "Get support on WhatsApp"
+msgstr ""
+
+#: includes/class-ddsw-assets.php:158
+msgid "Gettext Locale"
+msgstr ""
+
+#: includes/class-ddsw-settings.php:533
+msgid "Google Maps"
+msgstr ""
+
+#: includes/class-ddsw-assets.php:160
+msgid "HTML Lang"
+msgstr ""
+
+#: templates/en_US/store.php:6
+msgid ""
+"Hello!\n"
+"\n"
+"I am interested in buying from {site_title}.\n"
+"\n"
+"Page:\n"
+"{page_title}\n"
+"{page_url}\n"
+"\n"
+"Please send me product details."
+msgstr ""
+
+#: templates/en_US/real_estate.php:6
+msgid ""
+"Hello!\n"
+"\n"
+"I am interested in this property from {site_title}.\n"
+"\n"
+"Page:\n"
+"{page_title}\n"
+"{page_url}\n"
+"\n"
+"Please send me more details."
+msgstr ""
+
+#: templates/en_US/tourism.php:6
+msgid ""
+"Hello!\n"
+"\n"
+"I am interested in travel services from {site_title}.\n"
+"\n"
+"Page:\n"
+"{page_title}\n"
+"{page_url}\n"
+"\n"
+"Please send me availability and next steps."
+msgstr ""
+
+#: templates/en_US/lawyer.php:6
+msgid ""
+"Hello!\n"
+"\n"
+"I need legal assistance and found {site_title}.\n"
+"\n"
+"Page:\n"
+"{page_title}\n"
+"{page_url}\n"
+"\n"
+"Please tell me how to schedule a consultation."
+msgstr ""
+
+#: templates/en_US/support.php:6
+msgid ""
+"Hello!\n"
+"\n"
+"I need support from {site_title}.\n"
+"\n"
+"Page:\n"
+"{page_title}\n"
+"{page_url}\n"
+"\n"
+"Please help me with my request."
+msgstr ""
+
+#: templates/en_US/freelancer.php:6
+msgid ""
+"Hello!\n"
+"\n"
+"I would like a proposal from {site_title}.\n"
+"\n"
+"Page:\n"
+"{page_title}\n"
+"{page_url}\n"
+"\n"
+"Please tell me the next steps."
+msgstr ""
+
+#: templates/en_US/consulting.php:6
+msgid ""
+"Hello!\n"
+"\n"
+"I would like to book a consultation with {site_title}.\n"
+"\n"
+"Page:\n"
+"{page_title}\n"
+"{page_url}\n"
+"\n"
+"Please send me available options."
+msgstr ""
+
+#: templates/en_US/barbershop.php:6
+msgid ""
+"Hello!\n"
+"\n"
+"I would like to book a time at {site_title}.\n"
+"\n"
+"Page:\n"
+"{page_title}\n"
+"{page_url}\n"
+"\n"
+"Please send me available slots."
+msgstr ""
+
+#: templates/en_US/hotel.php:6
+msgid ""
+"Hello!\n"
+"\n"
+"I would like to check room availability at {site_title}.\n"
+"\n"
+"Page:\n"
+"{page_title}\n"
+"{page_url}\n"
+"\n"
+"Please send me rates and dates."
+msgstr ""
+
+#: templates/en_US/restaurant.php:6
+msgid ""
+"Hello!\n"
+"\n"
+"I would like to make a reservation with {site_title}.\n"
+"\n"
+"Page:\n"
+"{page_title}\n"
+"{page_url}\n"
+"\n"
+"Please send me available times."
+msgstr ""
+
+#: templates/en_US/doctor.php:6
+msgid ""
+"Hello!\n"
+"\n"
+"I would like to schedule an appointment with {site_title}.\n"
+"\n"
+"Page:\n"
+"{page_title}\n"
+"{page_url}\n"
+"\n"
+"Please send me available dates."
+msgstr ""
+
+#: admin/class-ddsw-admin.php:539
+msgid "Herdar fonte do tema"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:543
+msgid "Herdar padding"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:541
+msgid "Herdar raio das bordas"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:542
+msgid "Herdar sombra"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:540
+msgid "Herdar tamanho de texto"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:280
+#: includes/class-ddsw-dashboard-widget.php:55
+msgid "Hoje"
+msgstr ""
+
+#: templates/en_US/hotel.php:4
+msgid "Hotel"
+msgstr ""
+
+#: elementor/class-ddsw-elementor-widget.php:367
+msgid "Hover"
+msgstr ""
+
+#: elementor/class-ddsw-elementor-widget.php:235
+msgid "Hover Background"
+msgstr ""
+
+#: elementor/class-ddsw-elementor-widget.php:246
+msgid "Hover Color"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:520
+msgid "Hover fundo"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:521
+msgid "Hover texto"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:524
+msgid "Hover ícone"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:680
+msgid "Hub ativo"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:615
+msgid "ID"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:393
+msgid "ID estável"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:405
+msgid "Idioma do modelo"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:168
+msgid "Idioma inteligente"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:629
+msgid "Inferior direita"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:630
+msgid "Inferior esquerda"
+msgstr ""
+
+#: includes/class-ddsw-settings.php:528
+msgid "Instagram"
+msgstr ""
+
+#: includes/class-ddsw-assets.php:169
+msgid "Instruction"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:454
+#: elementor/class-ddsw-elementor-widget.php:416
+msgid "Instrução Android"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:452
+#: elementor/class-ddsw-elementor-widget.php:414
+msgid "Instrução desktop"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:453
+#: elementor/class-ddsw-elementor-widget.php:415
+msgid "Instrução iPhone/iPad"
+msgstr ""
+
+#: includes/class-ddsw-language.php:187
+msgid "Italian"
+msgstr ""
+
+#: includes/class-ddsw-language.php:184
+msgid "Japanese"
+msgstr ""
+
+#: includes/class-ddsw-settings.php:532
+msgid "LINE"
+msgstr ""
+
+#: includes/class-ddsw-assets.php:156
+msgid "Language Source"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:551
+#: elementor/class-ddsw-elementor-widget.php:136
+msgid "Largura"
+msgstr ""
+
+#: templates/en_US/lawyer.php:4
+msgid "Lawyer"
+msgstr ""
+
+#: blocks/block-editor.js:91
+msgid "Left"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:645
+msgid "Lenta"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:331
+msgid "Limpar estatísticas"
+msgstr ""
+
+#: includes/class-ddsw-settings.php:536
+msgid "Link personalizado"
+msgstr ""
+
+#: includes/class-ddsw-settings.php:518
+msgid "Lista compacta"
+msgstr ""
+
+#: includes/class-ddsw-assets.php:154
+msgid "Locale"
+msgstr ""
+
+#: includes/class-ddsw-assets.php:173
+msgid "MO Loaded"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:571
+msgid "Maiúsculas"
+msgstr ""
+
+#: elementor/class-ddsw-elementor-widget.php:306
+msgid "Margin"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:437
+#: admin/class-ddsw-admin.php:69
+#: elementor/class-ddsw-elementor-dynamic-tags.php:168
+msgid "Mensagem"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:458
+#: elementor/class-ddsw-elementor-widget.php:420
+msgid "Mensagem de erro"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:451
+#: elementor/class-ddsw-elementor-widget.php:413
+msgid "Mensagem de sucesso"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:207
+msgid "Mesma aba"
+msgstr ""
+
+#: assets/js/admin.js:329
+msgid "Message"
+msgstr ""
+
+#: includes/class-ddsw-settings.php:530
+msgid "Messenger"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:572
+msgid "Minúsculas"
+msgstr ""
+
+#: includes/class-ddsw-assets.php:165
+msgid "Modal Fields"
+msgstr ""
+
+#: includes/class-ddsw-assets.php:166
+msgid "Modal Payload"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:448
+#: admin/class-ddsw-admin.php:70
+msgid "Modal Smart Copy"
+msgstr ""
+
+#: includes/class-ddsw-assets.php:163
+msgid "Modal Source"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:370
+msgid "Modo"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:423
+#: elementor/class-ddsw-elementor-widget.php:73
+msgid "Modo de envio"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:547
+#: elementor/class-ddsw-elementor-widget.php:117
+msgid "Mostrar ícone"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:570
+msgid "Nenhuma"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:705
+msgid "Nome"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:611
+msgid "Nome do hub"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:646
+msgid "Normal"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:206
+#: admin/class-ddsw-admin.php:747
+msgid "Nova aba"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:483
+#: elementor/class-ddsw-elementor-widget.php:509
+msgid "Não mostrar novamente neste navegador"
+msgstr ""
+
+#: elementor/class-ddsw-elementor-dynamic-tags.php:184
+msgid "Número"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:169
+msgid "O frontend sempre usa o idioma do site. A área administrativa pode seguir o idioma do usuário logado."
+msgstr ""
+
+#: admin/class-ddsw-admin.php:66
+msgid "O idioma do modelo foi alterado."
+msgstr ""
+
+#: elementor/class-ddsw-elementor-widget.php:129
+msgid "Opcional. Deixe vazio para usar o ícone padrão do WhatsApp."
+msgstr ""
+
+#: blocks/block-editor.js:119
+msgid "Open automatically after copying"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:737
+msgid "Ordem"
+msgstr ""
+
+#: includes/class-ddsw-assets.php:174
+msgid "PO Loaded"
+msgstr ""
+
+#: elementor/class-ddsw-elementor-widget.php:294
+msgid "Padding"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:528
+msgid "Padding horizontal"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:527
+msgid "Padding vertical"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:184
+msgid "Passo 1: escolha o idioma."
+msgstr ""
+
+#: admin/class-ddsw-admin.php:185
+msgid "Passo 2: informe o número WhatsApp."
+msgstr ""
+
+#: admin/class-ddsw-admin.php:186
+msgid "Passo 3: crie o primeiro botão."
+msgstr ""
+
+#: admin/class-ddsw-admin.php:187
+msgid "Passo 4: copie o shortcode."
+msgstr ""
+
+#: includes/class-ddsw-assets.php:159
+msgid "Payload Language"
+msgstr ""
+
+#: includes/class-ddsw-settings.php:669
+msgid "Personalizado"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:533
+msgid "Peso da fonte"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:343
+msgid "Placeholders"
+msgstr ""
+
+#: templates/en_US/tourism.php:5
+msgid "Plan my trip on WhatsApp"
+msgstr ""
+
+#: includes/class-ddsw-language.php:181
+msgid "Portuguese"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:627
+msgid "Posição"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:590
+msgid "Preview em tempo real"
+msgstr ""
+
+#: blocks/class-ddsw-block.php:102
+#: elementor/class-ddsw-elementor-dynamic-tags.php:104
+#: elementor/class-ddsw-elementor-widget.php:593
+msgid "Principal"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:526
+msgid "Raio"
+msgstr ""
+
+#: templates/en_US/real_estate.php:4
+msgid "Real estate"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:586
+#: admin/class-ddsw-admin.php:750
+msgid "Remover"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:223
+msgid "Remover configurações e estatísticas ao desinstalar"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:690
+msgid "Remover hub"
+msgstr ""
+
+#: templates/en_US/freelancer.php:5
+msgid "Request a proposal"
+msgstr ""
+
+#: templates/en_US/lawyer.php:5
+msgid "Request legal assistance"
+msgstr ""
+
+#: includes/class-ddsw-tracker.php:20
+msgid "Requisição inválida."
+msgstr ""
+
+#: includes/class-ddsw-settings.php:535
+msgid "Reservar"
+msgstr ""
+
+#: templates/en_US/restaurant.php:5
+msgid "Reserve on WhatsApp"
+msgstr ""
+
+#: includes/class-ddsw-assets.php:164
+msgid "Resolved By"
+msgstr ""
+
+#: includes/class-ddsw-assets.php:155
+msgid "Resolved Locale"
+msgstr ""
+
+#: templates/en_US/restaurant.php:4
+msgid "Restaurant"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:260
+msgid "Restaurar TODOS os botões"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:443
+msgid "Restaurar botão atual"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:64
+msgid "Restaurar os textos padrão para o idioma selecionado?"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:65
+msgid "Restaurar todos os botões conforme o idioma/modelo selecionado?"
+msgstr ""
+
+#: assets/js/admin.js:305
+msgid "Restore all buttons using their selected language and model?"
+msgstr ""
+
+#: assets/js/admin.js:293
+msgid "Restore the default texts for the selected language?"
+msgstr ""
+
+#: blocks/block-editor.js:93
+msgid "Right"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:647
+msgid "Rápida"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:397
+msgid "Rótulo"
+msgstr ""
+
+#: elementor/class-ddsw-elementor-widget.php:417
+msgid "Rótulo Abrir WhatsApp"
+msgstr ""
+
+#: elementor/class-ddsw-elementor-widget.php:419
+msgid "Rótulo Copiar novamente"
+msgstr ""
+
+#: elementor/class-ddsw-elementor-widget.php:418
+msgid "Rótulo Fechar"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:457
+msgid "Rótulo copiar novamente"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:455
+msgid "Rótulo do botão abrir"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:456
+msgid "Rótulo do botão fechar"
+msgstr ""
+
+#: elementor/class-ddsw-elementor-widget.php:127
+msgid "SVG do ícone"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:227
+#: admin/class-ddsw-admin.php:258
+msgid "Salvar configurações"
+msgstr ""
+
+#: blocks/block-editor.js:45
+msgid "Saved button"
+msgstr ""
+
+#: templates/en_US/doctor.php:5
+msgid "Schedule an appointment"
+msgstr ""
+
+#: blocks/block-editor.js:53
+msgid "Send mode"
+msgstr ""
+
+#: blocks/block-editor.js:43
+msgid "Settings"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:73
+msgid "Shortcode copiado."
+msgstr ""
+
+#: blocks/block-editor.js:112
+msgid "Show icon"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:284
+#: admin/class-ddsw-admin.php:372
+#: admin/class-ddsw-admin.php:431
+#: blocks/block-editor.js:158
+#: blocks/block-editor.js:58
+#: elementor/class-ddsw-elementor-widget.php:78
+#: includes/class-ddsw-dashboard-widget.php:54
+msgid "Smart Copy"
+msgstr ""
+
+#: elementor/class-ddsw-elementor-widget.php:406
+msgid "Smart Copy Modal"
+msgstr ""
+
+#: assets/js/admin.js:330
+msgid "Smart Copy modal"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:128
+msgid "Smart Copy shortcode"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:231
+msgid "Smart Floating Actions"
+msgstr ""
+
+#: elementor/class-ddsw-elementor-widget.php:97
+msgid "Sobrescrever mensagem"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:464
+#: elementor/class-ddsw-elementor-widget.php:528
+msgid "Soft"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:535
+msgid "Sombra"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:536
+msgid "Sombra no hover"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:666
+msgid "Somente ícones"
+msgstr ""
+
+#: includes/class-ddsw-language.php:183
+msgid "Spanish"
+msgstr ""
+
+#: templates/en_US/store.php:4
+msgid "Store"
+msgstr ""
+
+#: blocks/block-editor.js:79
+msgid "Style"
+msgstr ""
+
+#: elementor/class-ddsw-elementor-widget.php:87
+msgid "Substituir rótulo"
+msgstr ""
+
+#: templates/en_US/support.php:4
+msgid "Support"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:638
+#: elementor/class-ddsw-elementor-widget.php:378
+msgid "Tamanho"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:531
+msgid "Tamanho do texto"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:529
+msgid "Tamanho ícone"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:401
+#: elementor/class-ddsw-elementor-widget.php:63
+#: includes/class-ddsw-settings.php:526
+msgid "Telefone"
+msgstr ""
+
+#: includes/class-ddsw-settings.php:531
+msgid "Telegram"
+msgstr ""
+
+#: includes/class-ddsw-assets.php:162
+msgid "Template"
+msgstr ""
+
+#: includes/class-ddsw-assets.php:157
+msgid "Template Loaded"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:479
+#: elementor/class-ddsw-elementor-widget.php:497
+msgid "Tempo para fechar modal"
+msgstr ""
+
+#: elementor/class-ddsw-elementor-widget.php:224
+msgid "Text Color"
+msgstr ""
+
+#: assets/js/admin.js:338
+msgid "The template language changed."
+msgstr ""
+
+#: admin/class-ddsw-admin.php:619
+#: admin/class-ddsw-admin.php:709
+msgid "Tipo"
+msgstr ""
+
+#: includes/class-ddsw-assets.php:167
+msgid "Title"
+msgstr ""
+
+#: includes/class-ddsw-dashboard-widget.php:52
+msgid "Total de cliques"
+msgstr ""
+
+#: templates/en_US/tourism.php:4
+msgid "Tourism"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:288
+#: admin/class-ddsw-admin.php:373
+#: admin/class-ddsw-admin.php:426
+#: elementor/class-ddsw-elementor-widget.php:77
+msgid "Tradicional"
+msgstr ""
+
+#: blocks/block-editor.js:57
+msgid "Traditional"
+msgstr ""
+
+#: blocks/block-editor.js:158
+msgid "Traditional or button default"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:568
+msgid "Transformação"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:232
+msgid "Transforme o WhatsApp em um hub premium de ações flutuantes. Tudo é opcional e preserva os botões existentes."
+msgstr ""
+
+#: elementor/class-ddsw-elementor-widget.php:334
+msgid "Transition"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:534
+msgid "Transição"
+msgstr ""
+
+#: includes/class-ddsw-assets.php:172
+msgid "Translation Loaded"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:450
+msgid "Título"
+msgstr ""
+
+#: elementor/class-ddsw-elementor-widget.php:412
+msgid "Título do modal"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:717
+msgid "URL / telefone"
+msgstr ""
+
+#: assets/js/admin.js:359
+msgid "Update"
+msgstr ""
+
+#: assets/js/admin.js:339
+msgid "Update fields that still use the previous default?"
+msgstr ""
+
+#: elementor/class-ddsw-elementor-widget.php:139
+#: elementor/class-ddsw-elementor-widget.php:76
+msgid "Usar configuração do botão"
+msgstr ""
+
+#: elementor/class-ddsw-elementor-widget.php:429
+#: elementor/class-ddsw-elementor-widget.php:440
+#: elementor/class-ddsw-elementor-widget.php:454
+#: elementor/class-ddsw-elementor-widget.php:486
+#: elementor/class-ddsw-elementor-widget.php:502
+#: elementor/class-ddsw-elementor-widget.php:512
+#: elementor/class-ddsw-elementor-widget.php:526
+msgid "Usar configuração do painel"
+msgstr ""
+
+#: elementor/class-ddsw-elementor-widget.php:99
+msgid "Usar mensagem do painel"
+msgstr ""
+
+#: elementor/class-ddsw-elementor-widget.php:193
+msgid "Usar padrão do botão"
+msgstr ""
+
+#: elementor/class-ddsw-elementor-widget.php:89
+msgid "Usar rótulo do painel"
+msgstr ""
+
+#: elementor/class-ddsw-elementor-widget.php:65
+msgid "Usar telefone do painel"
+msgstr ""
+
+#: blocks/class-ddsw-block.php:112
+msgid "Use button default"
+msgstr ""
+
+#: blocks/block-editor.js:103
+#: blocks/block-editor.js:122
+#: blocks/block-editor.js:134
+#: blocks/block-editor.js:146
+#: blocks/block-editor.js:56
+#: blocks/block-editor.js:90
+msgid "Use button setting"
+msgstr ""
+
+#: elementor/class-ddsw-elementor-widget.php:183
+msgid "Use uma linha por atributo no formato nome|valor. Permitidos: data-*, aria-*, role, title."
+msgstr ""
+
+#: admin/class-ddsw-admin.php:172
+msgid "Utilizar idioma do site"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:176
+msgid "Utilizar idioma do usuário logado"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:344
+msgid "Variáveis disponíveis para mensagens dinâmicas."
+msgstr ""
+
+#: admin/class-ddsw-admin.php:643
+msgid "Velocidade"
+msgstr ""
+
+#: includes/class-ddsw-settings.php:665
+msgid "Verde WhatsApp"
+msgstr ""
+
+#: includes/class-ddsw-settings.php:517
+msgid "Vertical"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:113
+msgid "Você não tem permissão para acessar esta página."
+msgstr ""
+
+#: admin/class-ddsw-admin.php:81
+#: admin/class-ddsw-admin.php:93
+msgid "Você não tem permissão para executar esta ação."
+msgstr ""
+
+#: includes/class-ddsw-settings.php:501
+msgid "WhatsApp"
+msgstr ""
+
+#: includes/class-ddsw-settings.php:525
+msgid "WhatsApp (Smart Copy)"
+msgstr ""
+
+#: includes/class-ddsw-dashboard-widget.php:53
+msgid "WhatsApp aberto"
+msgstr ""
+
+#: blocks/block-editor.js:100
+msgid "Width"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:181
+msgid "Wizard inicial"
+msgstr ""
+
+#: assets/js/frontend.js:423
+msgid "desktop"
+msgstr ""
+
+#: assets/js/frontend.js:420
+msgid "mobile"
+msgstr ""
+
+#: assets/js/frontend.js:416
+msgid "tablet"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:729
+#: elementor/class-ddsw-elementor-widget.php:348
+msgid "Ícone"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:659
+msgid "Ícone principal"
+msgstr ""
+
+#: includes/class-ddsw-dashboard-widget.php:72
+msgid "Último clique"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:296
+#: includes/class-ddsw-dashboard-widget.php:60
+msgid "Últimos 30 dias"
+msgstr ""
+
+#: includes/class-ddsw-dashboard-widget.php:56
+msgid "Últimos 7 dias"
+msgstr ""
+
+#: includes/class-ddsw-language.php:275
+msgctxt "Default Smart Copy Android instruction"
+msgid "Tap Open WhatsApp, tap and hold the message field and choose Paste."
+msgstr ""
+
+#: includes/class-ddsw-language.php:277
+msgctxt "Default Smart Copy close button label"
+msgid "Close"
+msgstr ""
+
+#: includes/class-ddsw-language.php:273
+msgctxt "Default Smart Copy desktop instruction"
+msgid "Click Open WhatsApp and press Ctrl + V in the message field."
+msgstr ""
+
+#: includes/class-ddsw-language.php:279
+msgctxt "Default Smart Copy error message"
+msgid "Automatic copy failed. Select and copy the message below."
+msgstr ""
+
+#: includes/class-ddsw-language.php:274
+msgctxt "Default Smart Copy iOS instruction"
+msgid "Tap Open WhatsApp, tap the message field and choose Paste."
+msgstr ""
+
+#: includes/class-ddsw-language.php:272
+msgctxt "Default Smart Copy modal success message"
+msgid "Your message has been copied to the clipboard."
+msgstr ""
+
+#: includes/class-ddsw-language.php:271
+msgctxt "Default Smart Copy modal title"
+msgid "Copied successfully"
+msgstr ""
+
+#: includes/class-ddsw-language.php:276
+msgctxt "Default Smart Copy open button label"
+msgid "Open WhatsApp"
+msgstr ""
+
+#: includes/class-ddsw-language.php:278
+msgctxt "Default Smart Copy retry button label"
+msgid "Copy again"
+msgstr ""
+
+#: admin/class-ddsw-admin.php:394
+msgctxt "Default button ID placeholder"
+msgid "principal"
+msgstr ""
+
+#: includes/class-ddsw-language.php:269
+msgctxt "Default button label"
+msgid "Chat on WhatsApp"
+msgstr ""
+
+#: includes/class-ddsw-language.php:270
+msgctxt "Default button message"
+msgid ""
+"Hello!\n"
+"\n"
+"I am visiting {site_title} and would like to receive more information.\n"
+"\n"
+"Page:\n"
+"{page_title}\n"
+"{page_url}\n"
+"\n"
+"Thank you!"
+msgstr ""
+
+#: includes/class-ddsw-language.php:280
+msgctxt "Default traditional mode copy feedback"
+msgid "Message copied. Opening WhatsApp..."
+msgstr ""
+
+#: elementor/class-ddsw-elementor-widget.php:33
+msgctxt "Elementor search keyword"
+msgid "copy"
+msgstr ""
+
+#: elementor/class-ddsw-elementor-widget.php:36
+msgctxt "Elementor search keyword"
+msgid "cta"
+msgstr ""
+
+#: elementor/class-ddsw-elementor-widget.php:35
+msgctxt "Elementor search keyword"
+msgid "dekassegui"
+msgstr ""
+
+#: elementor/class-ddsw-elementor-widget.php:34
+msgctxt "Elementor search keyword"
+msgid "smart copy"
+msgstr ""
+
+#: elementor/class-ddsw-elementor-widget.php:32
+msgctxt "Elementor search keyword"
+msgid "whatsapp"
+msgstr ""
+
+#: includes/class-ddsw-i18n.php:249
+msgctxt "Internal Smart Copy Android fallback"
+msgid "Tap Open WhatsApp, tap and hold the message field and choose Paste."
+msgstr ""
+
+#: includes/class-ddsw-i18n.php:250
+msgctxt "Internal Smart Copy button fallback"
+msgid "Open WhatsApp"
+msgstr ""
+
+#: includes/class-ddsw-i18n.php:251
+msgctxt "Internal Smart Copy close fallback"
+msgid "Close"
+msgstr ""
+
+#: includes/class-ddsw-i18n.php:247
+msgctxt "Internal Smart Copy desktop fallback"
+msgid "Click Open WhatsApp and press Ctrl + V in the message field."
+msgstr ""
+
+#: includes/class-ddsw-i18n.php:253
+msgctxt "Internal Smart Copy error fallback"
+msgid "Automatic copy failed. Select and copy the message below."
+msgstr ""
+
+#: includes/class-ddsw-i18n.php:255
+msgctxt "Internal Smart Copy hide-again fallback"
+msgid "Do not show again on this browser"
+msgstr ""
+
+#: includes/class-ddsw-i18n.php:248
+msgctxt "Internal Smart Copy iOS fallback"
+msgid "Tap Open WhatsApp, tap the message field and choose Paste."
+msgstr ""
+
+#: includes/class-ddsw-i18n.php:246
+msgctxt "Internal Smart Copy modal success fallback"
+msgid "Your message has been copied to the clipboard."
+msgstr ""
+
+#: includes/class-ddsw-i18n.php:245
+msgctxt "Internal Smart Copy modal title fallback"
+msgid "Copied successfully"
+msgstr ""
+
+#: includes/class-ddsw-i18n.php:252
+msgctxt "Internal Smart Copy retry fallback"
+msgid "Copy again"
+msgstr ""
+
+#: includes/class-ddsw-i18n.php:254
+msgctxt "Internal traditional feedback fallback"
+msgid "Message copied. Opening WhatsApp..."
+msgstr ""
+
+#: admin/class-ddsw-admin.php:402
+msgctxt "Phone number placeholder"
+msgid "+819012345678"
+msgstr ""

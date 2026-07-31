@@ -1,0 +1,199 @@
+.ddsw-wrap {
+    --ddsw-auto-background: var(--e-global-color-accent, var(--e-global-color-primary, var(--wp--preset--color--primary, var(--ast-global-color-0, var(--global-palette1, var(--accent, #25d366))))));
+    --ddsw-auto-hover-background: var(--e-global-color-secondary, var(--wp--preset--color--secondary, var(--ast-global-color-1, var(--global-palette2, #128c7e))));
+    --ddsw-auto-color: var(--contrast, #ffffff);
+    --ddsw-auto-hover-color: #ffffff;
+    --ddsw-border-width: 1px;
+    --ddsw-border-style: solid;
+    --ddsw-radius: 8px;
+    --ddsw-shadow: 0 10px 24px rgba(37, 211, 102, 0.24);
+    --ddsw-hover-shadow: 0 14px 30px rgba(18, 140, 126, 0.28);
+    --ddsw-padding-y: 14px;
+    --ddsw-padding-x: 28px;
+    --ddsw-icon-color: currentColor;
+    --ddsw-icon-hover-color: currentColor;
+    --ddsw-icon-size: 20px;
+    --ddsw-icon-gap: 9px;
+    --ddsw-font-size: 16px;
+    --ddsw-font-family: inherit;
+    --ddsw-font-weight: 700;
+    --ddsw-line-height: 1.25;
+    --ddsw-letter-spacing: normal;
+    --ddsw-text-transform: none;
+    --ddsw-transition: 200ms;
+    --ddsw-width: auto;
+    display: flex;
+    width: 100%;
+}
+
+.ddsw-align-left {
+    justify-content: flex-start;
+}
+
+.ddsw-align-center {
+    justify-content: center;
+}
+
+.ddsw-align-right {
+    justify-content: flex-end;
+}
+
+.ddsw-align-full .ddsw-button,
+.ddsw-button--width-full {
+    width: 100%;
+}
+
+.ddsw-wrap .ddsw-button {
+    align-items: center;
+    background: var(--ddsw-background, var(--ddsw-auto-background, #25d366));
+    border: var(--ddsw-border-width, 1px) var(--ddsw-border-style, solid) var(--ddsw-border-color, transparent);
+    border-radius: var(--ddsw-radius, 8px);
+    box-shadow: var(--ddsw-shadow, none);
+    box-sizing: border-box;
+    color: var(--ddsw-color, var(--ddsw-auto-color, #ffffff));
+    cursor: pointer;
+    display: inline-flex;
+    font-family: var(--ddsw-font-family, inherit);
+    font-size: var(--ddsw-font-size, 16px);
+    font-weight: var(--ddsw-font-weight, 700);
+    gap: var(--ddsw-icon-gap, 9px);
+    justify-content: center;
+    letter-spacing: var(--ddsw-letter-spacing, normal);
+    line-height: var(--ddsw-line-height, 1.25);
+    min-height: calc((var(--ddsw-padding-y, 14px) * 2) + var(--ddsw-icon-size, 20px));
+    padding: var(--ddsw-padding-y, 14px) var(--ddsw-padding-x, 28px);
+    text-align: center;
+    text-decoration: none;
+    text-transform: var(--ddsw-text-transform, none);
+    transition:
+        background-color var(--ddsw-transition, 200ms) ease,
+        border-color var(--ddsw-transition, 200ms) ease,
+        box-shadow var(--ddsw-transition, 200ms) ease,
+        color var(--ddsw-transition, 200ms) ease,
+        transform var(--ddsw-transition, 200ms) ease;
+    vertical-align: middle;
+    width: var(--ddsw-width, auto);
+}
+
+.ddsw-wrap .ddsw-button:hover,
+.ddsw-wrap .ddsw-button:focus {
+    background: var(--ddsw-hover-background, var(--ddsw-auto-hover-background, #128c7e));
+    border-color: var(--ddsw-hover-border-color, var(--ddsw-hover-background, var(--ddsw-border-color, transparent)));
+    box-shadow: var(--ddsw-hover-shadow, var(--ddsw-shadow, none));
+    color: var(--ddsw-hover-color, var(--ddsw-auto-hover-color, #ffffff));
+    text-decoration: none;
+    transform: translateY(-1px);
+}
+
+.ddsw-wrap .ddsw-button:focus-visible {
+    outline: 3px solid rgba(37, 211, 102, 0.35);
+    outline-offset: 3px;
+}
+
+@supports (color: color-mix(in srgb, #000 50%, transparent)) {
+    .ddsw-wrap .ddsw-button:focus-visible {
+        outline-color: color-mix(in srgb, currentColor 35%, transparent);
+    }
+}
+
+.ddsw-wrap .ddsw-button:active {
+    box-shadow: var(--ddsw-shadow, none);
+    transform: translateY(0);
+}
+
+.ddsw-style-green {
+    --ddsw-background: #25d366;
+    --ddsw-color: #ffffff;
+    --ddsw-hover-background: #128c7e;
+    --ddsw-hover-color: #ffffff;
+    --ddsw-border-color: #25d366;
+    --ddsw-hover-border-color: #128c7e;
+}
+
+.ddsw-style-auto {
+    --ddsw-background: var(--ddsw-auto-background, #25d366);
+    --ddsw-color: var(--ddsw-auto-color, #ffffff);
+    --ddsw-hover-background: var(--ddsw-auto-hover-background, #128c7e);
+    --ddsw-hover-color: var(--ddsw-auto-hover-color, #ffffff);
+    --ddsw-border-color: var(--ddsw-auto-background, #25d366);
+    --ddsw-hover-border-color: var(--ddsw-hover-background, var(--ddsw-border-color, transparent));
+}
+
+.ddsw-style-dark {
+    --ddsw-background: #111827;
+    --ddsw-color: #ffffff;
+    --ddsw-hover-background: #000000;
+    --ddsw-hover-color: #ffffff;
+    --ddsw-border-color: #111827;
+    --ddsw-hover-border-color: #000000;
+    --ddsw-shadow: 0 10px 26px rgba(17, 24, 39, 0.2);
+    --ddsw-hover-shadow: 0 14px 34px rgba(17, 24, 39, 0.28);
+}
+
+.ddsw-style-light {
+    --ddsw-background: #ffffff;
+    --ddsw-color: #17211c;
+    --ddsw-hover-background: #f3f7f5;
+    --ddsw-hover-color: #0f2b20;
+    --ddsw-border-color: #d7e1dc;
+    --ddsw-hover-border-color: #b9c9c1;
+    --ddsw-shadow: 0 8px 22px rgba(23, 33, 28, 0.1);
+    --ddsw-hover-shadow: 0 12px 28px rgba(23, 33, 28, 0.16);
+}
+
+.ddsw-style-outline {
+    --ddsw-background: transparent;
+    --ddsw-color: #128c7e;
+    --ddsw-hover-background: #128c7e;
+    --ddsw-hover-color: #ffffff;
+    --ddsw-border-color: #128c7e;
+    --ddsw-hover-border-color: #128c7e;
+    --ddsw-shadow: none;
+    --ddsw-hover-shadow: 0 10px 24px rgba(18, 140, 126, 0.2);
+}
+
+.ddsw-style-custom {
+    --ddsw-hover-border-color: var(--ddsw-hover-background, var(--ddsw-border-color, transparent));
+}
+
+.ddsw-icon,
+.ddsw-button__icon {
+    color: var(--ddsw-icon-color, currentColor);
+    display: inline-flex;
+    flex: 0 0 auto;
+    height: var(--ddsw-icon-size, 20px);
+    width: var(--ddsw-icon-size, 20px);
+}
+
+.ddsw-button:hover .ddsw-icon,
+.ddsw-button:focus .ddsw-icon,
+.ddsw-button:hover .ddsw-button__icon,
+.ddsw-button:focus .ddsw-button__icon {
+    color: var(--ddsw-icon-hover-color, currentColor);
+}
+
+.ddsw-icon svg,
+.ddsw-button__icon svg {
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+.ddsw-label,
+.ddsw-button__label {
+    overflow-wrap: anywhere;
+}
+
+.ddsw-admin-warning {
+    background: #fff8e5;
+    border-left: 4px solid #dba617;
+    color: #5c4300;
+    display: inline-block;
+    padding: 10px 12px;
+}
+
+@media (max-width: 600px) {
+    .ddsw-wrap .ddsw-button {
+        width: var(--ddsw-width, auto);
+    }
+}
