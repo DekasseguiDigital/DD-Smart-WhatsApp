@@ -445,9 +445,11 @@
         var rows = hub ? hub.querySelector('[data-ddsw-floating-actions]') : null;
         var template = document.querySelector('[data-ddsw-floating-action-template]');
         var hubIndex;
+        var actionIndex;
         var fragment;
+        var row;
 
-        if (!rows || !template) {
+        if (!hub || !rows || !template) {
             return;
         }
 
@@ -456,10 +458,34 @@
             var match = field ? field.name.match(/\[floating_hubs\]\[([^\]]+)\]/) : null;
             return match ? match[1] : nextIndex(rows);
         }());
+        actionIndex = nextIndex(rows);
         fragment = template.content.cloneNode(true);
         replaceTemplateToken(fragment, '__HUB_INDEX__', hubIndex);
-        replaceTemplateToken(fragment, '__ACTION_INDEX__', nextIndex(rows));
-        rows.appendChild(fragment);
+        replaceTemplateToken(fragment, '__ACTION_INDEX__', actionIndex);
+        row = fragment.firstElementChild;
+
+        if (!row) {
+            return;
+        }
+
+        rows.appendChild(row);
+        prepareFloatingActionRow(row, actionIndex);
+        refreshFloatingOrder(rows);
+    }
+
+    function prepareFloatingActionRow(row, actionIndex) {
+        var idField = row.querySelector('input[name*="[id]"]');
+        var typeField = row.querySelector('select[name*="[type]"]');
+        var orderField = row.querySelector('input[name*="[order]"]');
+        var type = typeField && typeField.value ? typeField.value : 'custom';
+
+        if (idField) {
+            idField.value = type + '-' + actionIndex;
+        }
+
+        if (orderField) {
+            orderField.value = String(row.parentElement ? row.parentElement.children.length : 1);
+        }
     }
 
     function refreshFloatingOrder(container) {
@@ -640,21 +666,28 @@
         }
 
         if (event.target.closest('[data-ddsw-add-floating-hub]')) {
+            event.preventDefault();
             addFloatingHub();
+            return;
         }
 
         if (event.target.closest('[data-ddsw-remove-floating-hub]')) {
+            event.preventDefault();
             var hub = event.target.closest('[data-ddsw-floating-hub-row]');
             if (hub) {
                 hub.remove();
             }
+            return;
         }
 
         if (event.target.closest('[data-ddsw-add-floating-action]')) {
+            event.preventDefault();
             addFloatingAction(event.target.closest('[data-ddsw-floating-hub-row]'));
+            return;
         }
 
         if (event.target.closest('[data-ddsw-remove-floating-action]')) {
+            event.preventDefault();
             var actionRow = event.target.closest('[data-ddsw-floating-action-row]');
             var parent = actionRow ? actionRow.parentElement : null;
             if (actionRow) {
@@ -663,6 +696,7 @@
             if (parent) {
                 refreshFloatingOrder(parent);
             }
+            return;
         }
     });
 
