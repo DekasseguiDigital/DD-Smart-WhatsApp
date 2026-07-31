@@ -1,5 +1,17 @@
 # Changelog
 
+## 2.2.0-beta.4 - Unified Floating Hub Smart Copy
+
+### Changed
+
+- Unified the Floating Hub Smart Copy flow with the standard Smart Copy modal used by regular buttons.
+- Added backward compatibility for stored `smart_auto` message mode values by normalizing them to `smart_copy`.
+
+### Fixed
+
+- Fixed Floating Hub Smart Copy actions opening the target channel immediately without showing the confirmation modal first.
+- Added WhatsApp to the Universal Smart Copy supported action list so Floating Hub WhatsApp actions can use the same modal flow.
+
 ## 2.2.0-beta.3 - Beta Polish
 
 ### Added

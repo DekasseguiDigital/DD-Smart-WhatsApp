@@ -9,7 +9,7 @@ import struct
 ROOT = Path(__file__).resolve().parents[1]
 LANG_DIR = ROOT / "languages"
 DOMAIN = "dd-smart-whatsapp"
-VERSION = "2.2.0-beta.3"
+VERSION = "2.2.0-beta.4"
 LOCALES = ("pt_BR", "en_US", "es_ES", "ja", "fr_FR", "de_DE", "it_IT", "nl_NL")
 SOURCE_SUFFIXES = {".php", ".js"}
 SKIP_PARTS = {"languages", "tests"}

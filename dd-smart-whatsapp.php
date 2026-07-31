@@ -3,7 +3,7 @@
  * Plugin Name: DD Smart WhatsApp
  * Plugin URI: https://github.com/DekasseguiDigital/DD-Smart-WhatsApp
  * Description: DD Smart WhatsApp transforma botões de contato em ferramentas inteligentes de conversão, com Smart Copy, ações flutuantes, mensagens contextuais, analytics, Elementor, Gutenberg e atualização via GitHub.
- * Version: 2.2.0-beta.3
+ * Version: 2.2.0-beta.4
  * Requires at least: 6.8
  * Requires PHP: 8.1
  * Author: Dekassegui Digital
@@ -19,7 +19,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('DDSW_VERSION', '2.2.0-beta.3');
+define('DDSW_VERSION', '2.2.0-beta.4');
 define('DDSW_PLUGIN_FILE', __FILE__);
 define('DDSW_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('DDSW_PLUGIN_URL', plugin_dir_url(__FILE__));
