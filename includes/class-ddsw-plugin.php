@@ -33,6 +33,7 @@ final class DDSW_Plugin
         if (is_admin()) {
             (new DDSW_Admin())->init();
             (new DDSW_Dashboard_Widget())->init();
+            (new DDSW_Update_Checker())->init();
         }
 
         (new DDSW_Elementor())->init();
