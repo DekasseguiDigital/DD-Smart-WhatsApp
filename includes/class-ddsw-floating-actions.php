@@ -201,8 +201,14 @@ final class DDSW_Floating_Actions
                 return esc_url_raw($url);
             }
 
+            $suggestion = DDSW_Settings::floating_action_suggestion('email');
+            $subject = isset($action['email_subject']) ? trim((string) $action['email_subject']) : '';
+            if ('' === $subject) {
+                $subject = isset($suggestion['subject']) ? (string) $suggestion['subject'] : $action['name'];
+            }
+
             $parts = [
-                'subject' => $action['name'],
+                'subject' => $subject,
                 'body' => $message,
             ];
 

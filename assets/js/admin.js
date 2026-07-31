@@ -486,10 +486,92 @@
         if (orderField) {
             orderField.value = String(row.parentElement ? row.parentElement.children.length : 1);
         }
+
+        syncFloatingMessageMode(typeField);
+        syncFloatingEmailFields(row);
+        applyFloatingSuggestion(row, { force: false });
+
+        if (typeField) {
+            row.setAttribute('data-ddsw-previous-action-type', type);
+        }
     }
 
     function smartCopyCapableAction(type) {
         return ['messenger', 'instagram', 'telegram', 'line', 'custom'].indexOf(type) !== -1;
+    }
+
+    function floatingSuggestion(type) {
+        var suggestions = i18n.floatingSuggestions || {};
+
+        return suggestions[type] || {};
+    }
+
+    function floatingActionFields(row) {
+        return {
+            type: row ? row.querySelector('[data-ddsw-floating-action-type]') : null,
+            message: row ? row.querySelector('[data-ddsw-floating-message-input]') : null,
+            messageLabel: row ? row.querySelector('[data-ddsw-floating-message-label]') : null,
+            subjectWrap: row ? row.querySelector('[data-ddsw-floating-email-subject]') : null,
+            subject: row ? row.querySelector('[data-ddsw-floating-email-subject-input]') : null
+        };
+    }
+
+    function syncFloatingEmailFields(row) {
+        var fields = floatingActionFields(row);
+        var type = fields.type ? fields.type.value : '';
+        var isEmail = type === 'email';
+
+        if (fields.subjectWrap) {
+            fields.subjectWrap.hidden = !isEmail;
+        }
+
+        if (fields.messageLabel) {
+            fields.messageLabel.replaceChildren(document.createTextNode(
+                isEmail
+                    ? (i18n.emailBodyLabel || __('Email body', 'dd-smart-whatsapp'))
+                    : (i18n.initialMessageLabel || __('Initial message', 'dd-smart-whatsapp'))
+            ));
+        }
+    }
+
+    function applyFloatingSuggestion(row, options) {
+        var fields = floatingActionFields(row);
+        var type = fields.type ? fields.type.value : '';
+        var suggestion = floatingSuggestion(type);
+        var force = options && options.force;
+        var message = suggestion.message || '';
+        var subject = suggestion.subject || '';
+
+        if (fields.message && message && (force || fields.message.value.trim() === '')) {
+            fields.message.value = message;
+        }
+
+        if (fields.subject && subject && (force || fields.subject.value.trim() === '')) {
+            fields.subject.value = subject;
+        }
+    }
+
+    function maybeReplaceFloatingSuggestion(row, previousType) {
+        var fields = floatingActionFields(row);
+        var type = fields.type ? fields.type.value : '';
+        var next = floatingSuggestion(type);
+        var previous = floatingSuggestion(previousType || '');
+        var message = fields.message ? fields.message.value : '';
+        var subject = fields.subject ? fields.subject.value : '';
+        var canReplaceMessage = !message.trim() || message === (previous.message || '');
+        var canReplaceSubject = !subject.trim() || subject === (previous.subject || '');
+        var hasNext = next.message || next.subject;
+        var needsConfirm = hasNext && (!canReplaceMessage || (!canReplaceSubject && type === 'email'));
+
+        if (!hasNext) {
+            return;
+        }
+
+        if (needsConfirm && !window.confirm(i18n.replaceSuggestedMessageConfirm || __('This field already has content. Replace it with this channel suggestion?', 'dd-smart-whatsapp'))) {
+            return;
+        }
+
+        applyFloatingSuggestion(row, { force: true });
     }
 
     function syncFloatingMessageMode(typeField) {
@@ -709,6 +791,19 @@
             return;
         }
 
+        if (event.target.closest('[data-ddsw-use-floating-suggestion]')) {
+            event.preventDefault();
+            var suggestionRow = event.target.closest('[data-ddsw-floating-action-row]');
+            var suggestionFields = floatingActionFields(suggestionRow);
+            var hasContent = (suggestionFields.message && suggestionFields.message.value.trim() !== '') ||
+                (suggestionFields.subject && suggestionFields.subject.value.trim() !== '');
+
+            if (!hasContent || window.confirm(i18n.replaceSuggestedMessageConfirm || __('This field already has content. Replace it with this channel suggestion?', 'dd-smart-whatsapp'))) {
+                applyFloatingSuggestion(suggestionRow, { force: true });
+            }
+            return;
+        }
+
         if (event.target.closest('[data-ddsw-remove-floating-action]')) {
             event.preventDefault();
             var actionRow = event.target.closest('[data-ddsw-floating-action-row]');
@@ -799,7 +894,16 @@
         }
 
         if (event.target.matches('[data-ddsw-floating-action-type]')) {
+            var actionTypeRow = event.target.closest('[data-ddsw-floating-action-row]');
+            var previousType = actionTypeRow ? actionTypeRow.getAttribute('data-ddsw-previous-action-type') : '';
+
             syncFloatingMessageMode(event.target);
+            syncFloatingEmailFields(actionTypeRow);
+            maybeReplaceFloatingSuggestion(actionTypeRow, previousType);
+
+            if (actionTypeRow) {
+                actionTypeRow.setAttribute('data-ddsw-previous-action-type', event.target.value || '');
+            }
         }
     });
 
@@ -816,11 +920,25 @@
             document.querySelectorAll('.ddsw-button-row').forEach(updatePreview);
             drawCharts();
             updateShortcodeGenerator();
+            document.querySelectorAll('[data-ddsw-floating-action-row]').forEach(function (row) {
+                var fields = floatingActionFields(row);
+                syncFloatingEmailFields(row);
+                if (fields.type) {
+                    row.setAttribute('data-ddsw-previous-action-type', fields.type.value || '');
+                }
+            });
         });
     } else {
         syncCustomStyleFields(document);
         document.querySelectorAll('.ddsw-button-row').forEach(updatePreview);
         drawCharts();
         updateShortcodeGenerator();
+        document.querySelectorAll('[data-ddsw-floating-action-row]').forEach(function (row) {
+            var fields = floatingActionFields(row);
+            syncFloatingEmailFields(row);
+            if (fields.type) {
+                row.setAttribute('data-ddsw-previous-action-type', fields.type.value || '');
+            }
+        });
     }
 })();

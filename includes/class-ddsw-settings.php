@@ -503,6 +503,7 @@ final class DDSW_Settings
                     'color' => '#25D366',
                     'url' => '',
                     'button_id' => 'principal',
+                    'email_subject' => '',
                     'initial_message' => '',
                     'message_mode' => 'none',
                     'order' => '1',
@@ -543,9 +544,54 @@ final class DDSW_Settings
     {
         return [
             'none' => __('Nenhuma', 'dd-smart-whatsapp'),
-            'smart_auto' => __('Smart Copy automÃ¡tico', 'dd-smart-whatsapp'),
+            'smart_auto' => __('Smart Copy automático', 'dd-smart-whatsapp'),
             'ask' => __('Sempre perguntar antes de copiar', 'dd-smart-whatsapp'),
         ];
+    }
+
+    public static function floating_action_suggestions()
+    {
+        return [
+            'whatsapp' => [
+                'message' => __(
+                    "Hola {{name}},\n\nEncontré su sitio web y me gustaría recibir información sobre sus servicios.\n\n¿Podría ayudarme con disponibilidad, precios y próximos pasos?\n\nMuchas gracias.",
+                    'dd-smart-whatsapp'
+                ),
+            ],
+            'messenger' => [
+                'message' => __(
+                    "Hola {{name}},\n\nVi su página de Facebook desde el sitio web y me gustaría recibir más información sobre sus servicios.\n\n¿Podría indicarme disponibilidad, precios y cómo continuar?\n\nMuchas gracias.",
+                    'dd-smart-whatsapp'
+                ),
+            ],
+            'facebook' => [
+                'message' => __(
+                    "Hola {{name}},\n\nVi su página de Facebook desde el sitio web y me gustaría recibir más información sobre sus servicios.\n\n¿Podría indicarme disponibilidad, precios y cómo continuar?\n\nMuchas gracias.",
+                    'dd-smart-whatsapp'
+                ),
+            ],
+            'instagram' => [
+                'message' => __(
+                    "Hola {{name}} 👋\n\nEncontré su perfil de Instagram desde el sitio web.\n\nMe gustaría recibir más información sobre sus servicios y disponibilidad.\n\n¡Muchas gracias!",
+                    'dd-smart-whatsapp'
+                ),
+            ],
+            'email' => [
+                'subject' => __('Consulta desde el sitio web', 'dd-smart-whatsapp'),
+                'message' => __(
+                    "Hola {{name}},\n\nEncontré su sitio web y me gustaría recibir más información sobre sus servicios.\n\n¿Podría ayudarme con disponibilidad, precios y próximos pasos?\n\nMuchas gracias.",
+                    'dd-smart-whatsapp'
+                ),
+            ],
+        ];
+    }
+
+    public static function floating_action_suggestion($type)
+    {
+        $type = sanitize_key((string) $type);
+        $suggestions = self::floating_action_suggestions();
+
+        return $suggestions[$type] ?? [];
     }
 
     public static function supports_universal_smart_copy($type)
@@ -592,6 +638,7 @@ final class DDSW_Settings
         $action['id'] = sanitize_key($action['id'] ?: $action['type']);
         $action['icon'] = sanitize_key($action['icon'] ?: $action['type']);
         $action['button_id'] = sanitize_key($action['button_id'] ?: 'principal');
+        $action['email_subject'] = isset($action['email_subject']) ? (string) $action['email_subject'] : '';
         $action['initial_message'] = isset($action['initial_message']) ? (string) $action['initial_message'] : '';
         $action['message_mode'] = self::select_key(
             $action['message_mode'] ?? '',
@@ -655,8 +702,9 @@ final class DDSW_Settings
             'name' => '' === $name ? (self::floating_action_types()[$type] ?? $defaults['name']) : $name,
             'icon' => sanitize_key(isset($action['icon']) ? wp_unslash($action['icon']) : $type),
             'color' => self::color_value($action, 'color', $defaults['color']),
-            'url' => isset($action['url']) ? esc_url_raw(wp_unslash($action['url'])) : '',
+            'url' => self::sanitize_floating_action_url($action, 'url', $type),
             'button_id' => isset($action['button_id']) ? sanitize_key(wp_unslash($action['button_id'])) : 'principal',
+            'email_subject' => isset($action['email_subject']) ? sanitize_text_field(wp_unslash($action['email_subject'])) : '',
             'initial_message' => isset($action['initial_message']) ? sanitize_textarea_field(wp_unslash($action['initial_message'])) : '',
             'message_mode' => self::select_key(
                 $action['message_mode'] ?? '',
@@ -674,6 +722,30 @@ final class DDSW_Settings
         $value = sanitize_key((string) $value);
 
         return in_array($value, $allowed, true) ? $value : $fallback;
+    }
+
+    private static function sanitize_floating_action_url(array $action, $key, $type)
+    {
+        if (!isset($action[$key])) {
+            return '';
+        }
+
+        $value = trim((string) wp_unslash($action[$key]));
+
+        if ('email' === $type) {
+            if (0 === stripos($value, 'mailto:')) {
+                $value = substr($value, 7);
+                $value = strtok($value, '?') ?: '';
+            }
+
+            return sanitize_email($value);
+        }
+
+        if ('phone' === $type || ('maps' === $type && false === strpos($value, '://'))) {
+            return sanitize_text_field($value);
+        }
+
+        return esc_url_raw($value);
     }
 
     public static function legacy_style_value($variant)

@@ -61,6 +61,7 @@ final class DDSW_Admin
                 'siteLocale' => DDSW_Language::site_locale(),
                 'templateDefaults' => DDSW_I18n::default_button_text_sets(),
                 'templateLibrary' => $this->template_library_payload(),
+                'floatingSuggestions' => DDSW_Settings::floating_action_suggestions(),
                 'confirmRestore' => __('Restaurar os textos padrão para o idioma selecionado?', 'dd-smart-whatsapp'),
                 'confirmRestoreAll' => __('Restaurar todos os botões conforme o idioma/modelo selecionado?', 'dd-smart-whatsapp'),
                 'templateChangeTitle' => __('O idioma do modelo foi alterado.', 'dd-smart-whatsapp'),
@@ -71,6 +72,11 @@ final class DDSW_Admin
                 'updateButtonLabel' => __('Atualizar', 'dd-smart-whatsapp'),
                 'cancelButtonLabel' => __('Cancelar', 'dd-smart-whatsapp'),
                 'copiedLabel' => __('Shortcode copiado.', 'dd-smart-whatsapp'),
+                'useSuggestedMessageLabel' => __('Usar mensagem sugerida', 'dd-smart-whatsapp'),
+                'replaceSuggestedMessageConfirm' => __('Este campo já possui conteúdo. Deseja substituir pela sugestão deste canal?', 'dd-smart-whatsapp'),
+                'emailSubjectLabel' => __('Assunto do e-mail', 'dd-smart-whatsapp'),
+                'emailBodyLabel' => __('Corpo do e-mail', 'dd-smart-whatsapp'),
+                'initialMessageLabel' => __('Mensagem inicial', 'dd-smart-whatsapp'),
             ]
         );
     }
@@ -725,10 +731,19 @@ final class DDSW_Admin
                     <?php endforeach; ?>
                 </select>
             </label>
-            <label class="ddsw-field">
-                <span><?php esc_html_e('Mensagem inicial', 'dd-smart-whatsapp'); ?></span>
-                <textarea rows="3" name="<?php echo esc_attr($option); ?>[floating_hubs][<?php echo esc_attr($hub_index); ?>][actions][<?php echo esc_attr($action_index); ?>][initial_message]" placeholder="<?php echo esc_attr__('Olá {{name}}, encontrei seu site e gostaria de solicitar um orçamento.', 'dd-smart-whatsapp'); ?>"><?php echo esc_textarea($action['initial_message']); ?></textarea>
+            <label class="ddsw-field" data-ddsw-floating-email-subject <?php echo 'email' === $action['type'] ? '' : 'hidden'; ?>>
+                <span><?php esc_html_e('Assunto do e-mail', 'dd-smart-whatsapp'); ?></span>
+                <input type="text" name="<?php echo esc_attr($option); ?>[floating_hubs][<?php echo esc_attr($hub_index); ?>][actions][<?php echo esc_attr($action_index); ?>][email_subject]" value="<?php echo esc_attr($action['email_subject']); ?>" data-ddsw-floating-email-subject-input>
             </label>
+            <div class="ddsw-field ddsw-field--message">
+                <label>
+                    <span data-ddsw-floating-message-label><?php echo 'email' === $action['type'] ? esc_html__('Corpo do e-mail', 'dd-smart-whatsapp') : esc_html__('Mensagem inicial', 'dd-smart-whatsapp'); ?></span>
+                    <textarea rows="4" name="<?php echo esc_attr($option); ?>[floating_hubs][<?php echo esc_attr($hub_index); ?>][actions][<?php echo esc_attr($action_index); ?>][initial_message]" placeholder="<?php echo esc_attr__('Use placeholders como {{name}}, {{page_title}} e {{page_url}}.', 'dd-smart-whatsapp'); ?>" data-ddsw-floating-message-input><?php echo esc_textarea($action['initial_message']); ?></textarea>
+                </label>
+                <button type="button" class="button button-secondary ddsw-floating-admin__suggestion" data-ddsw-use-floating-suggestion>
+                    <?php esc_html_e('Usar mensagem sugerida', 'dd-smart-whatsapp'); ?>
+                </button>
+            </div>
             <label class="ddsw-field">
                 <span><?php esc_html_e('Modo da mensagem', 'dd-smart-whatsapp'); ?></span>
                 <select name="<?php echo esc_attr($option); ?>[floating_hubs][<?php echo esc_attr($hub_index); ?>][actions][<?php echo esc_attr($action_index); ?>][message_mode]" data-ddsw-floating-message-mode>
