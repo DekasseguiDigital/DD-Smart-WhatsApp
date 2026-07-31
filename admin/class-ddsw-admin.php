@@ -707,7 +707,7 @@ final class DDSW_Admin
             </label>
             <label class="ddsw-field">
                 <span><?php esc_html_e('Tipo', 'dd-smart-whatsapp'); ?></span>
-                <select name="<?php echo esc_attr($option); ?>[floating_hubs][<?php echo esc_attr($hub_index); ?>][actions][<?php echo esc_attr($action_index); ?>][type]">
+                <select name="<?php echo esc_attr($option); ?>[floating_hubs][<?php echo esc_attr($hub_index); ?>][actions][<?php echo esc_attr($action_index); ?>][type]" data-ddsw-floating-action-type>
                     <?php foreach (DDSW_Settings::floating_action_types() as $type_key => $type_label) : ?>
                         <option value="<?php echo esc_attr($type_key); ?>" <?php selected($action['type'], $type_key); ?>><?php echo esc_html($type_label); ?></option>
                     <?php endforeach; ?>
@@ -722,6 +722,18 @@ final class DDSW_Admin
                 <select name="<?php echo esc_attr($option); ?>[floating_hubs][<?php echo esc_attr($hub_index); ?>][actions][<?php echo esc_attr($action_index); ?>][button_id]">
                     <?php foreach ($buttons as $button) : ?>
                         <option value="<?php echo esc_attr($button['id']); ?>" <?php selected($action['button_id'], $button['id']); ?>><?php echo esc_html($button['label']); ?></option>
+                    <?php endforeach; ?>
+                </select>
+            </label>
+            <label class="ddsw-field">
+                <span><?php esc_html_e('Mensagem inicial', 'dd-smart-whatsapp'); ?></span>
+                <textarea rows="3" name="<?php echo esc_attr($option); ?>[floating_hubs][<?php echo esc_attr($hub_index); ?>][actions][<?php echo esc_attr($action_index); ?>][initial_message]" placeholder="<?php echo esc_attr__('Olá {{name}}, encontrei seu site e gostaria de solicitar um orçamento.', 'dd-smart-whatsapp'); ?>"><?php echo esc_textarea($action['initial_message']); ?></textarea>
+            </label>
+            <label class="ddsw-field">
+                <span><?php esc_html_e('Modo da mensagem', 'dd-smart-whatsapp'); ?></span>
+                <select name="<?php echo esc_attr($option); ?>[floating_hubs][<?php echo esc_attr($hub_index); ?>][actions][<?php echo esc_attr($action_index); ?>][message_mode]" data-ddsw-floating-message-mode>
+                    <?php foreach (DDSW_Settings::floating_message_modes() as $mode_key => $mode_label) : ?>
+                        <option value="<?php echo esc_attr($mode_key); ?>" <?php selected($action['message_mode'], $mode_key); ?>><?php echo esc_html($mode_label); ?></option>
                     <?php endforeach; ?>
                 </select>
             </label>

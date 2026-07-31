@@ -135,6 +135,7 @@ final class Assets
                 'debugInvalidPayload' => esc_html__('DD Smart WhatsApp: invalid payload.', 'dd-smart-whatsapp'),
                 'debugTraditionalCopyFailed' => esc_html__('DD Smart WhatsApp: failed to copy in Traditional mode.', 'dd-smart-whatsapp'),
                 'debugSmartCopyFailed' => esc_html__('DD Smart WhatsApp: Smart Copy failed.', 'dd-smart-whatsapp'),
+                'debugUniversalCopyFailed' => esc_html__('DD Smart WhatsApp: Universal Smart Copy failed.', 'dd-smart-whatsapp'),
                 'debugExecCommandFailed' => esc_html__('DD Smart WhatsApp: copy fallback failed.', 'dd-smart-whatsapp'),
                 'debugTrackingFailed' => esc_html__('DD Smart WhatsApp: failed to record event.', 'dd-smart-whatsapp'),
                 'modalClose' => $modal_strings['close'],

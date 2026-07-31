@@ -503,6 +503,8 @@ final class DDSW_Settings
                     'color' => '#25D366',
                     'url' => '',
                     'button_id' => 'principal',
+                    'initial_message' => '',
+                    'message_mode' => 'none',
                     'order' => '1',
                     'visible' => '1',
                     'new_tab' => '1',
@@ -537,6 +539,33 @@ final class DDSW_Settings
         ];
     }
 
+    public static function floating_message_modes()
+    {
+        return [
+            'none' => __('Nenhuma', 'dd-smart-whatsapp'),
+            'smart_auto' => __('Smart Copy automÃ¡tico', 'dd-smart-whatsapp'),
+            'ask' => __('Sempre perguntar antes de copiar', 'dd-smart-whatsapp'),
+        ];
+    }
+
+    public static function supports_universal_smart_copy($type)
+    {
+        $type = sanitize_key((string) $type);
+
+        return in_array($type, ['messenger', 'instagram', 'telegram', 'line', 'custom'], true);
+    }
+
+    public static function default_floating_message_mode($type)
+    {
+        $type = sanitize_key((string) $type);
+
+        if (in_array($type, ['messenger', 'instagram', 'telegram', 'line'], true)) {
+            return 'smart_auto';
+        }
+
+        return 'none';
+    }
+
     public static function normalize_floating_hub(array $hub)
     {
         $defaults = self::default_floating_hub();
@@ -563,6 +592,16 @@ final class DDSW_Settings
         $action['id'] = sanitize_key($action['id'] ?: $action['type']);
         $action['icon'] = sanitize_key($action['icon'] ?: $action['type']);
         $action['button_id'] = sanitize_key($action['button_id'] ?: 'principal');
+        $action['initial_message'] = isset($action['initial_message']) ? (string) $action['initial_message'] : '';
+        $action['message_mode'] = self::select_key(
+            $action['message_mode'] ?? '',
+            array_keys(self::floating_message_modes()),
+            self::default_floating_message_mode($action['type'])
+        );
+
+        if (!self::supports_universal_smart_copy($action['type'])) {
+            $action['message_mode'] = 'none';
+        }
 
         return $action;
     }
@@ -618,6 +657,12 @@ final class DDSW_Settings
             'color' => self::color_value($action, 'color', $defaults['color']),
             'url' => isset($action['url']) ? esc_url_raw(wp_unslash($action['url'])) : '',
             'button_id' => isset($action['button_id']) ? sanitize_key(wp_unslash($action['button_id'])) : 'principal',
+            'initial_message' => isset($action['initial_message']) ? sanitize_textarea_field(wp_unslash($action['initial_message'])) : '',
+            'message_mode' => self::select_key(
+                $action['message_mode'] ?? '',
+                array_keys(self::floating_message_modes()),
+                self::default_floating_message_mode($type)
+            ),
             'order' => self::number_value($action, 'order', (string) ((int) $index + 1), 0, 1000),
             'visible' => empty($action['visible']) ? '0' : '1',
             'new_tab' => empty($action['new_tab']) ? '0' : '1',

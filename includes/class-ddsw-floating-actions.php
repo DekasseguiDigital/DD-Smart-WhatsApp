@@ -120,12 +120,45 @@ final class DDSW_Floating_Actions
             return;
         }
 
-        $url = $this->action_url($action);
+        $message = $this->action_message($action);
+        $url = $this->action_url($action, $message);
         if ('' === $url) {
             return;
         }
 
         $target = !empty($action['new_tab']) ? '_blank' : '_self';
+        $uses_smart_copy = DDSW_Settings::supports_universal_smart_copy($action['type'])
+            && 'none' !== $action['message_mode']
+            && '' !== trim($message);
+        $modal = DDSW_I18n::resolve_universal_copy_strings($action);
+        $payload = [
+            'id' => sanitize_key($action['button_id']),
+            'label' => $label,
+            'message' => $message,
+            'mode' => 'universal_smart',
+            'messageMode' => $action['message_mode'],
+            'platform' => $action['type'],
+            'url' => $url,
+            'baseUrl' => $url,
+            'target' => $target,
+            'modal' => [
+                'title' => $modal['confirmTitle'],
+                'description' => $modal['confirmDescription'],
+                'instruction' => $modal['confirmInstruction'],
+                'button' => $modal['button'],
+                'close' => $modal['close'],
+                'success' => $modal['title'],
+                'failed' => $modal['failed'],
+                'retryLabel' => $modal['retry'],
+                'copyFeedback' => $modal['copyFeedback'],
+                'toastTitle' => $modal['title'],
+                'toastMessage' => $modal['instruction'],
+                'style' => 'clean',
+            ],
+            'actionId' => sanitize_key($action['id']),
+            'actionType' => sanitize_key($action['type']),
+        ];
+        $payload = apply_filters('ddsw_floating_action_payload', $payload, $action, $hub);
         ?>
         <a
             class="ddsw-floating-action ddsw-floating-action--<?php echo esc_attr($action['type']); ?>"
@@ -139,15 +172,19 @@ final class DDSW_Floating_Actions
             data-ddsw-floating-action-id="<?php echo esc_attr($action['id']); ?>"
             data-ddsw-floating-action-type="<?php echo esc_attr($action['type']); ?>"
             data-ddsw-floating-action-label="<?php echo esc_attr($label); ?>"
+            data-ddsw-floating-smart-copy="<?php echo esc_attr($uses_smart_copy ? '1' : '0'); ?>"
             aria-label="<?php echo esc_attr($label); ?>"
         >
             <span class="ddsw-floating-action__icon" aria-hidden="true"><?php echo self::icon_svg($action['icon']); ?></span>
             <span class="ddsw-floating-action__label"><?php echo esc_html($label); ?></span>
         </a>
+        <?php if ($uses_smart_copy) : ?>
+            <script type="application/json" class="ddsw-floating-action-payload"><?php echo wp_json_encode($payload, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT); ?></script>
+        <?php endif; ?>
         <?php
     }
 
-    private function action_url(array $action)
+    private function action_url(array $action, $message = '')
     {
         $url = trim((string) $action['url']);
 
@@ -160,7 +197,16 @@ final class DDSW_Floating_Actions
         }
 
         if ('email' === $action['type']) {
-            return is_email($url) ? 'mailto:' . sanitize_email($url) : esc_url_raw($url);
+            if (!is_email($url)) {
+                return esc_url_raw($url);
+            }
+
+            $parts = [
+                'subject' => $action['name'],
+                'body' => $message,
+            ];
+
+            return 'mailto:' . sanitize_email($url) . '?' . http_build_query($parts, '', '&', PHP_QUERY_RFC3986);
         }
 
         if ('maps' === $action['type'] && '' !== $url && false === strpos($url, '://')) {
@@ -168,6 +214,40 @@ final class DDSW_Floating_Actions
         }
 
         return esc_url_raw($url);
+    }
+
+    private function action_message(array $action)
+    {
+        $message = isset($action['initial_message']) ? trim((string) $action['initial_message']) : '';
+
+        if ('' === $message) {
+            $message = $this->linked_button_message($action);
+        }
+
+        $message = DDSW_Placeholders::replace($message);
+
+        return apply_filters('ddsw_floating_action_message', $message, $action);
+    }
+
+    private function linked_button_message(array $action)
+    {
+        $button = DDSW_Settings::get_button($action['button_id'] ?? '');
+
+        if (!$button) {
+            return '';
+        }
+
+        $button = DDSW_Settings::normalize_button($button);
+        $locale = DDSW_Language::template_locale($button, 'frontend');
+        $defaults = DDSW_Language::template_defaults($locale, $button['template_key'] ?? 'support');
+        $saved = isset($button['message']) ? (string) $button['message'] : '';
+        $fallback = isset($defaults['message']) ? (string) $defaults['message'] : '';
+
+        if (DDSW_Language::is_default_template_value('message', $saved)) {
+            return $fallback;
+        }
+
+        return '' === trim($saved) ? $fallback : $saved;
     }
 
     public static function icon_svg($icon)

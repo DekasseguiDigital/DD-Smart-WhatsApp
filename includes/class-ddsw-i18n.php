@@ -170,6 +170,25 @@ final class DDSW_I18n
         return apply_filters('ddsw_resolved_modal_strings', $resolved, $button, $atts, $locale);
     }
 
+    public static function resolve_universal_copy_strings(array $action = [])
+    {
+        $strings = [
+            'title' => __('Mensagem copiada.', self::DOMAIN),
+            'description' => __('A mensagem inicial foi copiada para a Ã¡rea de transferÃªncia.', self::DOMAIN),
+            'instruction' => __('Cole na conversa.', self::DOMAIN),
+            'button' => __('Copiar e abrir', self::DOMAIN),
+            'confirmTitle' => __('Copiar mensagem?', self::DOMAIN),
+            'confirmDescription' => __('A mensagem inicial serÃ¡ copiada antes de abrir este canal.', self::DOMAIN),
+            'confirmInstruction' => __('Depois que a conversa abrir, cole a mensagem copiada.', self::DOMAIN),
+            'failed' => __('NÃ£o foi possÃ­vel copiar automaticamente. Selecione e copie a mensagem abaixo.', self::DOMAIN),
+            'retry' => __('Copiar novamente', self::DOMAIN),
+            'close' => __('Fechar', self::DOMAIN),
+            'copyFeedback' => __('Mensagem copiada. Cole na conversa.', self::DOMAIN),
+        ];
+
+        return apply_filters('ddsw_universal_copy_strings', $strings, $action);
+    }
+
     public static function is_default_modal_value($field, $value)
     {
         $value = trim((string) $value);
