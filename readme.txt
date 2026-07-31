@@ -85,6 +85,7 @@ No. Raw IP addresses are not stored. Optional IP hashing can be disabled in the 
 * Added per-action message modes: none, automatic Smart Copy and ask before copying.
 * Added mailto subject and body generation for email actions without using Smart Copy.
 * Added platform analytics event tracking for Universal Smart Copy.
+* Fixed frontend style loading on internal pages with DD Smart WhatsApp shortcodes, Gutenberg blocks or Elementor widgets.
 
 = 2.1.0 =
 * Added optional Smart Floating Actions hubs with Vertical and Compact List layouts.

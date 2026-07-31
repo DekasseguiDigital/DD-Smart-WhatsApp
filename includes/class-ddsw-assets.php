@@ -13,6 +13,8 @@ final class Assets
     public static function init(): void
     {
         add_action('wp_enqueue_scripts', [self::class, 'register_frontend']);
+        add_action('wp_enqueue_scripts', [self::class, 'maybe_enqueue_frontend'], 20);
+        add_action('enqueue_block_assets', [self::class, 'maybe_enqueue_frontend'], 20);
         add_action('elementor/preview/enqueue_styles', [self::class, 'enqueue_frontend']);
         add_action('elementor/editor/after_enqueue_styles', [self::class, 'enqueue_frontend']);
         add_action('elementor/frontend/after_enqueue_styles', [self::class, 'enqueue_frontend']);
@@ -90,6 +92,17 @@ final class Assets
 
         foreach (['ddsw-clipboard', 'ddsw-tracking', 'ddsw-modal', 'ddsw-frontend', 'ddsw-floating-actions'] as $handle) {
             wp_set_script_translations($handle, 'dd-smart-whatsapp', DDSW_PLUGIN_DIR . 'languages');
+        }
+    }
+
+    public static function maybe_enqueue_frontend(): void
+    {
+        if (is_admin()) {
+            return;
+        }
+
+        if (self::request_has_frontend_button()) {
+            self::enqueue_frontend();
         }
     }
 
@@ -177,5 +190,80 @@ final class Assets
             ]
         );
         self::$localized = true;
+    }
+
+    private static function request_has_frontend_button(): bool
+    {
+        $has_button = false;
+
+        foreach (self::candidate_post_ids() as $post_id) {
+            $post = get_post($post_id);
+
+            if ($post && self::content_has_button((string) $post->post_content)) {
+                $has_button = true;
+                break;
+            }
+
+            if (self::elementor_data_has_button((string) get_post_meta($post_id, '_elementor_data', true))) {
+                $has_button = true;
+                break;
+            }
+        }
+
+        return (bool) apply_filters('ddsw_request_has_frontend_button', $has_button);
+    }
+
+    private static function candidate_post_ids(): array
+    {
+        global $post, $wp_query;
+
+        $ids = [];
+
+        if (is_singular()) {
+            $ids[] = (int) get_queried_object_id();
+        }
+
+        if ($post instanceof \WP_Post) {
+            $ids[] = (int) $post->ID;
+        }
+
+        if ($wp_query instanceof \WP_Query && !empty($wp_query->posts)) {
+            foreach (array_slice((array) $wp_query->posts, 0, 25) as $query_post) {
+                if ($query_post instanceof \WP_Post) {
+                    $ids[] = (int) $query_post->ID;
+                }
+            }
+        }
+
+        return array_values(array_unique(array_filter($ids)));
+    }
+
+    private static function content_has_button(string $content): bool
+    {
+        if ('' === $content) {
+            return false;
+        }
+
+        if (
+            has_shortcode($content, 'dd_smart_whatsapp')
+            || has_shortcode($content, 'dd_whatsapp')
+            || has_block('dd-smart-whatsapp/button', $content)
+        ) {
+            return true;
+        }
+
+        return false !== strpos($content, 'dd_smart_whatsapp')
+            || false !== strpos($content, 'dd_whatsapp')
+            || false !== strpos($content, 'dd-smart-whatsapp/button');
+    }
+
+    private static function elementor_data_has_button(string $elementor_data): bool
+    {
+        if ('' === $elementor_data) {
+            return false;
+        }
+
+        return false !== strpos($elementor_data, 'dd_smart_whatsapp')
+            || false !== strpos($elementor_data, 'dd-smart-whatsapp');
     }
 }

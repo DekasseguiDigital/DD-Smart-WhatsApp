@@ -16,6 +16,10 @@
 - Email actions now generate `mailto:` links with subject and body when an initial message is configured.
 - The existing Smart Copy modal is reused for confirm/error flows, with a lightweight toast after successful automatic copy.
 
+### Fixed
+
+- Fixed frontend style loading on internal pages that render DD Smart WhatsApp buttons through shortcodes, Gutenberg blocks or Elementor widgets.
+
 ### Compatibility
 
 - WhatsApp Smart Copy, traditional WhatsApp links, shortcodes, Elementor, Gutenberg, Dashboard analytics and existing Floating Actions behavior remain backward compatible.
