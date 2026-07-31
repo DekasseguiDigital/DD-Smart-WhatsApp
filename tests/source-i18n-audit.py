@@ -7,7 +7,7 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 DOMAIN = "dd-smart-whatsapp"
-VERSION = "2.2.0-beta.4"
+VERSION = "2.2.0-beta.5"
 
 SOURCE_SUFFIXES = {".php", ".js"}
 SKIP_PARTS = {"languages", "tests"}

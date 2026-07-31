@@ -4,7 +4,7 @@ Tags: whatsapp, elementor, gutenberg, shortcode, analytics
 Requires at least: 6.8
 Tested up to: 6.8
 Requires PHP: 8.1
-Stable tag: 2.2.0-beta.4
+Stable tag: 2.2.0-beta.5
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -78,6 +78,10 @@ No. Raw IP addresses are not stored. Optional IP hashing can be disabled in the 
 8. Mobile modal.
 
 == Changelog ==
+
+= 2.2.0-beta.5 =
+* Fixed Facebook Messenger floating actions saved as Facebook links bypassing the Universal Smart Copy modal.
+* Preserved the existing WhatsApp, Instagram and e-mail flows while routing Messenger links through the shared Smart Copy modal.
 
 = 2.2.0-beta.4 =
 * Unified the Floating Hub Smart Copy flow with the standard Smart Copy modal used by regular buttons.

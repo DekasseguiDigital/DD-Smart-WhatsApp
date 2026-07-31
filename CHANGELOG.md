@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.2.0-beta.5 - Messenger Smart Copy Modal Fix
+
+### Fixed
+
+- Fixed Facebook Messenger floating actions saved as Facebook links bypassing the Universal Smart Copy modal.
+- Preserved the existing WhatsApp, Instagram and e-mail flows while routing Messenger links through the shared Smart Copy modal.
+
 ## 2.2.0-beta.4 - Unified Floating Hub Smart Copy
 
 ### Changed

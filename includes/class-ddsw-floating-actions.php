@@ -127,17 +127,19 @@ final class DDSW_Floating_Actions
         }
 
         $target = !empty($action['new_tab']) ? '_blank' : '_self';
-        $uses_smart_copy = DDSW_Settings::supports_universal_smart_copy($action['type'])
-            && 'none' !== $action['message_mode']
+        $smart_copy_type = self::smart_copy_type($action, $url);
+        $uses_smart_copy = DDSW_Settings::supports_universal_smart_copy($smart_copy_type)
+            && ('none' !== $action['message_mode'] || ('facebook' === $action['type'] && 'messenger' === $smart_copy_type))
             && '' !== trim($message);
-        $modal = DDSW_I18n::resolve_universal_copy_strings($action);
+        $modal_action = array_merge($action, ['type' => $smart_copy_type]);
+        $modal = DDSW_I18n::resolve_universal_copy_strings($modal_action);
         $payload = [
             'id' => sanitize_key($action['button_id']),
             'label' => $label,
             'message' => $message,
             'mode' => 'universal_smart',
             'messageMode' => $action['message_mode'],
-            'platform' => $action['type'],
+            'platform' => $smart_copy_type,
             'url' => $url,
             'baseUrl' => $url,
             'target' => $target,
@@ -223,6 +225,29 @@ final class DDSW_Floating_Actions
         }
 
         return esc_url_raw($url);
+    }
+
+    private static function smart_copy_type(array $action, $url)
+    {
+        $type = sanitize_key((string) ($action['type'] ?? ''));
+
+        if ('facebook' === $type && self::is_messenger_url($url)) {
+            return 'messenger';
+        }
+
+        return $type;
+    }
+
+    private static function is_messenger_url($url)
+    {
+        $host = strtolower((string) wp_parse_url((string) $url, PHP_URL_HOST));
+        $path = strtolower((string) wp_parse_url((string) $url, PHP_URL_PATH));
+
+        if (in_array($host, ['m.me', 'www.m.me', 'messenger.com', 'www.messenger.com'], true)) {
+            return true;
+        }
+
+        return false !== strpos($host, 'facebook.com') && 0 === strpos($path, '/messages');
     }
 
     private function action_message(array $action)
