@@ -488,6 +488,29 @@
         }
     }
 
+    function smartCopyCapableAction(type) {
+        return ['messenger', 'instagram', 'telegram', 'line', 'custom'].indexOf(type) !== -1;
+    }
+
+    function syncFloatingMessageMode(typeField) {
+        var row = typeField ? typeField.closest('[data-ddsw-floating-action-row]') : null;
+        var mode = row ? row.querySelector('[data-ddsw-floating-message-mode]') : null;
+        var type = typeField ? typeField.value : '';
+
+        if (!mode) {
+            return;
+        }
+
+        if (!smartCopyCapableAction(type)) {
+            mode.value = 'none';
+            return;
+        }
+
+        if (mode.value === 'none' && type !== 'custom') {
+            mode.value = 'smart_auto';
+        }
+    }
+
     function refreshFloatingOrder(container) {
         Array.prototype.slice.call(container.querySelectorAll('[data-ddsw-floating-action-row]')).forEach(function (row, index) {
             var order = row.querySelector('input[name*="[order]"]');
@@ -773,6 +796,10 @@
 
         if (event.target.matches('[data-ddsw-shortcode-button], [data-ddsw-shortcode-mode]')) {
             updateShortcodeGenerator();
+        }
+
+        if (event.target.matches('[data-ddsw-floating-action-type]')) {
+            syncFloatingMessageMode(event.target);
         }
     });
 

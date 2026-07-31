@@ -464,7 +464,7 @@
     function preparePayload(payload) {
         payload.message = resolveBrowserPlaceholders(payload.message || '');
 
-        if (payload.mode !== 'smart' && payload.baseUrl) {
+        if (payload.mode !== 'smart' && payload.mode !== 'universal_smart' && payload.baseUrl) {
             payload.url = payload.baseUrl + '?text=' + encodeURIComponent(payload.message);
         }
 
@@ -572,6 +572,85 @@
         });
     }
 
+    function reserveTargetWindow(payload) {
+        var pendingWindow = null;
+
+        if (payload.target !== '_blank') {
+            return null;
+        }
+
+        try {
+            pendingWindow = window.open(String.fromCharCode(97, 98, 111, 117, 116, 58, 98, 108, 97, 110, 107), '_blank');
+            if (pendingWindow) {
+                pendingWindow.opener = null;
+            }
+        } catch (error) {
+            pendingWindow = null;
+        }
+
+        return pendingWindow;
+    }
+
+    function closeReservedWindow(pendingWindow) {
+        try {
+            if (pendingWindow && !pendingWindow.closed) {
+                pendingWindow.close();
+            }
+        } catch (error) {
+            if (window.DDSWClipboard) {
+                window.DDSWClipboard.debugLog('', error);
+            }
+        }
+    }
+
+    function openTarget(payload, pendingWindow) {
+        if (window.DDSWModal && window.DDSWModal.openTarget) {
+            window.DDSWModal.openTarget(payload, pendingWindow);
+            return;
+        }
+
+        window.DDSWModal.openWhatsApp(payload);
+    }
+
+    function completeUniversalCopy(payload, pendingWindow) {
+        window.DDSWClipboard.copyText(payload.message || '').then(function (copied) {
+            if (copied) {
+                window.DDSWTracking.record(payload, 'dd_smart_whatsapp_copy_success', 'success');
+                window.DDSWTracking.record(payload, 'smart_copy_platform', 'success');
+                openTarget(payload, pendingWindow);
+                if (window.DDSWModal && window.DDSWModal.toast) {
+                    window.DDSWModal.toast(payload);
+                }
+                return;
+            }
+
+            closeReservedWindow(pendingWindow);
+            window.DDSWTracking.record(payload, 'dd_smart_whatsapp_copy_error', 'error');
+            window.DDSWTracking.record(payload, 'smart_copy_platform', 'error');
+            window.DDSWModal.show(payload, false);
+        }).catch(function (error) {
+            closeReservedWindow(pendingWindow);
+            window.DDSWClipboard.debugLog((window.DDSmartWhatsApp || {}).debugUniversalCopyFailed || '', error);
+            window.DDSWTracking.record(payload, 'dd_smart_whatsapp_copy_error', 'error');
+            window.DDSWTracking.record(payload, 'smart_copy_platform', 'error');
+            window.DDSWModal.show(payload, false);
+        });
+    }
+
+    function handleUniversalSmartCopy(payload) {
+        payload = preparePayload(payload);
+        logDebug(payload);
+
+        if (payload.messageMode === 'ask') {
+            window.DDSWModal.confirm(payload, function () {
+                completeUniversalCopy(payload, reserveTargetWindow(payload));
+            });
+            return;
+        }
+
+        completeUniversalCopy(payload, reserveTargetWindow(payload));
+    }
+
     document.addEventListener('click', function (event) {
         var button = event.target.closest('[data-ddsw-button]');
         var payload;
@@ -612,4 +691,9 @@
             scheduleAdaptiveThemeStyles();
         }).observe(document.documentElement, { childList: true, subtree: true });
     }
+
+    window.DDSWFrontend = {
+        handleUniversalSmartCopy: handleUniversalSmartCopy,
+        preparePayload: preparePayload
+    };
 })();

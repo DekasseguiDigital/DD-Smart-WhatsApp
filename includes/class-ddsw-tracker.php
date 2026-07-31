@@ -36,6 +36,7 @@ final class DDSW_Tracker
             'dd_smart_whatsapp_copy_error',
             'dd_smart_whatsapp_open',
             'dd_smart_whatsapp_click',
+            'smart_copy_platform',
         ];
 
         $event_type = isset($_POST['event_type']) ? sanitize_key(wp_unslash($_POST['event_type'])) : 'dd_smart_whatsapp_click';

@@ -76,6 +76,23 @@
         }, 'dd_smart_whatsapp_click', '');
     }
 
+    function parseActionPayload(link) {
+        var node = link ? link.nextElementSibling : null;
+
+        if (!node || !node.classList.contains('ddsw-floating-action-payload')) {
+            return null;
+        }
+
+        try {
+            return JSON.parse(node.textContent || '{}');
+        } catch (error) {
+            if (window.DDSWClipboard) {
+                window.DDSWClipboard.debugLog((window.DDSmartWhatsApp || {}).debugInvalidPayload || '', error);
+            }
+            return null;
+        }
+    }
+
     document.addEventListener('click', function (event) {
         var toggle = event.target.closest('[data-ddsw-floating-toggle]');
         var action = event.target.closest('[data-ddsw-floating-action], .ddsw-floating-action--whatsapp');
@@ -93,6 +110,14 @@
         if (action) {
             if (action.hasAttribute('data-ddsw-floating-action')) {
                 trackAction(action);
+
+                if (action.getAttribute('data-ddsw-floating-smart-copy') === '1') {
+                    var payload = parseActionPayload(action);
+                    if (payload && window.DDSWFrontend && window.DDSWFrontend.handleUniversalSmartCopy) {
+                        event.preventDefault();
+                        window.DDSWFrontend.handleUniversalSmartCopy(payload);
+                    }
+                }
             }
             closeAll();
             return;

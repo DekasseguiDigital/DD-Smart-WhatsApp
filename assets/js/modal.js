@@ -62,18 +62,29 @@
     }
 
     function openWhatsApp(payload) {
+        openTarget(payload);
+    }
+
+    function openTarget(payload, pendingWindow) {
+        var destination = payload.baseUrl || payload.url;
+
         if (window.DDSWTracking) {
             window.DDSWTracking.record(payload, 'dd_smart_whatsapp_open', '');
         }
 
-        if (payload.target === '_self') {
-            window.location.href = payload.baseUrl || payload.url;
+        if (pendingWindow && !pendingWindow.closed) {
+            pendingWindow.location.href = destination;
             return;
         }
 
-        var opened = window.open(payload.baseUrl || payload.url, '_blank', 'noopener');
+        if (payload.target === '_self') {
+            window.location.href = destination;
+            return;
+        }
+
+        var opened = window.open(destination, '_blank', 'noopener');
         if (!opened) {
-            window.location.href = payload.baseUrl || payload.url;
+            window.location.href = destination;
         }
     }
 
@@ -109,6 +120,99 @@
         svg.appendChild(path);
 
         return svg;
+    }
+
+    function showToast(payload) {
+        var modalConfig = payload.modal || {};
+        var toast = createElement('div', 'ddsw-toast', { role: 'status', 'aria-live': 'polite' });
+        var icon = createElement('span', 'ddsw-toast__icon', { 'aria-hidden': 'true' });
+        var body = createElement('span', 'ddsw-toast__body');
+        var title = createElement('strong', 'ddsw-toast__title');
+        var message = createElement('span', 'ddsw-toast__message');
+
+        icon.appendChild(document.createTextNode('✓'));
+        setText(title, modalConfig.toastTitle || modalConfig.success || settings().modalSuccess || '');
+        setText(message, modalConfig.toastMessage || modalConfig.instruction || settings().modalInstruction || '');
+        body.appendChild(title);
+        body.appendChild(message);
+        toast.appendChild(icon);
+        toast.appendChild(body);
+        document.body.appendChild(toast);
+
+        window.setTimeout(function () {
+            toast.classList.add('is-visible');
+        }, 10);
+
+        window.setTimeout(function () {
+            toast.classList.remove('is-visible');
+            window.setTimeout(function () {
+                toast.remove();
+            }, 220);
+        }, Number(modalConfig.toastDelay || 3600));
+    }
+
+    function confirmCopy(payload, onConfirm) {
+        closeModal();
+
+        var modalConfig = payload.modal || {};
+        var overlay = document.createElement('div');
+        var titleId = 'ddsw-modal-title-' + Date.now();
+        var descId = 'ddsw-modal-desc-' + Date.now();
+        var backdrop = createElement('div', 'ddsw-modal__backdrop', { 'data-ddsw-close': '' });
+        var dialog = createElement('div', 'ddsw-modal__dialog', { role: 'document' });
+        var closeButton = createElement('button', 'ddsw-modal__close', { type: 'button', 'data-ddsw-close': '' });
+        var icon = createElement('div', 'ddsw-modal__icon', { 'aria-hidden': 'true' });
+        var title = createElement('h2', 'ddsw-modal__title', { id: titleId });
+        var content = createElement('div', 'ddsw-modal__content');
+        var status = createElement('p', 'ddsw-modal__status', { id: descId });
+        var instruction = createElement('p', 'ddsw-modal__instruction');
+        var actions = createElement('div', 'ddsw-modal__actions');
+        var confirmButton = createElement('button', 'ddsw-modal__open', { type: 'button' });
+
+        overlay.className = 'ddsw-modal ddsw-modal--' + (modalConfig.style || 'clean');
+        overlay.setAttribute('role', 'dialog');
+        overlay.setAttribute('aria-modal', 'true');
+        overlay.setAttribute('aria-labelledby', titleId);
+        overlay.setAttribute('aria-describedby', descId);
+        overlay.setAttribute('tabindex', '-1');
+
+        closeButton.setAttribute('aria-label', modalConfig.close || settings().modalClose || '');
+        closeButton.appendChild(createSvgIcon('M18.3 5.71 16.89 4.3 12 9.17 7.11 4.3 5.7 5.71 10.59 10.6 5.7 15.49l1.41 1.41L12 12.01l4.89 4.89 1.41-1.41-4.89-4.89 4.89-4.89Z'));
+        icon.appendChild(createSvgIcon('M8 3h8a2 2 0 0 1 2 2v1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-1H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3Zm0 3h8V5H8v1Zm0 2v11h11V8H8ZM5 5v11h1V8a2 2 0 0 1 2-2V5H5Zm5 6h7v2h-7v-2Zm0 4h5v2h-5v-2Z'));
+
+        setText(title, modalConfig.title || settings().modalTitle || '');
+        setText(status, modalConfig.description || settings().modalDescription || '');
+        setText(instruction, modalConfig.instruction || settings().modalInstruction || '');
+        setText(confirmButton, modalConfig.button || settings().modalButton || '');
+
+        confirmButton.addEventListener('click', function () {
+            closeModal();
+            if (typeof onConfirm === 'function') {
+                onConfirm();
+            }
+        });
+
+        overlay.addEventListener('click', function (event) {
+            if (event.target.closest('[data-ddsw-close]')) {
+                closeModal();
+            }
+        });
+
+        content.appendChild(status);
+        content.appendChild(instruction);
+        actions.appendChild(confirmButton);
+        dialog.appendChild(closeButton);
+        dialog.appendChild(icon);
+        dialog.appendChild(title);
+        dialog.appendChild(content);
+        dialog.appendChild(actions);
+        overlay.appendChild(backdrop);
+        overlay.appendChild(dialog);
+        document.body.appendChild(overlay);
+        lastFocus = document.activeElement;
+        activeModal = overlay;
+        document.addEventListener('keydown', onModalKeydown);
+        window.DDSWClipboard.focusElement(confirmButton);
     }
 
     function showModal(payload, success) {
@@ -261,7 +365,10 @@
 
     window.DDSWModal = {
         close: closeModal,
+        confirm: confirmCopy,
+        openTarget: openTarget,
         openWhatsApp: openWhatsApp,
-        show: showModal
+        show: showModal,
+        toast: showToast
     };
 })();
