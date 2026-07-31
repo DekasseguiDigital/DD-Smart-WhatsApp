@@ -180,9 +180,9 @@
         closeButton.appendChild(createSvgIcon('M18.3 5.71 16.89 4.3 12 9.17 7.11 4.3 5.7 5.71 10.59 10.6 5.7 15.49l1.41 1.41L12 12.01l4.89 4.89 1.41-1.41-4.89-4.89 4.89-4.89Z'));
         icon.appendChild(createSvgIcon('M8 3h8a2 2 0 0 1 2 2v1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-1H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3Zm0 3h8V5H8v1Zm0 2v11h11V8H8ZM5 5v11h1V8a2 2 0 0 1 2-2V5H5Zm5 6h7v2h-7v-2Zm0 4h5v2h-5v-2Z'));
 
-        setText(title, modalConfig.title || settings().modalTitle || '');
-        setText(status, modalConfig.description || settings().modalDescription || '');
-        setText(instruction, modalConfig.instruction || settings().modalInstruction || '');
+        setText(title, modalConfig.confirmTitle || modalConfig.title || settings().modalTitle || '');
+        setText(status, modalConfig.confirmDescription || modalConfig.description || settings().modalDescription || '');
+        setText(instruction, modalConfig.confirmInstruction || modalConfig.instruction || settings().modalInstruction || '');
         setText(confirmButton, modalConfig.button || settings().modalButton || '');
 
         confirmButton.addEventListener('click', function () {

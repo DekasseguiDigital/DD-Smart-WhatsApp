@@ -544,7 +544,7 @@ final class DDSW_Settings
     {
         return [
             'none' => __('Nenhuma', 'dd-smart-whatsapp'),
-            'smart_auto' => __('Smart Copy automático', 'dd-smart-whatsapp'),
+            'smart_copy' => __('Smart Copy automático', 'dd-smart-whatsapp'),
             'ask' => __('Sempre perguntar antes de copiar', 'dd-smart-whatsapp'),
         ];
     }
@@ -598,15 +598,15 @@ final class DDSW_Settings
     {
         $type = sanitize_key((string) $type);
 
-        return in_array($type, ['messenger', 'instagram', 'telegram', 'line', 'custom'], true);
+        return in_array($type, ['whatsapp', 'messenger', 'instagram', 'telegram', 'line', 'custom'], true);
     }
 
     public static function default_floating_message_mode($type)
     {
         $type = sanitize_key((string) $type);
 
-        if (in_array($type, ['messenger', 'instagram', 'telegram', 'line'], true)) {
-            return 'smart_auto';
+        if (in_array($type, ['whatsapp', 'messenger', 'instagram', 'telegram', 'line'], true)) {
+            return 'smart_copy';
         }
 
         return 'none';
@@ -640,8 +640,9 @@ final class DDSW_Settings
         $action['button_id'] = sanitize_key($action['button_id'] ?: 'principal');
         $action['email_subject'] = isset($action['email_subject']) ? (string) $action['email_subject'] : '';
         $action['initial_message'] = isset($action['initial_message']) ? (string) $action['initial_message'] : '';
+        $message_mode = 'smart_auto' === ($action['message_mode'] ?? '') ? 'smart_copy' : ($action['message_mode'] ?? '');
         $action['message_mode'] = self::select_key(
-            $action['message_mode'] ?? '',
+            $message_mode,
             array_keys(self::floating_message_modes()),
             self::default_floating_message_mode($action['type'])
         );
@@ -707,7 +708,7 @@ final class DDSW_Settings
             'email_subject' => isset($action['email_subject']) ? sanitize_text_field(wp_unslash($action['email_subject'])) : '',
             'initial_message' => isset($action['initial_message']) ? sanitize_textarea_field(wp_unslash($action['initial_message'])) : '',
             'message_mode' => self::select_key(
-                $action['message_mode'] ?? '',
+                'smart_auto' === ($action['message_mode'] ?? '') ? 'smart_copy' : ($action['message_mode'] ?? ''),
                 array_keys(self::floating_message_modes()),
                 self::default_floating_message_mode($type)
             ),

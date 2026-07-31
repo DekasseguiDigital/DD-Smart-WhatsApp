@@ -588,8 +588,12 @@
             return;
         }
 
+        if (mode.value === 'smart_auto') {
+            mode.value = 'smart_copy';
+        }
+
         if (mode.value === 'none' && type !== 'custom') {
-            mode.value = 'smart_auto';
+            mode.value = 'smart_copy';
         }
     }
 

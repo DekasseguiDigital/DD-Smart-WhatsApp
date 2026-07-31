@@ -16,6 +16,7 @@
 ### Fixed
 
 - Fixed a corrupted "Smart Copy automático" admin label in message mode options.
+- Unified Universal Smart Copy in Floating Actions with the standard Smart Copy modal before opening the selected channel.
 
 ## 2.2.0 - Universal Smart Copy
 

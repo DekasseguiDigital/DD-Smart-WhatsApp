@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: DD Smart WhatsApp 2.2.0-beta.3\n"
-"POT-Creation-Date: 2026-07-31 18:34+0000\n"
+"POT-Creation-Date: 2026-07-31 19:20+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -22,17 +22,21 @@ msgstr "%d ms"
 msgid "100%"
 msgstr "100%"
 
-#: includes/class-ddsw-i18n.php:177
-msgid "A mensagem inicial foi copiada para a Ã¡rea de transferÃªncia."
-msgstr "A mensagem inicial foi copiada para a Ã¡rea de transferÃªncia."
+#: includes/class-ddsw-i18n.php:178
+msgid "A mensagem inicial foi copiada para a área de transferência."
+msgstr "The initial message has been copied to the clipboard."
 
-#: includes/class-ddsw-i18n.php:181
-msgid "A mensagem inicial serÃ¡ copiada antes de abrir este canal."
-msgstr "A mensagem inicial serÃ¡ copiada antes de abrir este canal."
+#: includes/class-ddsw-i18n.php:186
+msgid "A mensagem inicial será copiada antes de abrir este canal."
+msgstr "The initial message will be copied before opening this channel."
 
 #: admin/class-ddsw-admin.php:433
 msgid "Abre o WhatsApp com a mensagem pelo parâmetro text="
 msgstr "Opens WhatsApp with the message through the text= parameter"
+
+#: includes/class-ddsw-i18n.php:182
+msgid "Abrir %s"
+msgstr "Open %s"
 
 #: admin/class-ddsw-admin.php:477
 #: elementor/class-ddsw-elementor-widget.php:437
@@ -117,7 +121,7 @@ msgstr "Active"
 msgid "Atualizar"
 msgstr "Atualizar"
 
-#: includes/class-ddsw-settings.php:781
+#: includes/class-ddsw-settings.php:782
 msgid "Auto — usar identidade visual do site"
 msgstr "Auto — use the site's visual identity"
 
@@ -239,6 +243,10 @@ msgstr "CTA"
 msgid "Cada botão pode usar o modo tradicional ou Smart Copy sem depender de Elementor."
 msgstr "Each button can use Traditional or Smart Copy mode without depending on Elementor."
 
+#: includes/class-ddsw-i18n.php:210
+msgid "Canal"
+msgstr "Channel"
+
 #: assets/js/admin.js:362
 msgid "Cancel"
 msgstr "Cancel"
@@ -273,7 +281,7 @@ msgstr "Chat via WhatsApp"
 msgid "Check availability"
 msgstr "Check availability"
 
-#: includes/class-ddsw-settings.php:784
+#: includes/class-ddsw-settings.php:785
 msgid "Claro"
 msgstr "Light"
 
@@ -290,9 +298,9 @@ msgstr "Clean"
 msgid "Close modal automatically"
 msgstr "Close modal automatically"
 
-#: includes/class-ddsw-i18n.php:178
+#: includes/class-ddsw-i18n.php:179
 msgid "Cole na conversa."
-msgstr "Cole na conversa."
+msgstr "Paste it in the conversation."
 
 #: admin/class-ddsw-admin.php:669
 msgid "Comportamento no mobile"
@@ -318,7 +326,7 @@ msgstr "Consulting"
 msgid "Conteúdo"
 msgstr "Content"
 
-#: includes/class-ddsw-settings.php:785
+#: includes/class-ddsw-settings.php:786
 msgid "Contorno"
 msgstr "Outline"
 
@@ -331,15 +339,11 @@ msgstr "Conversion"
 msgid "Copia a mensagem formatada e abre o WhatsApp sem texto"
 msgstr "Copies the formatted message and opens WhatsApp without text"
 
-#: includes/class-ddsw-i18n.php:179
-msgid "Copiar e abrir"
-msgstr "Copiar e abrir"
-
-#: includes/class-ddsw-i18n.php:180
+#: includes/class-ddsw-i18n.php:185
 msgid "Copiar mensagem?"
-msgstr "Copiar mensagem?"
+msgstr "Copy message?"
 
-#: includes/class-ddsw-i18n.php:184
+#: includes/class-ddsw-i18n.php:189
 msgid "Copiar novamente"
 msgstr "Copy again"
 
@@ -480,9 +484,9 @@ msgstr "Delay"
 msgid "Delay automático"
 msgstr "Automatic delay"
 
-#: includes/class-ddsw-i18n.php:182
+#: includes/class-ddsw-i18n.php:187
 msgid "Depois que a conversa abrir, cole a mensagem copiada."
-msgstr "Depois que a conversa abrir, cole a mensagem copiada."
+msgstr "After the conversation opens, paste the copied message."
 
 #: elementor/class-ddsw-elementor-widget.php:442
 #: elementor/class-ddsw-elementor-widget.php:488
@@ -527,7 +531,7 @@ msgstr "Distância vertical"
 
 #: blocks/block-editor.js:143
 #: includes/class-ddsw-i18n.php:109
-#: includes/class-ddsw-i18n.php:201
+#: includes/class-ddsw-i18n.php:222
 msgid "Do not show again on this browser"
 msgstr "Niet opnieuw tonen in deze browser"
 
@@ -581,7 +585,7 @@ msgstr "Escala"
 msgid "Escolha as opções e copie o shortcode automaticamente."
 msgstr "Choose the options and copy the shortcode automatically."
 
-#: includes/class-ddsw-settings.php:783
+#: includes/class-ddsw-settings.php:784
 msgid "Escuro"
 msgstr "Dark"
 
@@ -632,7 +636,7 @@ msgstr "Local events by button, without storing raw IP addresses."
 msgid "Eventos totais"
 msgstr "Total events"
 
-#: assets/js/admin.js:667
+#: assets/js/admin.js:671
 msgid "Events"
 msgstr "Events"
 
@@ -652,6 +656,7 @@ msgstr "Exibir rótulos das ações"
 msgid "Exportar CSV"
 msgstr "Exportar CSV"
 
+#: includes/class-ddsw-i18n.php:204
 #: includes/class-ddsw-settings.php:532
 msgid "Facebook"
 msgstr "Facebook"
@@ -668,7 +673,7 @@ msgstr "Falar no WhatsApp"
 msgid "Família da fonte"
 msgstr "Font family"
 
-#: includes/class-ddsw-i18n.php:185
+#: includes/class-ddsw-i18n.php:190
 msgid "Fechar"
 msgstr "Close"
 
@@ -1126,6 +1131,7 @@ msgstr "Inferior esquerda"
 msgid "Initial message"
 msgstr "Initial message"
 
+#: includes/class-ddsw-i18n.php:203
 #: includes/class-ddsw-settings.php:531
 msgid "Instagram"
 msgstr "Instagram"
@@ -1165,6 +1171,7 @@ msgstr "Italian"
 msgid "Japanese"
 msgstr "Japanese"
 
+#: includes/class-ddsw-i18n.php:206
 #: includes/class-ddsw-settings.php:535
 msgid "LINE"
 msgstr "LINE"
@@ -1193,6 +1200,10 @@ msgstr "Lenta"
 #: admin/class-ddsw-admin.php:337
 msgid "Limpar estatísticas"
 msgstr "Clear statistics"
+
+#: includes/class-ddsw-i18n.php:207
+msgid "Link"
+msgstr "Link"
 
 #: includes/class-ddsw-settings.php:539
 msgid "Link personalizado"
@@ -1224,13 +1235,13 @@ msgstr "Margin"
 msgid "Mensagem"
 msgstr "Message"
 
-#: includes/class-ddsw-i18n.php:176
+#: includes/class-ddsw-i18n.php:177
 msgid "Mensagem copiada."
-msgstr "Mensagem copiada."
+msgstr "Message copied."
 
-#: includes/class-ddsw-i18n.php:186
+#: includes/class-ddsw-i18n.php:191
 msgid "Mensagem copiada. Cole na conversa."
-msgstr "Mensagem copiada. Cole na conversa."
+msgstr "Message copied. Paste it in the conversation."
 
 #: admin/class-ddsw-admin.php:464
 #: elementor/class-ddsw-elementor-widget.php:420
@@ -1255,6 +1266,7 @@ msgstr "Same tab"
 msgid "Message"
 msgstr "Message"
 
+#: includes/class-ddsw-i18n.php:202
 #: includes/class-ddsw-settings.php:533
 msgid "Messenger"
 msgstr "Messenger"
@@ -1324,9 +1336,9 @@ msgstr "Normal"
 msgid "Nova aba"
 msgstr "New tab"
 
-#: includes/class-ddsw-i18n.php:183
-msgid "NÃ£o foi possÃ­vel copiar automaticamente. Selecione e copie a mensagem abaixo."
-msgstr "NÃ£o foi possÃ­vel copiar automaticamente. Selecione e copie a mensagem abaixo."
+#: includes/class-ddsw-i18n.php:188
+msgid "Não foi possível copiar automaticamente. Selecione e copie a mensagem abaixo."
+msgstr "Automatic copy failed. Select and copy the message below."
 
 #: admin/class-ddsw-admin.php:489
 #: elementor/class-ddsw-elementor-widget.php:509
@@ -1393,7 +1405,7 @@ msgstr "Step 4: copy the shortcode."
 msgid "Payload Language"
 msgstr "Payload Language"
 
-#: includes/class-ddsw-settings.php:786
+#: includes/class-ddsw-settings.php:787
 msgid "Personalizado"
 msgstr "Custom"
 
@@ -1675,6 +1687,7 @@ msgstr "Icon size"
 msgid "Telefone"
 msgstr "Phone"
 
+#: includes/class-ddsw-i18n.php:205
 #: includes/class-ddsw-settings.php:534
 msgid "Telegram"
 msgstr "Telegram"
@@ -1701,7 +1714,7 @@ msgid "The template language changed."
 msgstr "The template language changed."
 
 #: assets/js/admin.js:570
-#: assets/js/admin.js:801
+#: assets/js/admin.js:805
 msgid "This field already has content. Replace it with this channel suggestion?"
 msgstr "This field already has content. Replace it with this channel suggestion?"
 
@@ -1850,7 +1863,7 @@ msgstr "Variables available for dynamic messages."
 msgid "Velocidade"
 msgstr "Velocidade"
 
-#: includes/class-ddsw-settings.php:782
+#: includes/class-ddsw-settings.php:783
 msgid "Verde WhatsApp"
 msgstr "WhatsApp Green"
 
@@ -1867,6 +1880,7 @@ msgstr "You do not have permission to access this page."
 msgid "Você não tem permissão para executar esta ação."
 msgstr "You do not have permission to perform this action."
 
+#: includes/class-ddsw-i18n.php:201
 #: includes/class-ddsw-settings.php:501
 msgid "WhatsApp"
 msgstr "WhatsApp"
@@ -2029,57 +2043,57 @@ msgctxt "Elementor search keyword"
 msgid "whatsapp"
 msgstr "whatsapp"
 
-#: includes/class-ddsw-i18n.php:268
+#: includes/class-ddsw-i18n.php:289
 msgctxt "Internal Smart Copy Android fallback"
 msgid "Tap Open WhatsApp, tap and hold the message field and choose Paste."
 msgstr "Tik op WhatsApp openen, houd het berichtveld ingedrukt en kies Plakken."
 
-#: includes/class-ddsw-i18n.php:269
+#: includes/class-ddsw-i18n.php:290
 msgctxt "Internal Smart Copy button fallback"
 msgid "Open WhatsApp"
 msgstr "WhatsApp openen"
 
-#: includes/class-ddsw-i18n.php:270
+#: includes/class-ddsw-i18n.php:291
 msgctxt "Internal Smart Copy close fallback"
 msgid "Close"
 msgstr "Sluiten"
 
-#: includes/class-ddsw-i18n.php:266
+#: includes/class-ddsw-i18n.php:287
 msgctxt "Internal Smart Copy desktop fallback"
 msgid "Click Open WhatsApp and press Ctrl + V in the message field."
 msgstr "Klik op WhatsApp openen en druk op Ctrl + V in het berichtveld."
 
-#: includes/class-ddsw-i18n.php:272
+#: includes/class-ddsw-i18n.php:293
 msgctxt "Internal Smart Copy error fallback"
 msgid "Automatic copy failed. Select and copy the message below."
 msgstr "Automatisch kopiëren is mislukt. Selecteer en kopieer het onderstaande bericht."
 
-#: includes/class-ddsw-i18n.php:274
+#: includes/class-ddsw-i18n.php:295
 msgctxt "Internal Smart Copy hide-again fallback"
 msgid "Do not show again on this browser"
 msgstr "Niet opnieuw tonen in deze browser"
 
-#: includes/class-ddsw-i18n.php:267
+#: includes/class-ddsw-i18n.php:288
 msgctxt "Internal Smart Copy iOS fallback"
 msgid "Tap Open WhatsApp, tap the message field and choose Paste."
 msgstr "Tik op WhatsApp openen, tik op het berichtveld en kies Plakken."
 
-#: includes/class-ddsw-i18n.php:265
+#: includes/class-ddsw-i18n.php:286
 msgctxt "Internal Smart Copy modal success fallback"
 msgid "Your message has been copied to the clipboard."
 msgstr "Uw bericht is naar het klembord gekopieerd."
 
-#: includes/class-ddsw-i18n.php:264
+#: includes/class-ddsw-i18n.php:285
 msgctxt "Internal Smart Copy modal title fallback"
 msgid "Copied successfully"
 msgstr "Bericht gekopieerd"
 
-#: includes/class-ddsw-i18n.php:271
+#: includes/class-ddsw-i18n.php:292
 msgctxt "Internal Smart Copy retry fallback"
 msgid "Copy again"
 msgstr "Opnieuw kopi?ren"
 
-#: includes/class-ddsw-i18n.php:273
+#: includes/class-ddsw-i18n.php:294
 msgctxt "Internal traditional feedback fallback"
 msgid "Message copied. Opening WhatsApp..."
 msgstr "Bericht gekopieerd. WhatsApp wordt geopend..."
