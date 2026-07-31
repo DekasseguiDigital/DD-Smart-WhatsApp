@@ -47,7 +47,7 @@
         var style;
         var rect;
 
-        if (!element || element.closest('.ddsw-wrap, .ddsw-button, #wpadminbar, .wp-admin, .components-popover, .media-modal')) {
+        if (!element || element.closest('.ddsw-wrap, .ddsw-button, .ddsw-floating-hub, #wpadminbar, .wp-admin, .components-popover, .media-modal')) {
             return false;
         }
 
@@ -215,6 +215,12 @@
         return String(style.transitionDuration || '').split(',')[0].trim() || '200ms';
     }
 
+    function usableLength(value) {
+        value = String(value || '').trim();
+
+        return value && !/^0(?:\.0+)?(?:px|em|rem|%|vh|vw)?$/i.test(value);
+    }
+
     function horizontalPadding(style) {
         return style.paddingRight && style.paddingRight !== '0px' ? style.paddingRight : style.paddingLeft;
     }
@@ -227,8 +233,14 @@
         var style = window.getComputedStyle(button);
         var background = usableBackground(style.backgroundColor) ? style.backgroundColor : '';
         var borderColor = validColor(style.borderColor) ? style.borderColor : background;
+        var paddingY = verticalPadding(style);
+        var paddingX = horizontalPadding(style);
 
         if (!background) {
+            return null;
+        }
+
+        if (!usableLength(paddingY) || !usableLength(paddingX)) {
             return null;
         }
 
@@ -248,8 +260,8 @@
             lineHeight: style.lineHeight || '1.25',
             letterSpacing: style.letterSpacing || 'normal',
             textTransform: style.textTransform || 'none',
-            paddingY: verticalPadding(style) || '14px',
-            paddingX: horizontalPadding(style) || '28px',
+            paddingY: paddingY,
+            paddingX: paddingX,
             shadow: style.boxShadow && style.boxShadow !== 'none' ? style.boxShadow : 'none',
             hoverShadow: style.boxShadow && style.boxShadow !== 'none' ? style.boxShadow : 'none',
             transition: transitionDuration(style)
