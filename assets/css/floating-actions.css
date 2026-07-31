@@ -11,17 +11,28 @@
     --ddsw-float-muted: #647067;
     --ddsw-float-shadow: 0 18px 46px rgba(15, 23, 42, 0.22);
     --ddsw-float-action-shadow: 0 12px 32px rgba(15, 23, 42, 0.14);
+    block-size: var(--ddsw-float-size) !important;
     bottom: calc(var(--ddsw-float-y) + env(safe-area-inset-bottom, 0px)) !important;
     box-sizing: border-box;
+    contain: layout style;
     display: block !important;
-    height: var(--ddsw-float-size);
-    max-height: var(--ddsw-float-size);
-    max-width: calc(100vw - 24px);
+    height: var(--ddsw-float-size) !important;
+    inline-size: var(--ddsw-float-size) !important;
+    isolation: isolate;
+    margin: 0 !important;
+    max-block-size: var(--ddsw-float-size) !important;
+    max-height: var(--ddsw-float-size) !important;
+    max-inline-size: var(--ddsw-float-size) !important;
+    max-width: var(--ddsw-float-size) !important;
+    min-block-size: var(--ddsw-float-size) !important;
+    min-height: var(--ddsw-float-size) !important;
+    min-inline-size: var(--ddsw-float-size) !important;
+    min-width: var(--ddsw-float-size) !important;
     overflow: visible !important;
     pointer-events: none;
     position: fixed !important;
     top: auto !important;
-    width: var(--ddsw-float-size);
+    width: var(--ddsw-float-size) !important;
     z-index: 999999;
 }
 
@@ -53,29 +64,40 @@
 .ddsw-floating-hub__trigger {
     align-items: center !important;
     appearance: none;
+    aspect-ratio: 1 / 1;
     background: var(--ddsw-float-main) !important;
     border: 0 !important;
-    border-radius: 999px !important;
+    border-radius: 50% !important;
     box-shadow: var(--ddsw-float-shadow);
+    box-sizing: border-box !important;
     color: #ffffff !important;
     cursor: pointer;
-    display: inline-flex !important;
-    height: var(--ddsw-float-size);
+    display: grid !important;
+    flex: 0 0 var(--ddsw-float-size) !important;
+    height: var(--ddsw-float-size) !important;
+    inline-size: var(--ddsw-float-size) !important;
     justify-content: center !important;
     line-height: 1;
     margin: 0 !important;
-    min-height: 56px;
-    min-width: 56px;
+    max-block-size: var(--ddsw-float-size) !important;
+    max-height: var(--ddsw-float-size) !important;
+    max-inline-size: var(--ddsw-float-size) !important;
+    max-width: var(--ddsw-float-size) !important;
+    min-block-size: var(--ddsw-float-size) !important;
+    min-height: var(--ddsw-float-size) !important;
+    min-inline-size: var(--ddsw-float-size) !important;
+    min-width: var(--ddsw-float-size) !important;
     overflow: hidden;
     padding: 0 !important;
     pointer-events: auto;
     position: relative;
     text-align: center;
+    text-indent: 0;
     transition:
         background-color var(--ddsw-float-speed) ease,
         box-shadow var(--ddsw-float-speed) ease,
         transform var(--ddsw-float-speed) ease;
-    width: var(--ddsw-float-size);
+    width: var(--ddsw-float-size) !important;
     z-index: 2;
 }
 
@@ -94,8 +116,11 @@
 }
 
 .ddsw-floating-hub__trigger-icon {
-    display: inline-flex;
+    block-size: calc(var(--ddsw-float-size) * 0.46);
+    display: inline-flex !important;
     height: calc(var(--ddsw-float-size) * 0.46);
+    inline-size: calc(var(--ddsw-float-size) * 0.46);
+    place-self: center;
     width: calc(var(--ddsw-float-size) * 0.46);
 }
 
@@ -109,17 +134,20 @@
 .ddsw-floating-hub__menu {
     align-items: flex-end;
     bottom: calc(var(--ddsw-float-size) + var(--ddsw-float-gap));
+    box-sizing: border-box;
     display: flex !important;
     flex-direction: column;
     gap: 10px;
+    inline-size: max-content;
     max-height: calc(100vh - var(--ddsw-float-size) - var(--ddsw-float-y) - 48px - env(safe-area-inset-bottom, 0px));
-    max-width: calc(100vw - 24px);
+    max-inline-size: min(340px, calc(100vw - 24px));
+    max-width: min(340px, calc(100vw - 24px));
     opacity: 0;
     overflow: visible;
     pointer-events: none;
     position: absolute !important;
     right: 0;
-    transform: translateY(8px) scale(0.98);
+    transform: translate3d(0, 8px, 0) scale(0.98);
     transform-origin: bottom right;
     transition:
         opacity var(--ddsw-float-speed) ease,
@@ -140,7 +168,7 @@
 .ddsw-floating-hub.is-open .ddsw-floating-hub__menu {
     opacity: 1;
     pointer-events: auto;
-    transform: translateY(0) scale(1);
+    transform: translate3d(0, 0, 0) scale(1);
     visibility: visible;
 }
 
@@ -150,20 +178,26 @@
     border: 1px solid rgba(15, 23, 42, 0.08) !important;
     border-radius: 999px !important;
     box-shadow: var(--ddsw-float-action-shadow);
+    box-sizing: border-box !important;
     color: var(--ddsw-float-text) !important;
     display: inline-flex !important;
+    flex: 0 0 auto !important;
     gap: 10px;
+    inline-size: max-content !important;
     justify-content: flex-start !important;
     line-height: 1.2;
     margin: 0 !important;
-    max-width: min(320px, calc(100vw - 32px));
-    min-height: 46px;
-    min-width: 46px;
+    max-inline-size: min(320px, calc(100vw - 32px));
+    max-width: min(320px, calc(100vw - 32px)) !important;
+    min-block-size: 46px !important;
+    min-height: 46px !important;
+    min-inline-size: 0 !important;
+    min-width: 0 !important;
     opacity: 0;
     padding: 8px 14px 8px 8px !important;
     pointer-events: auto;
     text-decoration: none !important;
-    transform: translateY(8px) scale(0.96);
+    transform: translate3d(0, 8px, 0) scale(0.96);
     transition:
         background-color var(--ddsw-float-speed) ease,
         box-shadow var(--ddsw-float-speed) ease,
@@ -172,11 +206,12 @@
         transform var(--ddsw-float-speed) ease;
     transition-delay: calc(var(--ddsw-action-index, 0) * 22ms);
     white-space: nowrap;
+    width: max-content !important;
 }
 
 .ddsw-floating-hub.is-open .ddsw-floating-action {
     opacity: 1;
-    transform: translateY(0) scale(1);
+    transform: translate3d(0, 0, 0) scale(1);
 }
 
 .ddsw-floating-action:hover,
@@ -189,12 +224,15 @@
 .ddsw-floating-action__icon {
     align-items: center;
     background: var(--ddsw-action-color, var(--ddsw-float-main));
+    block-size: 32px;
     border-radius: 999px;
     color: #ffffff;
     display: inline-flex;
     flex: 0 0 32px;
     height: 32px;
+    inline-size: 32px;
     justify-content: center;
+    min-width: 32px;
     width: 32px;
 }
 
@@ -223,7 +261,11 @@
     box-shadow: none !important;
     color: inherit !important;
     display: block !important;
+    inline-size: max-content !important;
+    min-inline-size: 0 !important;
+    min-width: 0 !important;
     padding: 0 !important;
+    width: max-content !important;
 }
 
 .ddsw-floating-action--whatsapp:hover,
@@ -234,7 +276,12 @@
 
 .ddsw-floating-action--whatsapp .ddsw-wrap {
     display: inline-flex !important;
+    inline-size: max-content !important;
     justify-content: flex-end !important;
+    max-inline-size: min(320px, calc(100vw - 32px));
+    max-width: min(320px, calc(100vw - 32px)) !important;
+    min-inline-size: 0 !important;
+    min-width: 0 !important;
     width: auto !important;
 }
 
@@ -244,27 +291,44 @@
 
 .ddsw-floating-action--whatsapp .ddsw-button {
     border-radius: 999px !important;
+    box-sizing: border-box !important;
     box-shadow: var(--ddsw-float-action-shadow) !important;
+    display: inline-flex !important;
+    flex: 0 0 auto !important;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
     font-size: 14px !important;
     font-weight: 650 !important;
     gap: 10px !important;
+    inline-size: max-content !important;
+    justify-content: flex-start !important;
     line-height: 1.2 !important;
-    max-width: min(320px, calc(100vw - 32px));
+    max-inline-size: min(320px, calc(100vw - 32px));
+    max-width: min(320px, calc(100vw - 32px)) !important;
+    min-inline-size: 0 !important;
     min-height: 46px !important;
+    min-width: 0 !important;
     padding: 8px 14px 8px 8px !important;
-    width: auto !important;
+    width: max-content !important;
+}
+
+.ddsw-floating-action--whatsapp .ddsw-align-full .ddsw-button,
+.ddsw-floating-action--whatsapp .ddsw-button--width-full {
+    inline-size: max-content !important;
+    width: max-content !important;
 }
 
 .ddsw-floating-action--whatsapp .ddsw-icon {
     align-items: center;
     background: var(--ddsw-action-color, var(--ddsw-float-main));
+    block-size: 32px;
     border-radius: 999px;
     color: #ffffff;
     display: inline-flex;
     flex: 0 0 32px;
     height: 32px;
+    inline-size: 32px;
     justify-content: center;
+    min-width: 32px;
     width: 32px;
 }
 
@@ -285,7 +349,8 @@
 .ddsw-floating-hub--compact .ddsw-floating-action,
 .ddsw-floating-hub--compact .ddsw-floating-action--whatsapp .ddsw-button {
     box-shadow: none !important;
-    min-width: min(220px, calc(100vw - 48px));
+    min-inline-size: 0 !important;
+    min-width: 0 !important;
 }
 
 .ddsw-floating-hub[data-ddsw-show-labels="0"] .ddsw-floating-action__label,
@@ -324,7 +389,8 @@
 
     .ddsw-floating-action,
     .ddsw-floating-action--whatsapp .ddsw-button {
-        max-width: calc(100vw - 32px);
+        max-inline-size: calc(100vw - 32px);
+        max-width: calc(100vw - 32px) !important;
     }
 
     .ddsw-floating-action__label,
