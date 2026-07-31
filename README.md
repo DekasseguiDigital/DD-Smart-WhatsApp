@@ -9,6 +9,7 @@ DD Smart WhatsApp is a WordPress plugin for premium WhatsApp call-to-action butt
 - Traditional mode keeps the classic WhatsApp `text=` URL behavior.
 - Multiple reusable buttons with CTA, message, style, modal and tracking settings.
 - Optional Smart Floating Actions hubs for WhatsApp, phone, email, social links, maps, booking, form and custom links.
+- Contextual suggested messages by Floating Action channel, including dedicated e-mail subject/body support.
 - Adaptive Auto style that can inherit colors, typography, radius, border, spacing and shadow from visible site buttons.
 - Elementor widget plus Dynamic Tags for URL, phone, CTA, message and Smart Copy shortcode.
 - Native Gutenberg block with visual controls.

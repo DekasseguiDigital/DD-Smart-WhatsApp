@@ -1,10 +1,10 @@
 === DD Smart WhatsApp ===
 Contributors: dekassegui-digital
 Tags: whatsapp, elementor, gutenberg, shortcode, analytics
-Requires at least: 6.0
+Requires at least: 6.8
 Tested up to: 6.8
-Requires PHP: 8.0
-Stable tag: 2.2.0
+Requires PHP: 8.1
+Stable tag: 2.2.0-beta.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -78,6 +78,12 @@ No. Raw IP addresses are not stored. Optional IP hashing can be disabled in the 
 8. Mobile modal.
 
 == Changelog ==
+
+= 2.2.0-beta.3 =
+* Added contextual suggested messages for WhatsApp, Messenger, Facebook, Instagram and e-mail actions.
+* Added dedicated e-mail subject support for Floating Actions.
+* Improved plugin metadata and added Settings, Documentation, Support, GitHub and Changelog links on the Plugins screen.
+* Normalized beta admin labels and fixed a corrupted Smart Copy automatic label.
 
 = 2.2.0 =
 * Added Universal Smart Copy for Messenger, Instagram, Telegram, LINE and optional custom links.

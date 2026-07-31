@@ -1,5 +1,22 @@
 # Changelog
 
+## 2.2.0-beta.3 - Beta Polish
+
+### Added
+
+- Added contextual suggested messages for WhatsApp, Messenger, Facebook, Instagram and e-mail Floating Actions.
+- Added dedicated e-mail subject support for Floating Actions while reusing the existing initial message field as the e-mail body.
+- Added plugin action links for Settings, Documentation, Support, GitHub and Changelog on the WordPress Plugins screen.
+
+### Changed
+
+- Updated the plugin header with Plugin URI, Author URI, Update URI and a more product-focused description.
+- Improved Floating Actions admin UX so suggested messages can be applied manually or after confirming replacement of existing custom content.
+
+### Fixed
+
+- Fixed a corrupted "Smart Copy automático" admin label in message mode options.
+
 ## 2.2.0 - Universal Smart Copy
 
 ### Added

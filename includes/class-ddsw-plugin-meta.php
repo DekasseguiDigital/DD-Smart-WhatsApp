@@ -79,10 +79,6 @@ final class DDSW_Plugin_Meta
 
     private function link($url, $label)
     {
-        return sprintf(
-            '<a href="%1$s" target="_blank" rel="noopener noreferrer">%2$s</a>',
-            esc_url($url),
-            esc_html($label)
-        );
+        return '<a href="' . esc_url($url) . '" target="_blank" rel="noopener noreferrer">' . esc_html($label) . '</a>';
     }
 }

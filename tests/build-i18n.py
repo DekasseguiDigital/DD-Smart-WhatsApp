@@ -9,7 +9,7 @@ import struct
 ROOT = Path(__file__).resolve().parents[1]
 LANG_DIR = ROOT / "languages"
 DOMAIN = "dd-smart-whatsapp"
-VERSION = "2.2.0"
+VERSION = "2.2.0-beta.3"
 LOCALES = ("pt_BR", "en_US", "es_ES", "ja", "fr_FR", "de_DE", "it_IT", "nl_NL")
 SOURCE_SUFFIXES = {".php", ".js"}
 SKIP_PARTS = {"languages", "tests"}
@@ -69,6 +69,19 @@ I18N_RE = re.compile(
 
 FALLBACK_TRANSLATIONS = {
     "en_US": {
+        "Assunto do e-mail": "Email subject",
+        "Changelog": "Changelog",
+        "Configurações": "Settings",
+        "Consulta desde el sitio web": "Website inquiry",
+        "Corpo do e-mail": "Email body",
+        "Documentação": "Documentation",
+        "Este campo já possui conteúdo. Deseja substituir pela sugestão deste canal?": "This field already has content. Do you want to replace it with this channel suggestion?",
+        "Use placeholders como {{name}}, {{page_title}} e {{page_url}}.": "Use placeholders such as {{name}}, {{page_title}} and {{page_url}}.",
+        "Usar mensagem sugerida": "Use suggested message",
+        "Hola {{name}},\n\nEncontré su sitio web y me gustaría recibir información sobre sus servicios.\n\n¿Podría ayudarme con disponibilidad, precios y próximos pasos?\n\nMuchas gracias.": "Hello {{name}},\n\nI found your website and would like to receive information about your services.\n\nCould you help me with availability, pricing and next steps?\n\nThank you.",
+        "Hola {{name}},\n\nEncontré su sitio web y me gustaría recibir más información sobre sus servicios.\n\n¿Podría ayudarme con disponibilidad, precios y próximos pasos?\n\nMuchas gracias.": "Hello {{name}},\n\nI found your website and would like to receive more information about your services.\n\nCould you help me with availability, pricing and next steps?\n\nThank you.",
+        "Hola {{name}},\n\nVi su página de Facebook desde el sitio web y me gustaría recibir más información sobre sus servicios.\n\n¿Podría indicarme disponibilidad, precios y cómo continuar?\n\nMuchas gracias.": "Hello {{name}},\n\nI saw your Facebook page from the website and would like to receive more information about your services.\n\nCould you tell me availability, pricing and how to continue?\n\nThank you.",
+        "Hola {{name}} 👋\n\nEncontré su perfil de Instagram desde el sitio web.\n\nMe gustaría recibir más información sobre sus servicios y disponibilidad.\n\n¡Muchas gracias!": "Hello {{name}} 👋\n\nI found your Instagram profile from the website.\n\nI would like to receive more information about your services and availability.\n\nThank you!",
         "Abre o WhatsApp com a mensagem pelo parâmetro text=": "Opens WhatsApp with the message through the text= parameter",
         "Abrir WhatsApp →": "Open WhatsApp →",
         "Abrir automaticamente após copiar": "Open automatically after copying",
@@ -239,6 +252,19 @@ FALLBACK_TRANSLATIONS = {
         "Ícone": "Icon",
     },
     "pt_BR": {
+        "Assunto do e-mail": "Assunto do e-mail",
+        "Changelog": "Changelog",
+        "Configurações": "Configurações",
+        "Consulta desde el sitio web": "Consulta pelo site",
+        "Corpo do e-mail": "Corpo do e-mail",
+        "Documentação": "Documentação",
+        "Este campo já possui conteúdo. Deseja substituir pela sugestão deste canal?": "Este campo já possui conteúdo. Deseja substituir pela sugestão deste canal?",
+        "Use placeholders como {{name}}, {{page_title}} e {{page_url}}.": "Use placeholders como {{name}}, {{page_title}} e {{page_url}}.",
+        "Usar mensagem sugerida": "Usar mensagem sugerida",
+        "Hola {{name}},\n\nEncontré su sitio web y me gustaría recibir información sobre sus servicios.\n\n¿Podría ayudarme con disponibilidad, precios y próximos pasos?\n\nMuchas gracias.": "Olá {{name}},\n\nEncontrei seu site e gostaria de receber informações sobre seus serviços.\n\nVocê poderia me ajudar com disponibilidade, preços e próximos passos?\n\nMuito obrigado.",
+        "Hola {{name}},\n\nEncontré su sitio web y me gustaría recibir más información sobre sus servicios.\n\n¿Podría ayudarme con disponibilidad, precios y próximos pasos?\n\nMuchas gracias.": "Olá {{name}},\n\nEncontrei seu site e gostaria de receber mais informações sobre seus serviços.\n\nVocê poderia me ajudar com disponibilidade, preços e próximos passos?\n\nMuito obrigado.",
+        "Hola {{name}},\n\nVi su página de Facebook desde el sitio web y me gustaría recibir más información sobre sus servicios.\n\n¿Podría indicarme disponibilidad, precios y cómo continuar?\n\nMuchas gracias.": "Olá {{name}},\n\nVi sua página do Facebook pelo site e gostaria de receber mais informações sobre seus serviços.\n\nVocê poderia me informar disponibilidade, preços e como continuar?\n\nMuito obrigado.",
+        "Hola {{name}} 👋\n\nEncontré su perfil de Instagram desde el sitio web.\n\nMe gustaría recibir más información sobre sus servicios y disponibilidad.\n\n¡Muchas gracias!": "Olá {{name}} 👋\n\nEncontrei seu perfil do Instagram pelo site.\n\nGostaria de receber mais informações sobre seus serviços e disponibilidade.\n\nMuito obrigado!",
         "Automatic — current site language": "Automático — idioma atual do site",
         "Portuguese": "Português",
         "Spanish": "Espanhol",
@@ -299,6 +325,15 @@ FALLBACK_TRANSLATIONS = {
         "principal": "principal",
     },
     "es_ES": {
+        "Assunto do e-mail": "Asunto del e-mail",
+        "Changelog": "Registro de cambios",
+        "Configurações": "Configuración",
+        "Consulta desde el sitio web": "Consulta desde el sitio web",
+        "Corpo do e-mail": "Cuerpo del e-mail",
+        "Documentação": "Documentación",
+        "Este campo já possui conteúdo. Deseja substituir pela sugestão deste canal?": "Este campo ya tiene contenido. ¿Deseas sustituirlo por la sugerencia de este canal?",
+        "Use placeholders como {{name}}, {{page_title}} e {{page_url}}.": "Usa placeholders como {{name}}, {{page_title}} y {{page_url}}.",
+        "Usar mensagem sugerida": "Usar mensaje sugerido",
         "Automatic — current site language": "Automático — idioma actual del sitio",
         "Portuguese": "Portugués",
         "Spanish": "Español",
