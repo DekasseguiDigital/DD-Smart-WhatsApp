@@ -134,3 +134,115 @@
 - Source i18n audit: `306` visible strings, `306` internationalized, `0` remaining.
 - PHP syntax check: passed for all plugin PHP files with PHP 8.2.29.
 - JS syntax check: passed for admin, frontend, modal and Gutenberg scripts with Node `--check`.
+
+## 2.0.1 - Smart Copy modal resolution architecture
+
+### Added
+
+- Added `DDSW_I18n::resolve_modal_strings()` as the single source of truth for Smart Copy modal copy.
+- Added modal metadata fields: `template_version`, `last_template`, `modal_template_hash`, `customized` and `modal_customized`.
+- Added settings migration that refreshes non-customized saved modal text to the current translated defaults while preserving truly customized fields.
+- Added localized debug payload for `DDSW Debug`, locale, template, modal source, resolver, custom override, translation loaded, MO loaded and PO loaded.
+- Added `DDSW_Language_Resolver` as the central frontend/admin language resolver.
+- Added frontend language diagnostics for resolved locale, language source, loaded template, gettext locale, payload language, HTML lang and document lang.
+
+### Changed
+
+- Updated version to `2.0.1`.
+- Changed frontend locale resolution to prioritize the real page language from Polylang, WPML, TranslatePress, URL subdirectories, language subdomains, locale filters, `determine_locale()` and finally `get_locale()`.
+- Changed gettext loading so Smart Copy modal strings load the `.mo` file for the resolved frontend page locale before payload generation.
+- Changed renderer modal payloads to use resolved gettext/current-locale strings before applying user customizations.
+- Changed Traditional feedback to prefer the resolved button payload instead of old global database defaults.
+- Removed hardcoded modal fallback phrases from JavaScript; modal text now comes from PHP localization or the resolved payload.
+- Regenerated POT, PO and MO catalogs for all supported locales.
+
+### Fixed
+
+- Fixed Smart Copy modal showing old Portuguese database defaults such as "Mensagem copiada", "Clique em Abrir WhatsApp" and "Abrir WhatsApp" on English, Spanish, Japanese and other localized frontends.
+- Fixed Japanese modal title, desktop instruction and Open WhatsApp label catalog values.
+- Fixed stale modal customization flags causing legacy default descriptions and instructions saved in the database to override current gettext translations.
+- Fixed Smart Copy modal DOM rendering so the visible modal fields now prioritize the canonical resolved keys: `title`, `description`, `instruction`, `button`, `close`, `success` and `failed`.
+- Added field-level Smart Copy modal debug output for the canonical modal fields when DDSW Debug is enabled.
+- Fixed the remaining Smart Copy modal description leak where a saved legacy Portuguese success phrase could still override gettext in non-Portuguese frontends.
+- Forced the Smart Copy modal description catalog entry to overwrite stale PO values in every supported locale.
+- Fixed frontends in `/es/`, `/en/`, `/ja/` or multilingual plugin contexts still resolving the modal payload as the base site locale.
+
+### Audit
+
+- Source i18n audit: `306` visible strings, `306` internationalized, `0` remaining.
+- Rendered admin catalog audit: `107` visible Portuguese source strings checked across 8 locales, `0` catalog failures.
+- PHP syntax check: passed for all plugin PHP files with PHP 8.2.29.
+- JS syntax check: passed for admin, frontend, modal and Gutenberg scripts with Node `--check`.
+
+## 2.0.0 - UX, internationalization and final polish
+
+### Added
+
+- Added smart admin language mode: site language by default, optional logged-in user language for the admin area.
+- Added intelligent template update modal when changing a button model language or model type.
+- Added safe default restoration for the current button and for all buttons, preserving customized CTA, message and modal fields.
+- Added model library for tourism, restaurant, lawyer, doctor, hotel, barbershop, real estate, support, store, freelancer and consulting.
+- Added first-run wizard with language, WhatsApp number, first button and shortcode steps.
+- Added live admin preview using the same frontend button classes and `frontend.css`.
+- Added shortcode generator with live output and clipboard copy.
+- Added Smart Copy options for auto close and "do not show again" through `localStorage`.
+- Added 30-day statistics chart, Smart Copy/Traditional metrics, conversion percentage and CSV export.
+- Added Elementor Dynamic Tags for principal WhatsApp URL, support WhatsApp URL, Smart Copy shortcode, message, phone and CTA.
+- Added Gutenberg controls for Smart Copy auto open, auto close and hide-again behavior.
+- Added dedicated reports: `RELEASE.md`, `COMPATIBILITY.md`, `PERFORMANCE.md`, `I18N-REPORT.md`, `ACCESSIBILITY.md` and `SECURITY.md`.
+
+### Changed
+
+- Updated version to `2.0.0`.
+- Regenerated POT, PO and MO catalogs for `pt_BR`, `en_US`, `es_ES`, `ja`, `fr_FR`, `de_DE`, `it_IT` and `nl_NL`.
+- Strengthened English fallback so non-Portuguese locales never inherit untranslated Portuguese admin strings.
+- Updated admin assets so the live preview does not depend on theme or Elementor CSS.
+- Updated source and rendered-admin i18n audit scripts for version `2.0.0`.
+
+### Fixed
+
+- Fixed missing translations for the new wizard, restore flow, language mode, shortcode generator and Smart Copy modal options.
+- Fixed catalog-level i18n regressions where wrapped strings could still render in Portuguese in non-`pt_BR` locales.
+- Fixed source i18n audit false positives for technical selectors and Elementor namespace strings.
+
+### Audit
+
+- Source i18n audit: `323` visible strings, `323` internationalized, `0` remaining.
+- Rendered admin catalog audit: `116` visible Portuguese source strings checked across 8 locales, `0` catalog failures.
+- PHP syntax check: passed for all plugin PHP files with PHP 8.2.29.
+- JS syntax check: passed for admin, frontend, modal, tracking and Gutenberg scripts with Node `--check`.
+- WordPress Plugin Check, PHPCS/WPCS and WP-CLI were not available in the local PATH; reports document this limitation.
+
+## 1.3.1 - Complete source i18n hardening
+
+- Removed hardcoded localized starter text sets from PHP source.
+- Regenerated `.pot`, `.po` and `.mo` files for 8 locales.
+- Added stricter source and rendered-admin i18n audits.
+- Removed `innerHTML` usage from modal/admin row creation.
+- Fixed incomplete English and non-Portuguese catalogs.
+
+## 1.3.0 - Final internationalization pass
+
+- Added source i18n audit for PHP, JavaScript and JSON files.
+- Added admin JavaScript translation registration.
+- Updated Gutenberg editor strings to use `wp.i18n.__()`.
+- Prevented mixed-language Smart Copy modal text.
+
+## 1.2.0 - Complete internationalization
+
+- Added `DDSW_I18n` loader with per-site locale resolution and English fallback.
+- Added localized starter content for 8 locales.
+- Added per-button template language.
+- Added frontend and block script translations.
+
+## 1.1.0 - Automatic visual integration and WordPress.org hardening
+
+- Fixed frontend style rendering.
+- Added Auto, Green, Dark, Light, Outline and Custom styles.
+- Added browser-side placeholders and admin statistics cleanup.
+- Added multisite initialization support.
+
+## 1.0.0 - WordPress.org-ready public release candidate
+
+- Added WordPress.org readme, GPL license, uninstall handler and separated assets.
+- Added Elementor widget, Gutenberg block, shortcodes, Smart Copy, tracking and developer hooks.
