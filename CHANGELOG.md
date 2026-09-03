@@ -1,5 +1,66 @@
 # Changelog
 
+## 2.2.0-beta.5 - Messenger Smart Copy Modal Fix
+
+### Fixed
+
+- Fixed Facebook Messenger floating actions saved as Facebook links bypassing the Universal Smart Copy modal.
+- Preserved the existing WhatsApp, Instagram and e-mail flows while routing Messenger links through the shared Smart Copy modal.
+
+## 2.2.0-beta.4 - Unified Floating Hub Smart Copy
+
+### Changed
+
+- Unified the Floating Hub Smart Copy flow with the standard Smart Copy modal used by regular buttons.
+- Added backward compatibility for stored `smart_auto` message mode values by normalizing them to `smart_copy`.
+
+### Fixed
+
+- Fixed Floating Hub Smart Copy actions opening the target channel immediately without showing the confirmation modal first.
+- Added WhatsApp to the Universal Smart Copy supported action list so Floating Hub WhatsApp actions can use the same modal flow.
+
+## 2.2.0-beta.3 - Beta Polish
+
+### Added
+
+- Added contextual suggested messages for WhatsApp, Messenger, Facebook, Instagram and e-mail Floating Actions.
+- Added dedicated e-mail subject support for Floating Actions while reusing the existing initial message field as the e-mail body.
+- Added plugin action links for Settings, Documentation, Support, GitHub and Changelog on the WordPress Plugins screen.
+
+### Changed
+
+- Updated the plugin header with Plugin URI, Author URI, Update URI and a more product-focused description.
+- Improved Floating Actions admin UX so suggested messages can be applied manually or after confirming replacement of existing custom content.
+
+### Fixed
+
+- Fixed a corrupted "Smart Copy automático" admin label in message mode options.
+- Unified Universal Smart Copy in Floating Actions with the standard Smart Copy modal before opening the selected channel.
+
+## 2.2.0 - Universal Smart Copy
+
+### Added
+
+- Added Universal Smart Copy infrastructure for floating actions beyond WhatsApp.
+- Added per-action initial messages with existing placeholder support.
+- Added per-action message modes: none, automatic Smart Copy and ask before copying.
+- Added Smart Copy support for Messenger, Instagram, Telegram and LINE actions.
+- Added optional Smart Copy support for custom links.
+- Added `smart_copy_platform` analytics events with the platform available through action metadata.
+
+### Changed
+
+- Email actions now generate `mailto:` links with subject and body when an initial message is configured.
+- The existing Smart Copy modal is reused for confirm/error flows, with a lightweight toast after successful automatic copy.
+
+### Fixed
+
+- Fixed frontend style loading on internal pages that render DD Smart WhatsApp buttons through shortcodes, Gutenberg blocks or Elementor widgets.
+
+### Compatibility
+
+- WhatsApp Smart Copy, traditional WhatsApp links, shortcodes, Elementor, Gutenberg, Dashboard analytics and existing Floating Actions behavior remain backward compatible.
+
 ## 2.1.0 - Smart Floating Actions Free and Dashboard Analytics
 
 ### Added

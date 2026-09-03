@@ -328,6 +328,10 @@ final class DDSW_Renderer
             return true;
         }
 
+        if ('auto' === $style_name) {
+            return in_array($group, ['always', 'visual', 'radius', 'padding', 'shadow', 'font', 'font_size'], true);
+        }
+
         if ('custom' !== $style_name) {
             return in_array($group, ['always'], true);
         }

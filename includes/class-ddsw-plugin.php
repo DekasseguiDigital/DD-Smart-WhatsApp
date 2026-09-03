@@ -31,6 +31,7 @@ final class DDSW_Plugin
         (new DDSW_Floating_Actions())->init();
 
         if (is_admin()) {
+            (new DDSW_Plugin_Meta())->init();
             (new DDSW_Admin())->init();
             (new DDSW_Dashboard_Widget())->init();
             (new DDSW_Update_Checker())->init();
