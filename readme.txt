@@ -1,10 +1,10 @@
 === DD Smart WhatsApp ===
 Contributors: dekassegui-digital
 Tags: whatsapp, elementor, gutenberg, shortcode, analytics
-Requires at least: 6.0
+Requires at least: 6.8
 Tested up to: 6.8
-Requires PHP: 8.0
-Stable tag: 2.1.0
+Requires PHP: 8.1
+Stable tag: 2.2.0-beta.5
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -79,6 +79,30 @@ No. Raw IP addresses are not stored. Optional IP hashing can be disabled in the 
 
 == Changelog ==
 
+= 2.2.0-beta.5 =
+* Fixed Facebook Messenger floating actions saved as Facebook links bypassing the Universal Smart Copy modal.
+* Preserved the existing WhatsApp, Instagram and e-mail flows while routing Messenger links through the shared Smart Copy modal.
+
+= 2.2.0-beta.4 =
+* Unified the Floating Hub Smart Copy flow with the standard Smart Copy modal used by regular buttons.
+* Added backward compatibility for stored smart_auto message mode values.
+* Fixed Floating Hub Smart Copy actions opening the target channel immediately without showing the confirmation modal first.
+* Added WhatsApp to the Universal Smart Copy supported action list.
+
+= 2.2.0-beta.3 =
+* Added contextual suggested messages for WhatsApp, Messenger, Facebook, Instagram and e-mail actions.
+* Added dedicated e-mail subject support for Floating Actions.
+* Improved plugin metadata and added Settings, Documentation, Support, GitHub and Changelog links on the Plugins screen.
+* Normalized beta admin labels and fixed a corrupted Smart Copy automatic label.
+
+= 2.2.0 =
+* Added Universal Smart Copy for Messenger, Instagram, Telegram, LINE and optional custom links.
+* Added per-action initial messages with placeholder support in Smart Floating Actions.
+* Added per-action message modes: none, automatic Smart Copy and ask before copying.
+* Added mailto subject and body generation for email actions without using Smart Copy.
+* Added platform analytics event tracking for Universal Smart Copy.
+* Fixed frontend style loading on internal pages with DD Smart WhatsApp shortcodes, Gutenberg blocks or Elementor widgets.
+
 = 2.1.0 =
 * Added optional Smart Floating Actions hubs with Vertical and Compact List layouts.
 * Added configurable floating actions for WhatsApp Smart Copy, phone, email, social links, maps, booking, form and custom links.
@@ -140,6 +164,9 @@ No. Raw IP addresses are not stored. Optional IP hashing can be disabled in the 
 * Initial WordPress.org-ready public release candidate.
 
 == Upgrade Notice ==
+
+= 2.2.0 =
+Adds Universal Smart Copy for Messenger, Instagram, Telegram, LINE and optional custom links while preserving existing WhatsApp behavior.
 
 = 2.1.0 =
 Adds optional Smart Floating Actions and Dashboard Analytics. Existing buttons, shortcodes, Elementor widgets and Gutenberg blocks keep their current behavior unless the new module is enabled.
