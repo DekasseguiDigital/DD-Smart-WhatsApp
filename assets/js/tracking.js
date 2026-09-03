@@ -32,6 +32,7 @@
         form.append('button_id', payload.id || '');
         form.append('action_id', payload.actionId || payload.action_id || '');
         form.append('action_type', payload.actionType || payload.action_type || '');
+        form.append('platform', payload.platform || payload.actionType || payload.action_type || '');
         form.append('event_type', eventType);
         form.append('copy_status', copyStatus || '');
         form.append('device', deviceType());
@@ -59,6 +60,7 @@
             button_label: payload.label || '',
             action_id: payload.actionId || payload.action_id || '',
             action_type: payload.actionType || payload.action_type || '',
+            platform: payload.platform || payload.actionType || payload.action_type || '',
             copy_status: copyStatus || '',
             device: deviceType(),
             page_location: window.location.href
