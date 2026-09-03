@@ -5,9 +5,11 @@ DD Smart WhatsApp is a WordPress plugin for premium WhatsApp call-to-action butt
 ## Highlights
 
 - Smart Copy mode copies the fully formatted message before opening WhatsApp without the `text=` parameter.
+- Universal Smart Copy can copy initial messages for Messenger, Instagram, Telegram, LINE and optional custom links.
 - Traditional mode keeps the classic WhatsApp `text=` URL behavior.
 - Multiple reusable buttons with CTA, message, style, modal and tracking settings.
 - Optional Smart Floating Actions hubs for WhatsApp, phone, email, social links, maps, booking, form and custom links.
+- Contextual suggested messages by Floating Action channel, including dedicated e-mail subject/body support.
 - Adaptive Auto style that can inherit colors, typography, radius, border, spacing and shadow from visible site buttons.
 - Elementor widget plus Dynamic Tags for URL, phone, CTA, message and Smart Copy shortcode.
 - Native Gutenberg block with visual controls.
@@ -30,7 +32,7 @@ Frontend rendering follows the real rendered page locale. The admin area uses th
 
 Translations are loaded through WordPress locale APIs and `load_plugin_textdomain()`. JavaScript handles use `wp_set_script_translations()`. New button defaults and model library text come from gettext catalogs, not hardcoded per-locale arrays.
 
-Final v2.1.0 i18n results:
+Final v2.2.0 i18n results:
 
 - Source audit: 367 visible strings, 367 translated, 0 remaining.
 - Rendered admin catalog audit: 107 visible Portuguese source strings checked across 8 locales, 0 failures.
