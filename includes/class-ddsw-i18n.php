@@ -170,6 +170,46 @@ final class DDSW_I18n
         return apply_filters('ddsw_resolved_modal_strings', $resolved, $button, $atts, $locale);
     }
 
+    public static function resolve_universal_copy_strings(array $action = [])
+    {
+        $platform = self::universal_copy_platform_label($action['type'] ?? '');
+        $strings = [
+            'title' => __('Mensagem copiada.', self::DOMAIN),
+            'description' => __('A mensagem inicial foi copiada para a área de transferência.', self::DOMAIN),
+            'instruction' => __('Cole na conversa.', self::DOMAIN),
+            'button' => sprintf(
+                /* translators: %s: communication channel name. */
+                __('Abrir %s', self::DOMAIN),
+                $platform
+            ),
+            'confirmTitle' => __('Copiar mensagem?', self::DOMAIN),
+            'confirmDescription' => __('A mensagem inicial será copiada antes de abrir este canal.', self::DOMAIN),
+            'confirmInstruction' => __('Depois que a conversa abrir, cole a mensagem copiada.', self::DOMAIN),
+            'failed' => __('Não foi possível copiar automaticamente. Selecione e copie a mensagem abaixo.', self::DOMAIN),
+            'retry' => __('Copiar novamente', self::DOMAIN),
+            'close' => __('Fechar', self::DOMAIN),
+            'copyFeedback' => __('Mensagem copiada. Cole na conversa.', self::DOMAIN),
+        ];
+
+        return apply_filters('ddsw_universal_copy_strings', $strings, $action);
+    }
+
+    private static function universal_copy_platform_label($type)
+    {
+        $type = sanitize_key((string) $type);
+        $labels = [
+            'whatsapp' => __('WhatsApp', self::DOMAIN),
+            'messenger' => __('Messenger', self::DOMAIN),
+            'instagram' => __('Instagram', self::DOMAIN),
+            'facebook' => __('Facebook', self::DOMAIN),
+            'telegram' => __('Telegram', self::DOMAIN),
+            'line' => __('LINE', self::DOMAIN),
+            'custom' => __('Link', self::DOMAIN),
+        ];
+
+        return $labels[$type] ?? __('Canal', self::DOMAIN);
+    }
+
     public static function is_default_modal_value($field, $value)
     {
         $value = trim((string) $value);

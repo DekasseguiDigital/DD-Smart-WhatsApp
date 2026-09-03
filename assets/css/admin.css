@@ -215,6 +215,19 @@
     width: 100%;
 }
 
+.ddsw-field--message {
+    grid-column: span 2;
+}
+
+.ddsw-field--message label {
+    display: grid;
+    gap: 6px;
+}
+
+.ddsw-floating-admin__suggestion {
+    justify-self: start;
+}
+
 .ddsw-toggle {
     align-items: center;
     display: inline-flex;
